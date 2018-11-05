@@ -249,7 +249,6 @@ void Conv3(		data_t input[CHANNELS][IMG_HEIGHT][IMG_WIDTH],
 
 
 
-
     // 三行缓存区
 	data_t x_cache[CHANNELS][IMG_WIDTH];
 	data_t output_cache[CHANNELS][IMG_WIDTH];
@@ -275,7 +274,9 @@ void Conv3(		data_t input[CHANNELS][IMG_HEIGHT][IMG_WIDTH],
             for (int j = 0; j < IMG_WIDTH; j++) {
 #pragma HLS UNROLL factor = 4
                 line_buffer[c_in][2][j] = input[c_in][i + 1][j]; // 加载新一行
+                if(mode == 2){
                 x_cache[c_in][j] = x[c_in][i - 1][j];
+                }
             }
         }
 
