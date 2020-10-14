@@ -3,6 +3,12 @@
   <source>
     <originFiles name="Conv2d.cpp" path="D:\code\git\HLS\HLS\src\Conv2d\Conv2d.cpp"/>
     <originFiles name="Conv2d.h" path="D:\code\git\HLS\HLS\src\Conv2d\Conv2d.h"/>
+    <originFiles name="Aff_channel.cpp" path="D:\code\git\HLS\HLS\src\norm\Aff_channel.cpp"/>
+    <originFiles name="Aff_channel.h" path="D:\code\git\HLS\HLS\src\norm\Aff_channel.h"/>
+    <originFiles name="gamma.cpp" path="D:\code\git\HLS\HLS\src\gamma\gamma.cpp"/>
+    <originFiles name="gamma.h" path="D:\code\git\HLS\HLS\src\gamma\gamma.h"/>
+    <originFiles name="GELU.cpp" path="D:\code\git\HLS\HLS\src\Gelu\GELU.cpp"/>
+    <originFiles name="GELU.h" path="D:\code\git\HLS\HLS\src\Gelu\GELU.h"/>
   </source>
   <testbench/>
 </autopilotfilemapping:AutoPilotFileMapping>

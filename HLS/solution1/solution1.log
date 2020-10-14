@@ -1,0 +1,611 @@
+==============================================================
+File generated on Mon Oct 14 23:43:25 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/gamma/gamma.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/Conv2d/Conv2d.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/norm/Aff_channel.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:30 . Memory (MB): peak = 103.543 ; gain = 18.363
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:30 . Memory (MB): peak = 103.543 ; gain = 18.363
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:31 . Memory (MB): peak = 226.508 ; gain = 141.328
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:32 . Memory (MB): peak = 324.766 ; gain = 239.586
+INFO: [XFORM 203-11] Balancing expressions in function 'Conv2D' (HLS/src/Conv2d/Conv2d.cpp:10)...3 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:32 . Memory (MB): peak = 439.035 ; gain = 353.855
+INFO: [HLS 200-444] Inferring multiple bus burst write of variable length on port 'gmem' (HLS/src/Conv2d/Conv2d.cpp:51:88). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:33 . Memory (MB): peak = 475.543 ; gain = 390.363
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'Conv2D' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Conv2D' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 33.068 seconds; current allocated memory: 408.294 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 6 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.158 seconds; current allocated memory: 409.149 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Conv2D' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/in_channel_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/out_channel_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/kernel_size_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/stride_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/padding_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/input_width_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/input_height_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/in_data_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/weights_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/biases_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/out_data_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'Conv2D' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'in_channel_V', 'out_channel_V', 'kernel_size_V', 'stride_V', 'padding_V', 'input_width_V', 'input_height_V', 'in_data_V', 'weights_V', 'biases_V' and 'out_data_V' to AXI-Lite port AXILiteS.
+INFO: [SYN 201-210] Renamed object name 'Conv2D_sdiv_12s_9ns_12_16_seq_1' to 'Conv2D_sdiv_12s_9bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mul_mul_16ns_13s_28_1_1' to 'Conv2D_mul_mul_16cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mul_mul_24ns_8ns_32_1_1' to 'Conv2D_mul_mul_24dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mac_muladd_24ns_8ns_48ns_48_1_1' to 'Conv2D_mac_muladdeOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mac_muladd_8ns_20s_32ns_33_1_1' to 'Conv2D_mac_muladdfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mac_muladd_16s_16s_24ns_24_1_1' to 'Conv2D_mac_muladdg8j' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mac_muladdeOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mac_muladdfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mac_muladdg8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mul_mul_16cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mul_mul_24dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_sdiv_12s_9bkb': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Conv2D'.
+INFO: [HLS 200-111]  Elapsed time: 0.583 seconds; current allocated memory: 410.923 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'Conv2D_sdiv_12s_9bkb_div'
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:36 . Memory (MB): peak = 478.180 ; gain = 393.000
+INFO: [SYSC 207-301] Generating SystemC RTL for Conv2D.
+INFO: [VHDL 208-304] Generating VHDL RTL for Conv2D.
+INFO: [VLOG 209-307] Generating Verilog RTL for Conv2D.
+INFO: [HLS 200-112] Total elapsed time: 35.664 seconds; peak allocated memory: 410.923 MB.
+==============================================================
+File generated on Mon Oct 14 23:44:47 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/gamma/gamma.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/Conv2d/Conv2d.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/norm/Aff_channel.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:27 . Memory (MB): peak = 103.617 ; gain = 17.988
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:27 . Memory (MB): peak = 103.617 ; gain = 17.988
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:28 . Memory (MB): peak = 226.422 ; gain = 140.793
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:29 . Memory (MB): peak = 324.875 ; gain = 239.246
+INFO: [XFORM 203-11] Balancing expressions in function 'Conv2D' (HLS/src/Conv2d/Conv2d.cpp:10)...3 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:00 ; elapsed = 00:00:30 . Memory (MB): peak = 438.824 ; gain = 353.195
+INFO: [HLS 200-444] Inferring multiple bus burst write of variable length on port 'gmem' (HLS/src/Conv2d/Conv2d.cpp:51:88). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:30 . Memory (MB): peak = 476.191 ; gain = 390.562
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'Conv2D' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Conv2D' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 30.39 seconds; current allocated memory: 408.279 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 6 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.146 seconds; current allocated memory: 409.118 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Conv2D' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/in_channel_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/out_channel_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/kernel_size_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/stride_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/padding_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/input_width_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/input_height_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/in_data_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/weights_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/biases_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/out_data_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'Conv2D' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'in_channel_V', 'out_channel_V', 'kernel_size_V', 'stride_V', 'padding_V', 'input_width_V', 'input_height_V', 'in_data_V', 'weights_V', 'biases_V' and 'out_data_V' to AXI-Lite port AXILiteS.
+INFO: [SYN 201-210] Renamed object name 'Conv2D_sdiv_12s_9ns_12_16_seq_1' to 'Conv2D_sdiv_12s_9bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mul_mul_16ns_13s_28_1_1' to 'Conv2D_mul_mul_16cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mul_mul_24ns_8ns_32_1_1' to 'Conv2D_mul_mul_24dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mac_muladd_24ns_8ns_48ns_48_1_1' to 'Conv2D_mac_muladdeOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mac_muladd_8ns_20s_32ns_33_1_1' to 'Conv2D_mac_muladdfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mac_muladd_16s_16s_24ns_24_1_1' to 'Conv2D_mac_muladdg8j' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mac_muladdeOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mac_muladdfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mac_muladdg8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mul_mul_16cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mul_mul_24dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_sdiv_12s_9bkb': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Conv2D'.
+INFO: [HLS 200-111]  Elapsed time: 0.537 seconds; current allocated memory: 410.907 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'Conv2D_sdiv_12s_9bkb_div'
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:33 . Memory (MB): peak = 478.566 ; gain = 392.938
+INFO: [SYSC 207-301] Generating SystemC RTL for Conv2D.
+INFO: [VHDL 208-304] Generating VHDL RTL for Conv2D.
+INFO: [VLOG 209-307] Generating Verilog RTL for Conv2D.
+INFO: [HLS 200-112] Total elapsed time: 32.794 seconds; peak allocated memory: 410.907 MB.
+==============================================================
+File generated on Wed Oct 14 23:45:35 +0800 2020
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+==============================================================
+File generated on Wed Oct 14 23:46:22 +0800 2020
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/gamma/gamma.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/Conv2d/Conv2d.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/norm/Aff_channel.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:29 . Memory (MB): peak = 103.836 ; gain = 18.680
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:29 . Memory (MB): peak = 103.836 ; gain = 18.680
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:31 . Memory (MB): peak = 224.422 ; gain = 139.266
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:31 . Memory (MB): peak = 324.648 ; gain = 239.492
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:32 . Memory (MB): peak = 437.438 ; gain = 352.281
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 16 on port 'gmem' (HLS/src/norm/Aff_channel.cpp:30:72). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:32 . Memory (MB): peak = 474.500 ; gain = 389.344
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'Aff_channel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Aff_channel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 32.521 seconds; current allocated memory: 406.201 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 4 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.122 seconds; current allocated memory: 406.664 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Aff_channel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'Aff_channel/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Aff_channel/dim_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Aff_channel/input_width_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Aff_channel/input_height_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Aff_channel/input_data_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Aff_channel/alpha_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Aff_channel/beta_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Aff_channel/color_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Aff_channel/out_data_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'Aff_channel' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'dim_V', 'input_width_V', 'input_height_V', 'input_data_V', 'alpha_V', 'beta_V', 'color_V' and 'out_data_V' to AXI-Lite port AXILiteS.
+INFO: [SYN 201-210] Renamed object name 'Aff_channel_mac_muladd_24ns_16ns_32ns_40_1_1' to 'Aff_channel_mac_mbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Aff_channel_mac_muladd_16s_16s_24ns_24_1_1' to 'Aff_channel_mac_mcud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'Aff_channel_mac_mbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Aff_channel_mac_mcud': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Aff_channel'.
+INFO: [HLS 200-111]  Elapsed time: 0.311 seconds; current allocated memory: 407.805 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:34 . Memory (MB): peak = 474.500 ; gain = 389.344
+INFO: [SYSC 207-301] Generating SystemC RTL for Aff_channel.
+INFO: [VHDL 208-304] Generating VHDL RTL for Aff_channel.
+INFO: [VLOG 209-307] Generating Verilog RTL for Aff_channel.
+INFO: [HLS 200-112] Total elapsed time: 34.158 seconds; peak allocated memory: 407.805 MB.
+==============================================================
+File generated on Wed Oct 14 23:47:23 +0800 2020
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/gamma/gamma.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/Conv2d/Conv2d.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/norm/Aff_channel.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:27 . Memory (MB): peak = 103.695 ; gain = 18.746
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:27 . Memory (MB): peak = 103.695 ; gain = 18.746
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:28 . Memory (MB): peak = 224.816 ; gain = 139.867
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:29 . Memory (MB): peak = 324.312 ; gain = 239.363
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:29 . Memory (MB): peak = 438.211 ; gain = 353.262
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 16 on port 'gmem' (HLS/src/norm/Aff_channel.cpp:30:72). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:30 . Memory (MB): peak = 474.508 ; gain = 389.559
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'Aff_channel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Aff_channel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 29.913 seconds; current allocated memory: 406.154 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 4 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.099 seconds; current allocated memory: 406.633 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Aff_channel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'Aff_channel/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Aff_channel/dim_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Aff_channel/input_width_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Aff_channel/input_height_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Aff_channel/input_data_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Aff_channel/alpha_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Aff_channel/beta_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Aff_channel/color_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Aff_channel/out_data_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'Aff_channel' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'dim_V', 'input_width_V', 'input_height_V', 'input_data_V', 'alpha_V', 'beta_V', 'color_V' and 'out_data_V' to AXI-Lite port AXILiteS.
+INFO: [SYN 201-210] Renamed object name 'Aff_channel_mac_muladd_24ns_16ns_32ns_40_1_1' to 'Aff_channel_mac_mbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Aff_channel_mac_muladd_16s_16s_24ns_24_1_1' to 'Aff_channel_mac_mcud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'Aff_channel_mac_mbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Aff_channel_mac_mcud': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Aff_channel'.
+INFO: [HLS 200-111]  Elapsed time: 0.241 seconds; current allocated memory: 407.805 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:31 . Memory (MB): peak = 474.508 ; gain = 389.559
+INFO: [SYSC 207-301] Generating SystemC RTL for Aff_channel.
+INFO: [VHDL 208-304] Generating VHDL RTL for Aff_channel.
+INFO: [VLOG 209-307] Generating Verilog RTL for Aff_channel.
+INFO: [HLS 200-112] Total elapsed time: 31.3 seconds; peak allocated memory: 407.805 MB.
+==============================================================
+File generated on Wed Oct 14 23:49:41 +0800 2020
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+==============================================================
+File generated on Wed Oct 14 23:50:06 +0800 2020
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/gamma/gamma.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/Conv2d/Conv2d.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/norm/Aff_channel.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:27 . Memory (MB): peak = 103.672 ; gain = 18.566
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:27 . Memory (MB): peak = 103.672 ; gain = 18.566
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:28 . Memory (MB): peak = 223.125 ; gain = 138.020
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:29 . Memory (MB): peak = 322.145 ; gain = 237.039
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:29 . Memory (MB): peak = 436.781 ; gain = 351.676
+INFO: [HLS 200-444] Inferring multiple bus burst write of variable length on port 'gmem' (HLS/src/gamma/gamma.cpp:11:14). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:30 . Memory (MB): peak = 472.793 ; gain = 387.688
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'gamma' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gamma' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-69] Unable to schedule bus request on port 'gmem' (HLS/src/gamma/gamma.cpp:11) due to limited memory ports. Please consider using a memory core with more ports or partitioning the array.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 2, Depth = 12.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 29.99 seconds; current allocated memory: 403.799 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.097 seconds; current allocated memory: 404.041 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gamma' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'gamma/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gamma/dim_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gamma/gamma_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gamma/mlp_output_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gamma/output_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'gamma' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'dim_V', 'gamma_V', 'mlp_output_V' and 'output_V' to AXI-Lite port AXILiteS.
+INFO: [SYN 201-210] Renamed object name 'gamma_mul_mul_16s_16s_24_1_1' to 'gamma_mul_mul_16sbkb' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'gamma_mul_mul_16sbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gamma'.
+INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 404.942 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:31 . Memory (MB): peak = 472.793 ; gain = 387.688
+INFO: [SYSC 207-301] Generating SystemC RTL for gamma.
+INFO: [VHDL 208-304] Generating VHDL RTL for gamma.
+INFO: [VLOG 209-307] Generating Verilog RTL for gamma.
+INFO: [HLS 200-112] Total elapsed time: 31.318 seconds; peak allocated memory: 404.942 MB.
+==============================================================
+File generated on Wed Oct 14 23:51:09 +0800 2020
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/gamma/gamma.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/Conv2d/Conv2d.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/norm/Aff_channel.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:26 . Memory (MB): peak = 103.637 ; gain = 18.297
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:26 . Memory (MB): peak = 103.637 ; gain = 18.297
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:27 . Memory (MB): peak = 223.441 ; gain = 138.102
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:28 . Memory (MB): peak = 322.254 ; gain = 236.914
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:29 . Memory (MB): peak = 437.348 ; gain = 352.008
+INFO: [HLS 200-444] Inferring multiple bus burst write of variable length on port 'gmem' (HLS/src/gamma/gamma.cpp:11:14). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:29 . Memory (MB): peak = 473.605 ; gain = 388.266
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'gamma' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gamma' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-69] Unable to schedule bus request on port 'gmem' (HLS/src/gamma/gamma.cpp:11) due to limited memory ports. Please consider using a memory core with more ports or partitioning the array.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 2, Depth = 12.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 29.093 seconds; current allocated memory: 403.752 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.088 seconds; current allocated memory: 404.010 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gamma' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'gamma/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gamma/dim_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gamma/gamma_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gamma/mlp_output_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gamma/output_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'gamma' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'dim_V', 'gamma_V', 'mlp_output_V' and 'output_V' to AXI-Lite port AXILiteS.
+INFO: [SYN 201-210] Renamed object name 'gamma_mul_mul_16s_16s_24_1_1' to 'gamma_mul_mul_16sbkb' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'gamma_mul_mul_16sbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gamma'.
+INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 404.910 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:30 . Memory (MB): peak = 473.605 ; gain = 388.266
+INFO: [SYSC 207-301] Generating SystemC RTL for gamma.
+INFO: [VHDL 208-304] Generating VHDL RTL for gamma.
+INFO: [VLOG 209-307] Generating Verilog RTL for gamma.
+INFO: [HLS 200-112] Total elapsed time: 30.322 seconds; peak allocated memory: 404.910 MB.
+==============================================================
+File generated on Wed Oct 14 23:52:04 +0800 2020
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+==============================================================
+File generated on Mon Oct 14 23:57:55 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/gamma/gamma.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/Gelu/GELU.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from HLS/src/Gelu/GELU.cpp:1:
+HLS/src/Gelu/GELU.cpp:16:24: error: call to 'tanh' is ambiguous
+    Dtype_t tanh_val = tanh(tanh_arg);
+                       ^~~~
+...
+==============================================================
+File generated on Tue Oct 15 00:03:32 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/gamma/gamma.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/Gelu/GELU.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/Conv2d/Conv2d.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'HLS/src/norm/Aff_channel.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:34 . Memory (MB): peak = 103.609 ; gain = 18.078
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:34 . Memory (MB): peak = 103.609 ; gain = 18.078
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:38 . Memory (MB): peak = 358.023 ; gain = 272.492
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::data' into 'fp_struct<float>::to_float' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:348) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_float' into 'fp_struct<float>::to_ieee' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:369) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_ieee' into 'generic_copysign<float>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:13) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_copysign<float>' into 'generic_fabs<float>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_fabs.h:12) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_ieee' into 'generic_nan<float>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_nan.h:14) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::data' into 'fp_struct<double>::to_double' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:512) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_double' into 'fp_struct<double>::to_ieee' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:526) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isnan<double>' into 'exp_reduce_::exp_generic<double>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:208) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isinf<double>' into 'exp_reduce_::exp_generic<double>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:209) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_ieee' into 'exp_reduce_::exp_generic<double>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:218) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::expv' into 'exp_reduce_::exp_generic<double>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:236) automatically.
+INFO: [XFORM 203-602] Inlining function 'exp_reduce_::exp_traits<double>::exp_Z1P_m_1' into 'exp_reduce_::exp_generic<double>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:321) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_fabs<float>' into 'explog_based::generic_tanh<float>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:61) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_nan<float>' into 'explog_based::generic_tanh<float>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:67) automatically.
+INFO: [XFORM 203-602] Inlining function 'exp_reduce_::expm1' into 'explog_based::generic_tanh<float>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:89) automatically.
+INFO: [XFORM 203-602] Inlining function 'tanhf' into 'std::tanh' (D:/software/Xilinx/Vivado/2018.3/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\cmath:466) automatically.
+INFO: [XFORM 203-602] Inlining function 'std::tanh' into 'GELU' (HLS/src/Gelu/GELU.cpp:16) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:39 . Memory (MB): peak = 442.770 ; gain = 357.238
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::data' into 'fp_struct<float>::to_float' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:348) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_float' into 'fp_struct<float>::to_ieee' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:369) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_ieee' into 'generic_copysign<float>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:13) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_copysign<float>' into 'generic_fabs<float>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_fabs.h:12) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_ieee' into 'generic_nan<float>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_nan.h:14) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::data' into 'fp_struct<double>::to_double' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:512) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_double' into 'fp_struct<double>::to_ieee' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:526) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isnan<double>' into 'exp_reduce_::exp_generic<double>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:208) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isinf<double>' into 'exp_reduce_::exp_generic<double>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:209) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_ieee' into 'exp_reduce_::exp_generic<double>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:218) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::expv' into 'exp_reduce_::exp_generic<double>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:236) automatically.
+INFO: [XFORM 203-602] Inlining function 'exp_reduce_::exp_traits<double>::exp_Z1P_m_1' into 'exp_reduce_::exp_generic<double>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:321) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_fabs<float>' into 'explog_based::generic_tanh<float>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:61) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_nan<float>' into 'explog_based::generic_tanh<float>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:67) automatically.
+INFO: [XFORM 203-602] Inlining function 'exp_reduce_::expm1' into 'explog_based::generic_tanh<float>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:89) automatically.
+INFO: [XFORM 203-602] Inlining function 'tanhf' into 'std::tanh' (D:/software/Xilinx/Vivado/2018.3/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\cmath:466) automatically.
+INFO: [XFORM 203-602] Inlining function 'std::tanh' into 'GELU' (HLS/src/Gelu/GELU.cpp:16) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:107:8) to (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:113:3) in function 'explog_based::generic_tanh<float>'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:82:10) to (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/common/hls_exp_float.cpp:8:10) in function 'explog_based::generic_tanh<float>'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:184:19) to (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:367:3) in function 'exp_reduce_::exp_generic<double>'... converting 20 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:40 . Memory (MB): peak = 585.602 ; gain = 500.070
+WARNING: [XFORM 203-631] Renaming function 'explog_based::generic_tanh<float>' to 'generic_tanh<float>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:56)
+WARNING: [XFORM 203-631] Renaming function 'exp_reduce_::exp_generic<double>' to 'exp_generic<double>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:184)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:40 . Memory (MB): peak = 626.648 ; gain = 541.117
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'GELU' ...
+WARNING: [SYN 201-103] Legalizing function name 'exp_generic<double>' to 'exp_generic_double_s'.
+WARNING: [SYN 201-103] Legalizing function name 'generic_tanh<float>' to 'generic_tanh_float_s'.
+WARNING: [SYN 201-107] Renaming port name 'GELU/out' to 'GELU/out_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'exp_generic_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'exp_generic<double>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 13.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 40.628 seconds; current allocated memory: 550.704 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.174 seconds; current allocated memory: 551.351 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'generic_tanh_float_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.217 seconds; current allocated memory: 551.992 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.145 seconds; current allocated memory: 552.443 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'GELU' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.226 seconds; current allocated memory: 552.777 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.154 seconds; current allocated memory: 552.918 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'exp_generic_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'exp_generic_double_s_table_exp_Z1_array_s' to 'exp_generic_doublbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'exp_generic_double_s_table_f_Z3_array_V' to 'exp_generic_doublcud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'exp_generic_double_s_table_f_Z2_array_V' to 'exp_generic_doubldEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'GELU_mul_72ns_13s_84_2_1' to 'GELU_mul_72ns_13seOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'GELU_mac_muladd_16ns_16s_19s_31_1_1' to 'GELU_mac_muladd_1fYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'GELU_mac_muladd_1fYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'GELU_mul_72ns_13seOg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'exp_generic_double_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.276 seconds; current allocated memory: 554.355 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'generic_tanh_float_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'GELU_faddfsub_32ns_32ns_32_4_full_dsp_1' to 'GELU_faddfsub_32ng8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'GELU_fmul_32ns_32ns_32_3_max_dsp_1' to 'GELU_fmul_32ns_32hbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'GELU_fdiv_32ns_32ns_32_12_1' to 'GELU_fdiv_32ns_32ibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'GELU_fptrunc_64ns_32_1_1' to 'GELU_fptrunc_64nsjbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'GELU_fpext_32ns_64_1_1' to 'GELU_fpext_32ns_6kbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'GELU_fcmp_32ns_32ns_1_1_1' to 'GELU_fcmp_32ns_32lbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'GELU_dadd_64ns_64ns_64_5_full_dsp_1' to 'GELU_dadd_64ns_64mb6' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'GELU_dadd_64ns_64mb6': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'GELU_faddfsub_32ng8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'GELU_fcmp_32ns_32lbW': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'GELU_fdiv_32ns_32ibs': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'GELU_fmul_32ns_32hbi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'GELU_fpext_32ns_6kbM': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'GELU_fptrunc_64nsjbC': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'generic_tanh_float_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.627 seconds; current allocated memory: 555.783 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'GELU' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'GELU/x' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'GELU/out_r' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'GELU' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'x' and 'out_r' to AXI-Lite port AXILiteS.
+INFO: [SYN 201-210] Renamed object name 'GELU_fadd_32ns_32ns_32_4_full_dsp_1' to 'GELU_fadd_32ns_32ncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'GELU_dmul_64ns_64ns_64_5_max_dsp_1' to 'GELU_dmul_64ns_64ocq' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'GELU_dmul_64ns_64ocq': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'GELU_fadd_32ns_32ncg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'GELU_fmul_32ns_32hbi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'GELU_fpext_32ns_6kbM': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'GELU_fptrunc_64nsjbC': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'GELU'.
+INFO: [HLS 200-111]  Elapsed time: 0.471 seconds; current allocated memory: 556.417 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'GELU_mul_72ns_13seOg_MulnS_0'
+INFO: [RTMG 210-279] Implementing memory 'exp_generic_doublbkb_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'exp_generic_doublcud_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'exp_generic_doubldEe_rom' using auto ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:46 . Memory (MB): peak = 630.961 ; gain = 545.430
+INFO: [SYSC 207-301] Generating SystemC RTL for GELU.
+INFO: [VHDL 208-304] Generating VHDL RTL for GELU.
+INFO: [VLOG 209-307] Generating Verilog RTL for GELU.
+INFO: [HLS 200-112] Total elapsed time: 46.098 seconds; peak allocated memory: 556.417 MB.
+==============================================================
+File generated on Thu Oct 15 00:04:57 +0800 2020
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.

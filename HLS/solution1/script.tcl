@@ -4,13 +4,21 @@
 ## Copyright (C) 1986-2018 Xilinx, Inc. All Rights Reserved.
 ############################################################
 open_project HLS
+set_top GELU
+add_files HLS/src/norm/Aff_channel.cpp
+add_files HLS/src/norm/Aff_channel.h
 add_files HLS/src/Conv2d/Conv2d.cpp
 add_files HLS/src/Conv2d/Conv2d.h
+add_files HLS/src/Gelu/GELU.cpp
+add_files HLS/src/Gelu/GELU.h
+add_files HLS/src/gamma/gamma.cpp
+add_files HLS/src/gamma/gamma.h
 open_solution "solution1"
 set_part {xc7z020clg400-2} -tool vivado
 create_clock -period 10 -name default
+config_export -format ip_catalog -rtl verilog
 #source "./HLS/solution1/directives.tcl"
 #csim_design
 csynth_design
 #cosim_design
-export_design -format ip_catalog
+export_design -rtl verilog -format ip_catalog

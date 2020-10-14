@@ -42,6 +42,16 @@
 			<location>D:/code/git/HLS/HLS/solution1/.tcls</location>
 		</link>
 		<link>
+			<name>source/Aff_channel.cpp</name>
+			<type>1</type>
+			<location>D:/code/git/HLS/HLS/src/norm/Aff_channel.cpp</location>
+		</link>
+		<link>
+			<name>source/Aff_channel.h</name>
+			<type>1</type>
+			<location>D:/code/git/HLS/HLS/src/norm/Aff_channel.h</location>
+		</link>
+		<link>
 			<name>source/Conv2d.cpp</name>
 			<type>1</type>
 			<location>D:/code/git/HLS/HLS/src/Conv2d/Conv2d.cpp</location>
@@ -50,6 +60,26 @@
 			<name>source/Conv2d.h</name>
 			<type>1</type>
 			<location>D:/code/git/HLS/HLS/src/Conv2d/Conv2d.h</location>
+		</link>
+		<link>
+			<name>source/GELU.cpp</name>
+			<type>1</type>
+			<location>D:/code/git/HLS/HLS/src/Gelu/GELU.cpp</location>
+		</link>
+		<link>
+			<name>source/GELU.h</name>
+			<type>1</type>
+			<location>D:/code/git/HLS/HLS/src/Gelu/GELU.h</location>
+		</link>
+		<link>
+			<name>source/gamma.cpp</name>
+			<type>1</type>
+			<location>D:/code/git/HLS/HLS/src/gamma/gamma.cpp</location>
+		</link>
+		<link>
+			<name>source/gamma.h</name>
+			<type>1</type>
+			<location>D:/code/git/HLS/HLS/src/gamma/gamma.h</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>
