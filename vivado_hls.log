@@ -1,0 +1,67 @@
+INFO: [HLS 200-10] Running 'D:/software/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user '11925' on host 'wushen' (Windows NT_amd64 version 6.2) on Mon Sep 16 18:21:59 +0800 2024
+INFO: [HLS 200-10] In directory 'D:/code/git/HLS'
+INFO: [HLS 200-10] Opening project 'D:/code/git/HLS/NN'.
+INFO: [HLS 200-10] Opening solution 'D:/code/git/HLS/NN/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_sdx -optimization_level=none
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../base.cpp in debug mode
+   Compiling ../../../block.cpp in debug mode
+   Generating csim.exe
+In file included from D:/software/Xilinx/Vivado/2018.3/include/floating_point_v7_0_bitacc_cmodel.h:143:0,
+                 from D:/software/Xilinx/Vivado/2018.3/include/hls_fpo.h:186,
+                 from D:/software/Xilinx/Vivado/2018.3/include/hls_half.h:44,
+                 from D:/software/Xilinx/Vivado/2018.3/include/etc/ap_private.h:90,
+                 from D:/software/Xilinx/Vivado/2018.3/include/ap_common.h:641,
+                 from D:/software/Xilinx/Vivado/2018.3/include/ap_int.h:54,
+                 from ../../../base.h:4,
+                 from ../../../base.cpp:1:
+D:/software/Xilinx/Vivado/2018.3/include/gmp.h:62:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from D:/software/Xilinx/Vivado/2018.3/include/hls_fpo.h:186:0,
+                 from D:/software/Xilinx/Vivado/2018.3/include/hls_half.h:44,
+                 from D:/software/Xilinx/Vivado/2018.3/include/etc/ap_private.h:90,
+                 from D:/software/Xilinx/Vivado/2018.3/include/ap_common.h:641,
+                 from D:/software/Xilinx/Vivado/2018.3/include/ap_int.h:54,
+                 from ../../../base.h:4,
+                 from ../../../base.cpp:1:
+D:/software/Xilinx/Vivado/2018.3/include/floating_point_v7_0_bitacc_cmodel.h:135:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+In file included from D:/software/Xilinx/Vivado/2018.3/include/floating_point_v7_0_bitacc_cmodel.h:143:0,
+                 from D:/software/Xilinx/Vivado/2018.3/include/hls_fpo.h:186,
+                 from D:/software/Xilinx/Vivado/2018.3/include/hls_half.h:44,
+                 from D:/software/Xilinx/Vivado/2018.3/include/etc/ap_private.h:90,
+                 from D:/software/Xilinx/Vivado/2018.3/include/ap_common.h:641,
+                 from D:/software/Xilinx/Vivado/2018.3/include/ap_int.h:54,
+                 from ../../../base.h:4,
+                 from ../../../block.h:3,
+                 from ../../../block.cpp:1:
+D:/software/Xilinx/Vivado/2018.3/include/gmp.h:62:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from D:/software/Xilinx/Vivado/2018.3/include/hls_fpo.h:186:0,
+                 from D:/software/Xilinx/Vivado/2018.3/include/hls_half.h:44,
+                 from D:/software/Xilinx/Vivado/2018.3/include/etc/ap_private.h:90,
+                 from D:/software/Xilinx/Vivado/2018.3/include/ap_common.h:641,
+                 from D:/software/Xilinx/Vivado/2018.3/include/ap_int.h:54,
+                 from ../../../base.h:4,
+                 from ../../../block.h:3,
+                 from ../../../block.cpp:1:
+D:/software/Xilinx/Vivado/2018.3/include/floating_point_v7_0_bitacc_cmodel.h:135:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+Softmax results:
+out_data[0] = 0.0320586
+out_data[1] = 0.0871443
+out_data[2] = 0.236883
+out_data[3] = 0.643914
+All tests passed!
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
