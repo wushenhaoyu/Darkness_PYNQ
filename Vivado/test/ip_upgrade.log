@@ -1,0 +1,1702 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Wed Oct 14 22:53:16 2020
+| Host         : wushen running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_Conv2D_1_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_Conv2D_1_0 (xilinx.com:hls:Conv2D:1.0) from (Rev. 2010142219) to (Rev. 2010142251)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'design_1_Conv2D_1_0'.
+
+
+-Upgrade has removed interface 'm_axi_biases_V'
+
+-Upgrade has removed interface 'm_axi_in_data_V'
+
+-Upgrade has removed interface 'm_axi_out_data_V'
+
+-Upgrade has removed interface 'm_axi_weights_V'
+
+-Upgrade has added interface 'm_axi_gmem' (xilinx.com:interface:aximm:1.0)
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_Conv2D_1_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'm_axi_biases_V_ARADDR'
+
+-Upgrade has removed port 'm_axi_biases_V_ARBURST'
+
+-Upgrade has removed port 'm_axi_biases_V_ARCACHE'
+
+-Upgrade has removed port 'm_axi_biases_V_ARLEN'
+
+-Upgrade has removed port 'm_axi_biases_V_ARLOCK'
+
+-Upgrade has removed port 'm_axi_biases_V_ARPROT'
+
+-Upgrade has removed port 'm_axi_biases_V_ARQOS'
+
+-Upgrade has removed port 'm_axi_biases_V_ARREADY'
+
+-Upgrade has removed port 'm_axi_biases_V_ARREGION'
+
+-Upgrade has removed port 'm_axi_biases_V_ARSIZE'
+
+-Upgrade has removed port 'm_axi_biases_V_ARVALID'
+
+-Upgrade has removed port 'm_axi_biases_V_AWADDR'
+
+-Upgrade has removed port 'm_axi_biases_V_AWBURST'
+
+-Upgrade has removed port 'm_axi_biases_V_AWCACHE'
+
+-Upgrade has removed port 'm_axi_biases_V_AWLEN'
+
+-Upgrade has removed port 'm_axi_biases_V_AWLOCK'
+
+-Upgrade has removed port 'm_axi_biases_V_AWPROT'
+
+-Upgrade has removed port 'm_axi_biases_V_AWQOS'
+
+-Upgrade has removed port 'm_axi_biases_V_AWREADY'
+
+-Upgrade has removed port 'm_axi_biases_V_AWREGION'
+
+-Upgrade has removed port 'm_axi_biases_V_AWSIZE'
+
+-Upgrade has removed port 'm_axi_biases_V_AWVALID'
+
+-Upgrade has removed port 'm_axi_biases_V_BREADY'
+
+-Upgrade has removed port 'm_axi_biases_V_BRESP'
+
+-Upgrade has removed port 'm_axi_biases_V_BVALID'
+
+-Upgrade has removed port 'm_axi_biases_V_RDATA'
+
+-Upgrade has removed port 'm_axi_biases_V_RLAST'
+
+-Upgrade has removed port 'm_axi_biases_V_RREADY'
+
+-Upgrade has removed port 'm_axi_biases_V_RRESP'
+
+-Upgrade has removed port 'm_axi_biases_V_RVALID'
+
+-Upgrade has removed port 'm_axi_biases_V_WDATA'
+
+-Upgrade has removed port 'm_axi_biases_V_WLAST'
+
+-Upgrade has removed port 'm_axi_biases_V_WREADY'
+
+-Upgrade has removed port 'm_axi_biases_V_WSTRB'
+
+-Upgrade has removed port 'm_axi_biases_V_WVALID'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARADDR'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARBURST'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARCACHE'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARLEN'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARLOCK'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARPROT'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARQOS'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARREADY'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARREGION'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARSIZE'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARVALID'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWADDR'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWBURST'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWCACHE'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWLEN'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWLOCK'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWPROT'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWQOS'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWREADY'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWREGION'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWSIZE'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWVALID'
+
+-Upgrade has removed port 'm_axi_in_data_V_BREADY'
+
+-Upgrade has removed port 'm_axi_in_data_V_BRESP'
+
+-Upgrade has removed port 'm_axi_in_data_V_BVALID'
+
+-Upgrade has removed port 'm_axi_in_data_V_RDATA'
+
+-Upgrade has removed port 'm_axi_in_data_V_RLAST'
+
+-Upgrade has removed port 'm_axi_in_data_V_RREADY'
+
+-Upgrade has removed port 'm_axi_in_data_V_RRESP'
+
+-Upgrade has removed port 'm_axi_in_data_V_RVALID'
+
+-Upgrade has removed port 'm_axi_in_data_V_WDATA'
+
+-Upgrade has removed port 'm_axi_in_data_V_WLAST'
+
+-Upgrade has removed port 'm_axi_in_data_V_WREADY'
+
+-Upgrade has removed port 'm_axi_in_data_V_WSTRB'
+
+-Upgrade has removed port 'm_axi_in_data_V_WVALID'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARADDR'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARBURST'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARCACHE'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARLEN'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARLOCK'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARPROT'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARQOS'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARREADY'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARREGION'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARSIZE'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARVALID'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWADDR'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWBURST'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWCACHE'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWLEN'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWLOCK'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWPROT'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWQOS'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWREADY'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWREGION'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWSIZE'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWVALID'
+
+-Upgrade has removed port 'm_axi_out_data_V_BREADY'
+
+-Upgrade has removed port 'm_axi_out_data_V_BRESP'
+
+-Upgrade has removed port 'm_axi_out_data_V_BVALID'
+
+-Upgrade has removed port 'm_axi_out_data_V_RDATA'
+
+-Upgrade has removed port 'm_axi_out_data_V_RLAST'
+
+-Upgrade has removed port 'm_axi_out_data_V_RREADY'
+
+-Upgrade has removed port 'm_axi_out_data_V_RRESP'
+
+-Upgrade has removed port 'm_axi_out_data_V_RVALID'
+
+-Upgrade has removed port 'm_axi_out_data_V_WDATA'
+
+-Upgrade has removed port 'm_axi_out_data_V_WLAST'
+
+-Upgrade has removed port 'm_axi_out_data_V_WREADY'
+
+-Upgrade has removed port 'm_axi_out_data_V_WSTRB'
+
+-Upgrade has removed port 'm_axi_out_data_V_WVALID'
+
+-Upgrade has removed port 'm_axi_weights_V_ARADDR'
+
+-Upgrade has removed port 'm_axi_weights_V_ARBURST'
+
+-Upgrade has removed port 'm_axi_weights_V_ARCACHE'
+
+-Upgrade has removed port 'm_axi_weights_V_ARLEN'
+
+-Upgrade has removed port 'm_axi_weights_V_ARLOCK'
+
+-Upgrade has removed port 'm_axi_weights_V_ARPROT'
+
+-Upgrade has removed port 'm_axi_weights_V_ARQOS'
+
+-Upgrade has removed port 'm_axi_weights_V_ARREADY'
+
+-Upgrade has removed port 'm_axi_weights_V_ARREGION'
+
+-Upgrade has removed port 'm_axi_weights_V_ARSIZE'
+
+-Upgrade has removed port 'm_axi_weights_V_ARVALID'
+
+-Upgrade has removed port 'm_axi_weights_V_AWADDR'
+
+-Upgrade has removed port 'm_axi_weights_V_AWBURST'
+
+-Upgrade has removed port 'm_axi_weights_V_AWCACHE'
+
+-Upgrade has removed port 'm_axi_weights_V_AWLEN'
+
+-Upgrade has removed port 'm_axi_weights_V_AWLOCK'
+
+-Upgrade has removed port 'm_axi_weights_V_AWPROT'
+
+-Upgrade has removed port 'm_axi_weights_V_AWQOS'
+
+-Upgrade has removed port 'm_axi_weights_V_AWREADY'
+
+-Upgrade has removed port 'm_axi_weights_V_AWREGION'
+
+-Upgrade has removed port 'm_axi_weights_V_AWSIZE'
+
+-Upgrade has removed port 'm_axi_weights_V_AWVALID'
+
+-Upgrade has removed port 'm_axi_weights_V_BREADY'
+
+-Upgrade has removed port 'm_axi_weights_V_BRESP'
+
+-Upgrade has removed port 'm_axi_weights_V_BVALID'
+
+-Upgrade has removed port 'm_axi_weights_V_RDATA'
+
+-Upgrade has removed port 'm_axi_weights_V_RLAST'
+
+-Upgrade has removed port 'm_axi_weights_V_RREADY'
+
+-Upgrade has removed port 'm_axi_weights_V_RRESP'
+
+-Upgrade has removed port 'm_axi_weights_V_RVALID'
+
+-Upgrade has removed port 'm_axi_weights_V_WDATA'
+
+-Upgrade has removed port 'm_axi_weights_V_WLAST'
+
+-Upgrade has removed port 'm_axi_weights_V_WREADY'
+
+-Upgrade has removed port 'm_axi_weights_V_WSTRB'
+
+-Upgrade has removed port 'm_axi_weights_V_WVALID'
+
+-Upgrade has added port 'm_axi_gmem_ARADDR'
+
+-Upgrade has added port 'm_axi_gmem_ARBURST'
+
+-Upgrade has added port 'm_axi_gmem_ARCACHE'
+
+-Upgrade has added port 'm_axi_gmem_ARLEN'
+
+-Upgrade has added port 'm_axi_gmem_ARLOCK'
+
+-Upgrade has added port 'm_axi_gmem_ARPROT'
+
+-Upgrade has added port 'm_axi_gmem_ARQOS'
+
+-Upgrade has added port 'm_axi_gmem_ARREADY'
+
+-Upgrade has added port 'm_axi_gmem_ARREGION'
+
+-Upgrade has added port 'm_axi_gmem_ARSIZE'
+
+-Upgrade has added port 'm_axi_gmem_ARVALID'
+
+-Upgrade has added port 'm_axi_gmem_AWADDR'
+
+-Upgrade has added port 'm_axi_gmem_AWBURST'
+
+-Upgrade has added port 'm_axi_gmem_AWCACHE'
+
+-Upgrade has added port 'm_axi_gmem_AWLEN'
+
+-Upgrade has added port 'm_axi_gmem_AWLOCK'
+
+-Upgrade has added port 'm_axi_gmem_AWPROT'
+
+-Upgrade has added port 'm_axi_gmem_AWQOS'
+
+-Upgrade has added port 'm_axi_gmem_AWREADY'
+
+-Upgrade has added port 'm_axi_gmem_AWREGION'
+
+-Upgrade has added port 'm_axi_gmem_AWSIZE'
+
+-Upgrade has added port 'm_axi_gmem_AWVALID'
+
+-Upgrade has added port 'm_axi_gmem_BREADY'
+
+-Upgrade has added port 'm_axi_gmem_BRESP'
+
+-Upgrade has added port 'm_axi_gmem_BVALID'
+
+-Upgrade has added port 'm_axi_gmem_RDATA'
+
+-Upgrade has added port 'm_axi_gmem_RLAST'
+
+-Upgrade has added port 'm_axi_gmem_RREADY'
+
+-Upgrade has added port 'm_axi_gmem_RRESP'
+
+-Upgrade has added port 'm_axi_gmem_RVALID'
+
+-Upgrade has added port 'm_axi_gmem_WDATA'
+
+-Upgrade has added port 'm_axi_gmem_WLAST'
+
+-Upgrade has added port 'm_axi_gmem_WREADY'
+
+-Upgrade has added port 'm_axi_gmem_WSTRB'
+
+-Upgrade has added port 'm_axi_gmem_WVALID'
+
+
+4. Customization warnings
+-------------------------
+
+Parameter 'C_M_AXI_IN_DATA_V_ENABLE_ID_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_IN_DATA_V_ID_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_IN_DATA_V_DATA_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '32'
+
+Parameter 'C_M_AXI_IN_DATA_V_ENABLE_USER_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_IN_DATA_V_AWUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_IN_DATA_V_WUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_IN_DATA_V_BUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_IN_DATA_V_ARUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_IN_DATA_V_RUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_IN_DATA_V_USER_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_IN_DATA_V_PROT_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '"000"'
+
+Parameter 'C_M_AXI_IN_DATA_V_CACHE_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '"0011"'
+
+Parameter 'C_M_AXI_IN_DATA_V_TARGET_ADDR' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_WEIGHTS_V_ENABLE_ID_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_WEIGHTS_V_ID_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_WEIGHTS_V_DATA_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '32'
+
+Parameter 'C_M_AXI_WEIGHTS_V_ENABLE_USER_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_WEIGHTS_V_AWUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_WEIGHTS_V_WUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_WEIGHTS_V_BUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_WEIGHTS_V_ARUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_WEIGHTS_V_RUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_WEIGHTS_V_USER_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_WEIGHTS_V_PROT_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '"000"'
+
+Parameter 'C_M_AXI_WEIGHTS_V_CACHE_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '"0011"'
+
+Parameter 'C_M_AXI_WEIGHTS_V_TARGET_ADDR' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_BIASES_V_ENABLE_ID_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_BIASES_V_ID_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_BIASES_V_DATA_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '32'
+
+Parameter 'C_M_AXI_BIASES_V_ENABLE_USER_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_BIASES_V_AWUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_BIASES_V_WUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_BIASES_V_BUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_BIASES_V_ARUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_BIASES_V_RUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_BIASES_V_USER_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_BIASES_V_PROT_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '"000"'
+
+Parameter 'C_M_AXI_BIASES_V_CACHE_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '"0011"'
+
+Parameter 'C_M_AXI_BIASES_V_TARGET_ADDR' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_OUT_DATA_V_ENABLE_ID_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_OUT_DATA_V_ID_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_OUT_DATA_V_DATA_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '32'
+
+Parameter 'C_M_AXI_OUT_DATA_V_ENABLE_USER_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_OUT_DATA_V_AWUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_OUT_DATA_V_WUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_OUT_DATA_V_BUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_OUT_DATA_V_ARUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_OUT_DATA_V_RUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_OUT_DATA_V_USER_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_OUT_DATA_V_PROT_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '"000"'
+
+Parameter 'C_M_AXI_OUT_DATA_V_CACHE_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '"0011"'
+
+Parameter 'C_M_AXI_OUT_DATA_V_TARGET_ADDR' is no longer present on the upgraded IP 'design_1_Conv2D_1_0', and cannot be set to '0x00000000'
+
+
+5. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:hls:Conv2D:1.0 -user_name design_1_Conv2D_1_0
+set_property -dict "\
+  CONFIG.Component_Name {design_1_Conv2D_1_0} \
+  CONFIG.II {x} \
+  CONFIG.ap_clk.ASSOCIATED_BUSIF {s_axi_AXILiteS:m_axi_in_data_V:m_axi_weights_V:m_axi_biases_V:m_axi_out_data_V} \
+  CONFIG.ap_clk.ASSOCIATED_RESET {ap_rst_n} \
+  CONFIG.ap_clk.CLK_DOMAIN {} \
+  CONFIG.ap_clk.FREQ_HZ {100000000} \
+  CONFIG.ap_clk.INSERT_VIP {0} \
+  CONFIG.ap_clk.LAYERED_METADATA {xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}} \
+  CONFIG.ap_clk.PHASE {0.000} \
+  CONFIG.ap_rst_n.INSERT_VIP {0} \
+  CONFIG.ap_rst_n.LAYERED_METADATA {xilinx.com:interface:datatypes:1.0 {RST {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}} \
+  CONFIG.ap_rst_n.POLARITY {ACTIVE_LOW} \
+  CONFIG.clk_period {10} \
+  CONFIG.combinational {0} \
+  CONFIG.interrupt.LAYERED_METADATA {xilinx.com:interface:datatypes:1.0 {INTERRUPT {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}} \
+  CONFIG.interrupt.PortWidth {1} \
+  CONFIG.interrupt.SENSITIVITY {LEVEL_HIGH} \
+  CONFIG.latency {16} \
+  CONFIG.machine {64} \
+  CONFIG.s_axi_AXILiteS.ADDR_WIDTH {7} \
+  CONFIG.s_axi_AXILiteS.ARUSER_WIDTH {0} \
+  CONFIG.s_axi_AXILiteS.AWUSER_WIDTH {0} \
+  CONFIG.s_axi_AXILiteS.BUSER_WIDTH {0} \
+  CONFIG.s_axi_AXILiteS.CLK_DOMAIN {} \
+  CONFIG.s_axi_AXILiteS.DATA_WIDTH {32} \
+  CONFIG.s_axi_AXILiteS.FREQ_HZ {100000000} \
+  CONFIG.s_axi_AXILiteS.HAS_BRESP {1} \
+  CONFIG.s_axi_AXILiteS.HAS_BURST {0} \
+  CONFIG.s_axi_AXILiteS.HAS_CACHE {0} \
+  CONFIG.s_axi_AXILiteS.HAS_LOCK {0} \
+  CONFIG.s_axi_AXILiteS.HAS_PROT {0} \
+  CONFIG.s_axi_AXILiteS.HAS_QOS {0} \
+  CONFIG.s_axi_AXILiteS.HAS_REGION {0} \
+  CONFIG.s_axi_AXILiteS.HAS_RRESP {1} \
+  CONFIG.s_axi_AXILiteS.HAS_WSTRB {1} \
+  CONFIG.s_axi_AXILiteS.ID_WIDTH {0} \
+  CONFIG.s_axi_AXILiteS.INSERT_VIP {0} \
+  CONFIG.s_axi_AXILiteS.LAYERED_METADATA {xilinx.com:interface:datatypes:1.0 {AWVALID {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} AWREADY {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} WVALID {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} WREADY {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} BVALID {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} BREADY {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} BRESP {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} ARVALID {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} ARREADY {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} RVALID {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} RREADY {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} RRESP {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} AWADDR {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 7} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} WDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} WSTRB {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 4} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} ARADDR {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 7} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} RDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}} \
+  CONFIG.s_axi_AXILiteS.MAX_BURST_LENGTH {1} \
+  CONFIG.s_axi_AXILiteS.NUM_READ_OUTSTANDING {1} \
+  CONFIG.s_axi_AXILiteS.NUM_READ_THREADS {1} \
+  CONFIG.s_axi_AXILiteS.NUM_WRITE_OUTSTANDING {1} \
+  CONFIG.s_axi_AXILiteS.NUM_WRITE_THREADS {1} \
+  CONFIG.s_axi_AXILiteS.PHASE {0.000} \
+  CONFIG.s_axi_AXILiteS.PROTOCOL {AXI4LITE} \
+  CONFIG.s_axi_AXILiteS.READ_WRITE_MODE {READ_WRITE} \
+  CONFIG.s_axi_AXILiteS.RUSER_BITS_PER_BYTE {0} \
+  CONFIG.s_axi_AXILiteS.RUSER_WIDTH {0} \
+  CONFIG.s_axi_AXILiteS.SUPPORTS_NARROW_BURST {0} \
+  CONFIG.s_axi_AXILiteS.WUSER_BITS_PER_BYTE {0} \
+  CONFIG.s_axi_AXILiteS.WUSER_WIDTH {0} " [get_ips design_1_Conv2D_1_0]
+
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Wed Oct 14 22:53:16 2020
+| Host         : wushen running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_Conv2D_0_3'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_Conv2D_0_3 (xilinx.com:hls:Conv2D:1.0) from (Rev. 2010142219) to (Rev. 2010142251)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'design_1_Conv2D_0_3'.
+
+
+-Upgrade has removed interface 'm_axi_biases_V'
+
+-Upgrade has removed interface 'm_axi_in_data_V'
+
+-Upgrade has removed interface 'm_axi_out_data_V'
+
+-Upgrade has removed interface 'm_axi_weights_V'
+
+-Upgrade has added interface 'm_axi_gmem' (xilinx.com:interface:aximm:1.0)
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_Conv2D_0_3'. These changes may impact your design.
+
+
+-Upgrade has removed port 'm_axi_biases_V_ARADDR'
+
+-Upgrade has removed port 'm_axi_biases_V_ARBURST'
+
+-Upgrade has removed port 'm_axi_biases_V_ARCACHE'
+
+-Upgrade has removed port 'm_axi_biases_V_ARLEN'
+
+-Upgrade has removed port 'm_axi_biases_V_ARLOCK'
+
+-Upgrade has removed port 'm_axi_biases_V_ARPROT'
+
+-Upgrade has removed port 'm_axi_biases_V_ARQOS'
+
+-Upgrade has removed port 'm_axi_biases_V_ARREADY'
+
+-Upgrade has removed port 'm_axi_biases_V_ARREGION'
+
+-Upgrade has removed port 'm_axi_biases_V_ARSIZE'
+
+-Upgrade has removed port 'm_axi_biases_V_ARVALID'
+
+-Upgrade has removed port 'm_axi_biases_V_AWADDR'
+
+-Upgrade has removed port 'm_axi_biases_V_AWBURST'
+
+-Upgrade has removed port 'm_axi_biases_V_AWCACHE'
+
+-Upgrade has removed port 'm_axi_biases_V_AWLEN'
+
+-Upgrade has removed port 'm_axi_biases_V_AWLOCK'
+
+-Upgrade has removed port 'm_axi_biases_V_AWPROT'
+
+-Upgrade has removed port 'm_axi_biases_V_AWQOS'
+
+-Upgrade has removed port 'm_axi_biases_V_AWREADY'
+
+-Upgrade has removed port 'm_axi_biases_V_AWREGION'
+
+-Upgrade has removed port 'm_axi_biases_V_AWSIZE'
+
+-Upgrade has removed port 'm_axi_biases_V_AWVALID'
+
+-Upgrade has removed port 'm_axi_biases_V_BREADY'
+
+-Upgrade has removed port 'm_axi_biases_V_BRESP'
+
+-Upgrade has removed port 'm_axi_biases_V_BVALID'
+
+-Upgrade has removed port 'm_axi_biases_V_RDATA'
+
+-Upgrade has removed port 'm_axi_biases_V_RLAST'
+
+-Upgrade has removed port 'm_axi_biases_V_RREADY'
+
+-Upgrade has removed port 'm_axi_biases_V_RRESP'
+
+-Upgrade has removed port 'm_axi_biases_V_RVALID'
+
+-Upgrade has removed port 'm_axi_biases_V_WDATA'
+
+-Upgrade has removed port 'm_axi_biases_V_WLAST'
+
+-Upgrade has removed port 'm_axi_biases_V_WREADY'
+
+-Upgrade has removed port 'm_axi_biases_V_WSTRB'
+
+-Upgrade has removed port 'm_axi_biases_V_WVALID'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARADDR'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARBURST'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARCACHE'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARLEN'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARLOCK'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARPROT'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARQOS'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARREADY'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARREGION'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARSIZE'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARVALID'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWADDR'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWBURST'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWCACHE'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWLEN'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWLOCK'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWPROT'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWQOS'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWREADY'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWREGION'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWSIZE'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWVALID'
+
+-Upgrade has removed port 'm_axi_in_data_V_BREADY'
+
+-Upgrade has removed port 'm_axi_in_data_V_BRESP'
+
+-Upgrade has removed port 'm_axi_in_data_V_BVALID'
+
+-Upgrade has removed port 'm_axi_in_data_V_RDATA'
+
+-Upgrade has removed port 'm_axi_in_data_V_RLAST'
+
+-Upgrade has removed port 'm_axi_in_data_V_RREADY'
+
+-Upgrade has removed port 'm_axi_in_data_V_RRESP'
+
+-Upgrade has removed port 'm_axi_in_data_V_RVALID'
+
+-Upgrade has removed port 'm_axi_in_data_V_WDATA'
+
+-Upgrade has removed port 'm_axi_in_data_V_WLAST'
+
+-Upgrade has removed port 'm_axi_in_data_V_WREADY'
+
+-Upgrade has removed port 'm_axi_in_data_V_WSTRB'
+
+-Upgrade has removed port 'm_axi_in_data_V_WVALID'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARADDR'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARBURST'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARCACHE'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARLEN'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARLOCK'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARPROT'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARQOS'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARREADY'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARREGION'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARSIZE'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARVALID'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWADDR'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWBURST'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWCACHE'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWLEN'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWLOCK'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWPROT'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWQOS'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWREADY'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWREGION'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWSIZE'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWVALID'
+
+-Upgrade has removed port 'm_axi_out_data_V_BREADY'
+
+-Upgrade has removed port 'm_axi_out_data_V_BRESP'
+
+-Upgrade has removed port 'm_axi_out_data_V_BVALID'
+
+-Upgrade has removed port 'm_axi_out_data_V_RDATA'
+
+-Upgrade has removed port 'm_axi_out_data_V_RLAST'
+
+-Upgrade has removed port 'm_axi_out_data_V_RREADY'
+
+-Upgrade has removed port 'm_axi_out_data_V_RRESP'
+
+-Upgrade has removed port 'm_axi_out_data_V_RVALID'
+
+-Upgrade has removed port 'm_axi_out_data_V_WDATA'
+
+-Upgrade has removed port 'm_axi_out_data_V_WLAST'
+
+-Upgrade has removed port 'm_axi_out_data_V_WREADY'
+
+-Upgrade has removed port 'm_axi_out_data_V_WSTRB'
+
+-Upgrade has removed port 'm_axi_out_data_V_WVALID'
+
+-Upgrade has removed port 'm_axi_weights_V_ARADDR'
+
+-Upgrade has removed port 'm_axi_weights_V_ARBURST'
+
+-Upgrade has removed port 'm_axi_weights_V_ARCACHE'
+
+-Upgrade has removed port 'm_axi_weights_V_ARLEN'
+
+-Upgrade has removed port 'm_axi_weights_V_ARLOCK'
+
+-Upgrade has removed port 'm_axi_weights_V_ARPROT'
+
+-Upgrade has removed port 'm_axi_weights_V_ARQOS'
+
+-Upgrade has removed port 'm_axi_weights_V_ARREADY'
+
+-Upgrade has removed port 'm_axi_weights_V_ARREGION'
+
+-Upgrade has removed port 'm_axi_weights_V_ARSIZE'
+
+-Upgrade has removed port 'm_axi_weights_V_ARVALID'
+
+-Upgrade has removed port 'm_axi_weights_V_AWADDR'
+
+-Upgrade has removed port 'm_axi_weights_V_AWBURST'
+
+-Upgrade has removed port 'm_axi_weights_V_AWCACHE'
+
+-Upgrade has removed port 'm_axi_weights_V_AWLEN'
+
+-Upgrade has removed port 'm_axi_weights_V_AWLOCK'
+
+-Upgrade has removed port 'm_axi_weights_V_AWPROT'
+
+-Upgrade has removed port 'm_axi_weights_V_AWQOS'
+
+-Upgrade has removed port 'm_axi_weights_V_AWREADY'
+
+-Upgrade has removed port 'm_axi_weights_V_AWREGION'
+
+-Upgrade has removed port 'm_axi_weights_V_AWSIZE'
+
+-Upgrade has removed port 'm_axi_weights_V_AWVALID'
+
+-Upgrade has removed port 'm_axi_weights_V_BREADY'
+
+-Upgrade has removed port 'm_axi_weights_V_BRESP'
+
+-Upgrade has removed port 'm_axi_weights_V_BVALID'
+
+-Upgrade has removed port 'm_axi_weights_V_RDATA'
+
+-Upgrade has removed port 'm_axi_weights_V_RLAST'
+
+-Upgrade has removed port 'm_axi_weights_V_RREADY'
+
+-Upgrade has removed port 'm_axi_weights_V_RRESP'
+
+-Upgrade has removed port 'm_axi_weights_V_RVALID'
+
+-Upgrade has removed port 'm_axi_weights_V_WDATA'
+
+-Upgrade has removed port 'm_axi_weights_V_WLAST'
+
+-Upgrade has removed port 'm_axi_weights_V_WREADY'
+
+-Upgrade has removed port 'm_axi_weights_V_WSTRB'
+
+-Upgrade has removed port 'm_axi_weights_V_WVALID'
+
+-Upgrade has added port 'm_axi_gmem_ARADDR'
+
+-Upgrade has added port 'm_axi_gmem_ARBURST'
+
+-Upgrade has added port 'm_axi_gmem_ARCACHE'
+
+-Upgrade has added port 'm_axi_gmem_ARLEN'
+
+-Upgrade has added port 'm_axi_gmem_ARLOCK'
+
+-Upgrade has added port 'm_axi_gmem_ARPROT'
+
+-Upgrade has added port 'm_axi_gmem_ARQOS'
+
+-Upgrade has added port 'm_axi_gmem_ARREADY'
+
+-Upgrade has added port 'm_axi_gmem_ARREGION'
+
+-Upgrade has added port 'm_axi_gmem_ARSIZE'
+
+-Upgrade has added port 'm_axi_gmem_ARVALID'
+
+-Upgrade has added port 'm_axi_gmem_AWADDR'
+
+-Upgrade has added port 'm_axi_gmem_AWBURST'
+
+-Upgrade has added port 'm_axi_gmem_AWCACHE'
+
+-Upgrade has added port 'm_axi_gmem_AWLEN'
+
+-Upgrade has added port 'm_axi_gmem_AWLOCK'
+
+-Upgrade has added port 'm_axi_gmem_AWPROT'
+
+-Upgrade has added port 'm_axi_gmem_AWQOS'
+
+-Upgrade has added port 'm_axi_gmem_AWREADY'
+
+-Upgrade has added port 'm_axi_gmem_AWREGION'
+
+-Upgrade has added port 'm_axi_gmem_AWSIZE'
+
+-Upgrade has added port 'm_axi_gmem_AWVALID'
+
+-Upgrade has added port 'm_axi_gmem_BREADY'
+
+-Upgrade has added port 'm_axi_gmem_BRESP'
+
+-Upgrade has added port 'm_axi_gmem_BVALID'
+
+-Upgrade has added port 'm_axi_gmem_RDATA'
+
+-Upgrade has added port 'm_axi_gmem_RLAST'
+
+-Upgrade has added port 'm_axi_gmem_RREADY'
+
+-Upgrade has added port 'm_axi_gmem_RRESP'
+
+-Upgrade has added port 'm_axi_gmem_RVALID'
+
+-Upgrade has added port 'm_axi_gmem_WDATA'
+
+-Upgrade has added port 'm_axi_gmem_WLAST'
+
+-Upgrade has added port 'm_axi_gmem_WREADY'
+
+-Upgrade has added port 'm_axi_gmem_WSTRB'
+
+-Upgrade has added port 'm_axi_gmem_WVALID'
+
+
+4. Customization warnings
+-------------------------
+
+Parameter 'C_M_AXI_IN_DATA_V_ENABLE_ID_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_IN_DATA_V_ID_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_IN_DATA_V_DATA_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '32'
+
+Parameter 'C_M_AXI_IN_DATA_V_ENABLE_USER_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_IN_DATA_V_AWUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_IN_DATA_V_WUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_IN_DATA_V_BUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_IN_DATA_V_ARUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_IN_DATA_V_RUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_IN_DATA_V_USER_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_IN_DATA_V_PROT_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '"000"'
+
+Parameter 'C_M_AXI_IN_DATA_V_CACHE_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '"0011"'
+
+Parameter 'C_M_AXI_IN_DATA_V_TARGET_ADDR' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_WEIGHTS_V_ENABLE_ID_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_WEIGHTS_V_ID_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_WEIGHTS_V_DATA_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '32'
+
+Parameter 'C_M_AXI_WEIGHTS_V_ENABLE_USER_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_WEIGHTS_V_AWUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_WEIGHTS_V_WUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_WEIGHTS_V_BUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_WEIGHTS_V_ARUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_WEIGHTS_V_RUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_WEIGHTS_V_USER_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_WEIGHTS_V_PROT_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '"000"'
+
+Parameter 'C_M_AXI_WEIGHTS_V_CACHE_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '"0011"'
+
+Parameter 'C_M_AXI_WEIGHTS_V_TARGET_ADDR' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_BIASES_V_ENABLE_ID_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_BIASES_V_ID_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_BIASES_V_DATA_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '32'
+
+Parameter 'C_M_AXI_BIASES_V_ENABLE_USER_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_BIASES_V_AWUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_BIASES_V_WUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_BIASES_V_BUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_BIASES_V_ARUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_BIASES_V_RUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_BIASES_V_USER_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_BIASES_V_PROT_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '"000"'
+
+Parameter 'C_M_AXI_BIASES_V_CACHE_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '"0011"'
+
+Parameter 'C_M_AXI_BIASES_V_TARGET_ADDR' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_OUT_DATA_V_ENABLE_ID_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_OUT_DATA_V_ID_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_OUT_DATA_V_DATA_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '32'
+
+Parameter 'C_M_AXI_OUT_DATA_V_ENABLE_USER_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_OUT_DATA_V_AWUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_OUT_DATA_V_WUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_OUT_DATA_V_BUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_OUT_DATA_V_ARUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_OUT_DATA_V_RUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '1'
+
+Parameter 'C_M_AXI_OUT_DATA_V_USER_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_OUT_DATA_V_PROT_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '"000"'
+
+Parameter 'C_M_AXI_OUT_DATA_V_CACHE_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '"0011"'
+
+Parameter 'C_M_AXI_OUT_DATA_V_TARGET_ADDR' is no longer present on the upgraded IP 'design_1_Conv2D_0_3', and cannot be set to '0x00000000'
+
+
+5. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:hls:Conv2D:1.0 -user_name design_1_Conv2D_0_3
+set_property -dict "\
+  CONFIG.Component_Name {design_1_Conv2D_0_3} \
+  CONFIG.II {x} \
+  CONFIG.ap_clk.ASSOCIATED_BUSIF {s_axi_AXILiteS:m_axi_in_data_V:m_axi_weights_V:m_axi_biases_V:m_axi_out_data_V} \
+  CONFIG.ap_clk.ASSOCIATED_RESET {ap_rst_n} \
+  CONFIG.ap_clk.CLK_DOMAIN {} \
+  CONFIG.ap_clk.FREQ_HZ {100000000} \
+  CONFIG.ap_clk.INSERT_VIP {0} \
+  CONFIG.ap_clk.LAYERED_METADATA {xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}} \
+  CONFIG.ap_clk.PHASE {0.000} \
+  CONFIG.ap_rst_n.INSERT_VIP {0} \
+  CONFIG.ap_rst_n.LAYERED_METADATA {xilinx.com:interface:datatypes:1.0 {RST {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}} \
+  CONFIG.ap_rst_n.POLARITY {ACTIVE_LOW} \
+  CONFIG.clk_period {10} \
+  CONFIG.combinational {0} \
+  CONFIG.interrupt.LAYERED_METADATA {xilinx.com:interface:datatypes:1.0 {INTERRUPT {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}} \
+  CONFIG.interrupt.PortWidth {1} \
+  CONFIG.interrupt.SENSITIVITY {LEVEL_HIGH} \
+  CONFIG.latency {16} \
+  CONFIG.machine {64} \
+  CONFIG.s_axi_AXILiteS.ADDR_WIDTH {7} \
+  CONFIG.s_axi_AXILiteS.ARUSER_WIDTH {0} \
+  CONFIG.s_axi_AXILiteS.AWUSER_WIDTH {0} \
+  CONFIG.s_axi_AXILiteS.BUSER_WIDTH {0} \
+  CONFIG.s_axi_AXILiteS.CLK_DOMAIN {} \
+  CONFIG.s_axi_AXILiteS.DATA_WIDTH {32} \
+  CONFIG.s_axi_AXILiteS.FREQ_HZ {100000000} \
+  CONFIG.s_axi_AXILiteS.HAS_BRESP {1} \
+  CONFIG.s_axi_AXILiteS.HAS_BURST {0} \
+  CONFIG.s_axi_AXILiteS.HAS_CACHE {0} \
+  CONFIG.s_axi_AXILiteS.HAS_LOCK {0} \
+  CONFIG.s_axi_AXILiteS.HAS_PROT {0} \
+  CONFIG.s_axi_AXILiteS.HAS_QOS {0} \
+  CONFIG.s_axi_AXILiteS.HAS_REGION {0} \
+  CONFIG.s_axi_AXILiteS.HAS_RRESP {1} \
+  CONFIG.s_axi_AXILiteS.HAS_WSTRB {1} \
+  CONFIG.s_axi_AXILiteS.ID_WIDTH {0} \
+  CONFIG.s_axi_AXILiteS.INSERT_VIP {0} \
+  CONFIG.s_axi_AXILiteS.LAYERED_METADATA {xilinx.com:interface:datatypes:1.0 {AWVALID {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} AWREADY {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} WVALID {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} WREADY {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} BVALID {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} BREADY {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} BRESP {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} ARVALID {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} ARREADY {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} RVALID {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} RREADY {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} RRESP {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} AWADDR {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 7} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} WDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} WSTRB {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 4} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} ARADDR {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 7} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} RDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}} \
+  CONFIG.s_axi_AXILiteS.MAX_BURST_LENGTH {1} \
+  CONFIG.s_axi_AXILiteS.NUM_READ_OUTSTANDING {1} \
+  CONFIG.s_axi_AXILiteS.NUM_READ_THREADS {1} \
+  CONFIG.s_axi_AXILiteS.NUM_WRITE_OUTSTANDING {1} \
+  CONFIG.s_axi_AXILiteS.NUM_WRITE_THREADS {1} \
+  CONFIG.s_axi_AXILiteS.PHASE {0.000} \
+  CONFIG.s_axi_AXILiteS.PROTOCOL {AXI4LITE} \
+  CONFIG.s_axi_AXILiteS.READ_WRITE_MODE {READ_WRITE} \
+  CONFIG.s_axi_AXILiteS.RUSER_BITS_PER_BYTE {0} \
+  CONFIG.s_axi_AXILiteS.RUSER_WIDTH {0} \
+  CONFIG.s_axi_AXILiteS.SUPPORTS_NARROW_BURST {0} \
+  CONFIG.s_axi_AXILiteS.WUSER_BITS_PER_BYTE {0} \
+  CONFIG.s_axi_AXILiteS.WUSER_WIDTH {0} " [get_ips design_1_Conv2D_0_3]
+
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Wed Oct 14 22:53:16 2020
+| Host         : wushen running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_Conv2D_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_Conv2D_0_0 (xilinx.com:hls:Conv2D:1.0) from (Rev. 2010142219) to (Rev. 2010142251)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'design_1_Conv2D_0_0'.
+
+
+-Upgrade has removed interface 'm_axi_biases_V'
+
+-Upgrade has removed interface 'm_axi_in_data_V'
+
+-Upgrade has removed interface 'm_axi_out_data_V'
+
+-Upgrade has removed interface 'm_axi_weights_V'
+
+-Upgrade has added interface 'm_axi_gmem' (xilinx.com:interface:aximm:1.0)
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_Conv2D_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'm_axi_biases_V_ARADDR'
+
+-Upgrade has removed port 'm_axi_biases_V_ARBURST'
+
+-Upgrade has removed port 'm_axi_biases_V_ARCACHE'
+
+-Upgrade has removed port 'm_axi_biases_V_ARLEN'
+
+-Upgrade has removed port 'm_axi_biases_V_ARLOCK'
+
+-Upgrade has removed port 'm_axi_biases_V_ARPROT'
+
+-Upgrade has removed port 'm_axi_biases_V_ARQOS'
+
+-Upgrade has removed port 'm_axi_biases_V_ARREADY'
+
+-Upgrade has removed port 'm_axi_biases_V_ARREGION'
+
+-Upgrade has removed port 'm_axi_biases_V_ARSIZE'
+
+-Upgrade has removed port 'm_axi_biases_V_ARVALID'
+
+-Upgrade has removed port 'm_axi_biases_V_AWADDR'
+
+-Upgrade has removed port 'm_axi_biases_V_AWBURST'
+
+-Upgrade has removed port 'm_axi_biases_V_AWCACHE'
+
+-Upgrade has removed port 'm_axi_biases_V_AWLEN'
+
+-Upgrade has removed port 'm_axi_biases_V_AWLOCK'
+
+-Upgrade has removed port 'm_axi_biases_V_AWPROT'
+
+-Upgrade has removed port 'm_axi_biases_V_AWQOS'
+
+-Upgrade has removed port 'm_axi_biases_V_AWREADY'
+
+-Upgrade has removed port 'm_axi_biases_V_AWREGION'
+
+-Upgrade has removed port 'm_axi_biases_V_AWSIZE'
+
+-Upgrade has removed port 'm_axi_biases_V_AWVALID'
+
+-Upgrade has removed port 'm_axi_biases_V_BREADY'
+
+-Upgrade has removed port 'm_axi_biases_V_BRESP'
+
+-Upgrade has removed port 'm_axi_biases_V_BVALID'
+
+-Upgrade has removed port 'm_axi_biases_V_RDATA'
+
+-Upgrade has removed port 'm_axi_biases_V_RLAST'
+
+-Upgrade has removed port 'm_axi_biases_V_RREADY'
+
+-Upgrade has removed port 'm_axi_biases_V_RRESP'
+
+-Upgrade has removed port 'm_axi_biases_V_RVALID'
+
+-Upgrade has removed port 'm_axi_biases_V_WDATA'
+
+-Upgrade has removed port 'm_axi_biases_V_WLAST'
+
+-Upgrade has removed port 'm_axi_biases_V_WREADY'
+
+-Upgrade has removed port 'm_axi_biases_V_WSTRB'
+
+-Upgrade has removed port 'm_axi_biases_V_WVALID'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARADDR'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARBURST'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARCACHE'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARLEN'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARLOCK'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARPROT'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARQOS'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARREADY'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARREGION'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARSIZE'
+
+-Upgrade has removed port 'm_axi_in_data_V_ARVALID'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWADDR'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWBURST'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWCACHE'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWLEN'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWLOCK'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWPROT'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWQOS'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWREADY'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWREGION'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWSIZE'
+
+-Upgrade has removed port 'm_axi_in_data_V_AWVALID'
+
+-Upgrade has removed port 'm_axi_in_data_V_BREADY'
+
+-Upgrade has removed port 'm_axi_in_data_V_BRESP'
+
+-Upgrade has removed port 'm_axi_in_data_V_BVALID'
+
+-Upgrade has removed port 'm_axi_in_data_V_RDATA'
+
+-Upgrade has removed port 'm_axi_in_data_V_RLAST'
+
+-Upgrade has removed port 'm_axi_in_data_V_RREADY'
+
+-Upgrade has removed port 'm_axi_in_data_V_RRESP'
+
+-Upgrade has removed port 'm_axi_in_data_V_RVALID'
+
+-Upgrade has removed port 'm_axi_in_data_V_WDATA'
+
+-Upgrade has removed port 'm_axi_in_data_V_WLAST'
+
+-Upgrade has removed port 'm_axi_in_data_V_WREADY'
+
+-Upgrade has removed port 'm_axi_in_data_V_WSTRB'
+
+-Upgrade has removed port 'm_axi_in_data_V_WVALID'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARADDR'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARBURST'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARCACHE'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARLEN'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARLOCK'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARPROT'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARQOS'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARREADY'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARREGION'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARSIZE'
+
+-Upgrade has removed port 'm_axi_out_data_V_ARVALID'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWADDR'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWBURST'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWCACHE'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWLEN'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWLOCK'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWPROT'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWQOS'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWREADY'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWREGION'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWSIZE'
+
+-Upgrade has removed port 'm_axi_out_data_V_AWVALID'
+
+-Upgrade has removed port 'm_axi_out_data_V_BREADY'
+
+-Upgrade has removed port 'm_axi_out_data_V_BRESP'
+
+-Upgrade has removed port 'm_axi_out_data_V_BVALID'
+
+-Upgrade has removed port 'm_axi_out_data_V_RDATA'
+
+-Upgrade has removed port 'm_axi_out_data_V_RLAST'
+
+-Upgrade has removed port 'm_axi_out_data_V_RREADY'
+
+-Upgrade has removed port 'm_axi_out_data_V_RRESP'
+
+-Upgrade has removed port 'm_axi_out_data_V_RVALID'
+
+-Upgrade has removed port 'm_axi_out_data_V_WDATA'
+
+-Upgrade has removed port 'm_axi_out_data_V_WLAST'
+
+-Upgrade has removed port 'm_axi_out_data_V_WREADY'
+
+-Upgrade has removed port 'm_axi_out_data_V_WSTRB'
+
+-Upgrade has removed port 'm_axi_out_data_V_WVALID'
+
+-Upgrade has removed port 'm_axi_weights_V_ARADDR'
+
+-Upgrade has removed port 'm_axi_weights_V_ARBURST'
+
+-Upgrade has removed port 'm_axi_weights_V_ARCACHE'
+
+-Upgrade has removed port 'm_axi_weights_V_ARLEN'
+
+-Upgrade has removed port 'm_axi_weights_V_ARLOCK'
+
+-Upgrade has removed port 'm_axi_weights_V_ARPROT'
+
+-Upgrade has removed port 'm_axi_weights_V_ARQOS'
+
+-Upgrade has removed port 'm_axi_weights_V_ARREADY'
+
+-Upgrade has removed port 'm_axi_weights_V_ARREGION'
+
+-Upgrade has removed port 'm_axi_weights_V_ARSIZE'
+
+-Upgrade has removed port 'm_axi_weights_V_ARVALID'
+
+-Upgrade has removed port 'm_axi_weights_V_AWADDR'
+
+-Upgrade has removed port 'm_axi_weights_V_AWBURST'
+
+-Upgrade has removed port 'm_axi_weights_V_AWCACHE'
+
+-Upgrade has removed port 'm_axi_weights_V_AWLEN'
+
+-Upgrade has removed port 'm_axi_weights_V_AWLOCK'
+
+-Upgrade has removed port 'm_axi_weights_V_AWPROT'
+
+-Upgrade has removed port 'm_axi_weights_V_AWQOS'
+
+-Upgrade has removed port 'm_axi_weights_V_AWREADY'
+
+-Upgrade has removed port 'm_axi_weights_V_AWREGION'
+
+-Upgrade has removed port 'm_axi_weights_V_AWSIZE'
+
+-Upgrade has removed port 'm_axi_weights_V_AWVALID'
+
+-Upgrade has removed port 'm_axi_weights_V_BREADY'
+
+-Upgrade has removed port 'm_axi_weights_V_BRESP'
+
+-Upgrade has removed port 'm_axi_weights_V_BVALID'
+
+-Upgrade has removed port 'm_axi_weights_V_RDATA'
+
+-Upgrade has removed port 'm_axi_weights_V_RLAST'
+
+-Upgrade has removed port 'm_axi_weights_V_RREADY'
+
+-Upgrade has removed port 'm_axi_weights_V_RRESP'
+
+-Upgrade has removed port 'm_axi_weights_V_RVALID'
+
+-Upgrade has removed port 'm_axi_weights_V_WDATA'
+
+-Upgrade has removed port 'm_axi_weights_V_WLAST'
+
+-Upgrade has removed port 'm_axi_weights_V_WREADY'
+
+-Upgrade has removed port 'm_axi_weights_V_WSTRB'
+
+-Upgrade has removed port 'm_axi_weights_V_WVALID'
+
+-Upgrade has added port 'm_axi_gmem_ARADDR'
+
+-Upgrade has added port 'm_axi_gmem_ARBURST'
+
+-Upgrade has added port 'm_axi_gmem_ARCACHE'
+
+-Upgrade has added port 'm_axi_gmem_ARLEN'
+
+-Upgrade has added port 'm_axi_gmem_ARLOCK'
+
+-Upgrade has added port 'm_axi_gmem_ARPROT'
+
+-Upgrade has added port 'm_axi_gmem_ARQOS'
+
+-Upgrade has added port 'm_axi_gmem_ARREADY'
+
+-Upgrade has added port 'm_axi_gmem_ARREGION'
+
+-Upgrade has added port 'm_axi_gmem_ARSIZE'
+
+-Upgrade has added port 'm_axi_gmem_ARVALID'
+
+-Upgrade has added port 'm_axi_gmem_AWADDR'
+
+-Upgrade has added port 'm_axi_gmem_AWBURST'
+
+-Upgrade has added port 'm_axi_gmem_AWCACHE'
+
+-Upgrade has added port 'm_axi_gmem_AWLEN'
+
+-Upgrade has added port 'm_axi_gmem_AWLOCK'
+
+-Upgrade has added port 'm_axi_gmem_AWPROT'
+
+-Upgrade has added port 'm_axi_gmem_AWQOS'
+
+-Upgrade has added port 'm_axi_gmem_AWREADY'
+
+-Upgrade has added port 'm_axi_gmem_AWREGION'
+
+-Upgrade has added port 'm_axi_gmem_AWSIZE'
+
+-Upgrade has added port 'm_axi_gmem_AWVALID'
+
+-Upgrade has added port 'm_axi_gmem_BREADY'
+
+-Upgrade has added port 'm_axi_gmem_BRESP'
+
+-Upgrade has added port 'm_axi_gmem_BVALID'
+
+-Upgrade has added port 'm_axi_gmem_RDATA'
+
+-Upgrade has added port 'm_axi_gmem_RLAST'
+
+-Upgrade has added port 'm_axi_gmem_RREADY'
+
+-Upgrade has added port 'm_axi_gmem_RRESP'
+
+-Upgrade has added port 'm_axi_gmem_RVALID'
+
+-Upgrade has added port 'm_axi_gmem_WDATA'
+
+-Upgrade has added port 'm_axi_gmem_WLAST'
+
+-Upgrade has added port 'm_axi_gmem_WREADY'
+
+-Upgrade has added port 'm_axi_gmem_WSTRB'
+
+-Upgrade has added port 'm_axi_gmem_WVALID'
+
+
+4. Customization warnings
+-------------------------
+
+Parameter 'C_M_AXI_IN_DATA_V_ENABLE_ID_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_IN_DATA_V_ID_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_IN_DATA_V_DATA_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '32'
+
+Parameter 'C_M_AXI_IN_DATA_V_ENABLE_USER_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_IN_DATA_V_AWUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_IN_DATA_V_WUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_IN_DATA_V_BUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_IN_DATA_V_ARUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_IN_DATA_V_RUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_IN_DATA_V_USER_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_IN_DATA_V_PROT_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '"000"'
+
+Parameter 'C_M_AXI_IN_DATA_V_CACHE_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '"0011"'
+
+Parameter 'C_M_AXI_IN_DATA_V_TARGET_ADDR' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_WEIGHTS_V_ENABLE_ID_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_WEIGHTS_V_ID_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_WEIGHTS_V_DATA_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '32'
+
+Parameter 'C_M_AXI_WEIGHTS_V_ENABLE_USER_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_WEIGHTS_V_AWUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_WEIGHTS_V_WUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_WEIGHTS_V_BUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_WEIGHTS_V_ARUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_WEIGHTS_V_RUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_WEIGHTS_V_USER_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_WEIGHTS_V_PROT_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '"000"'
+
+Parameter 'C_M_AXI_WEIGHTS_V_CACHE_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '"0011"'
+
+Parameter 'C_M_AXI_WEIGHTS_V_TARGET_ADDR' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_BIASES_V_ENABLE_ID_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_BIASES_V_ID_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_BIASES_V_DATA_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '32'
+
+Parameter 'C_M_AXI_BIASES_V_ENABLE_USER_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_BIASES_V_AWUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_BIASES_V_WUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_BIASES_V_BUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_BIASES_V_ARUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_BIASES_V_RUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_BIASES_V_USER_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_BIASES_V_PROT_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '"000"'
+
+Parameter 'C_M_AXI_BIASES_V_CACHE_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '"0011"'
+
+Parameter 'C_M_AXI_BIASES_V_TARGET_ADDR' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_OUT_DATA_V_ENABLE_ID_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_OUT_DATA_V_ID_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_OUT_DATA_V_DATA_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '32'
+
+Parameter 'C_M_AXI_OUT_DATA_V_ENABLE_USER_PORTS' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to 'false'
+
+Parameter 'C_M_AXI_OUT_DATA_V_AWUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_OUT_DATA_V_WUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_OUT_DATA_V_BUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_OUT_DATA_V_ARUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_OUT_DATA_V_RUSER_WIDTH' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '1'
+
+Parameter 'C_M_AXI_OUT_DATA_V_USER_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '0x00000000'
+
+Parameter 'C_M_AXI_OUT_DATA_V_PROT_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '"000"'
+
+Parameter 'C_M_AXI_OUT_DATA_V_CACHE_VALUE' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '"0011"'
+
+Parameter 'C_M_AXI_OUT_DATA_V_TARGET_ADDR' is no longer present on the upgraded IP 'design_1_Conv2D_0_0', and cannot be set to '0x00000000'
+
+
+5. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:hls:Conv2D:1.0 -user_name design_1_Conv2D_0_0
+set_property -dict "\
+  CONFIG.Component_Name {design_1_Conv2D_0_0} \
+  CONFIG.II {x} \
+  CONFIG.ap_clk.ASSOCIATED_BUSIF {s_axi_AXILiteS:m_axi_in_data_V:m_axi_weights_V:m_axi_biases_V:m_axi_out_data_V} \
+  CONFIG.ap_clk.ASSOCIATED_RESET {ap_rst_n} \
+  CONFIG.ap_clk.CLK_DOMAIN {} \
+  CONFIG.ap_clk.FREQ_HZ {100000000} \
+  CONFIG.ap_clk.INSERT_VIP {0} \
+  CONFIG.ap_clk.LAYERED_METADATA {xilinx.com:interface:datatypes:1.0 {CLK {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}} \
+  CONFIG.ap_clk.PHASE {0.000} \
+  CONFIG.ap_rst_n.INSERT_VIP {0} \
+  CONFIG.ap_rst_n.LAYERED_METADATA {xilinx.com:interface:datatypes:1.0 {RST {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}} \
+  CONFIG.ap_rst_n.POLARITY {ACTIVE_LOW} \
+  CONFIG.clk_period {10} \
+  CONFIG.combinational {0} \
+  CONFIG.interrupt.LAYERED_METADATA {xilinx.com:interface:datatypes:1.0 {INTERRUPT {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}}}} \
+  CONFIG.interrupt.PortWidth {1} \
+  CONFIG.interrupt.SENSITIVITY {LEVEL_HIGH} \
+  CONFIG.latency {16} \
+  CONFIG.machine {64} \
+  CONFIG.s_axi_AXILiteS.ADDR_WIDTH {7} \
+  CONFIG.s_axi_AXILiteS.ARUSER_WIDTH {0} \
+  CONFIG.s_axi_AXILiteS.AWUSER_WIDTH {0} \
+  CONFIG.s_axi_AXILiteS.BUSER_WIDTH {0} \
+  CONFIG.s_axi_AXILiteS.CLK_DOMAIN {} \
+  CONFIG.s_axi_AXILiteS.DATA_WIDTH {32} \
+  CONFIG.s_axi_AXILiteS.FREQ_HZ {100000000} \
+  CONFIG.s_axi_AXILiteS.HAS_BRESP {1} \
+  CONFIG.s_axi_AXILiteS.HAS_BURST {0} \
+  CONFIG.s_axi_AXILiteS.HAS_CACHE {0} \
+  CONFIG.s_axi_AXILiteS.HAS_LOCK {0} \
+  CONFIG.s_axi_AXILiteS.HAS_PROT {0} \
+  CONFIG.s_axi_AXILiteS.HAS_QOS {0} \
+  CONFIG.s_axi_AXILiteS.HAS_REGION {0} \
+  CONFIG.s_axi_AXILiteS.HAS_RRESP {1} \
+  CONFIG.s_axi_AXILiteS.HAS_WSTRB {1} \
+  CONFIG.s_axi_AXILiteS.ID_WIDTH {0} \
+  CONFIG.s_axi_AXILiteS.INSERT_VIP {0} \
+  CONFIG.s_axi_AXILiteS.LAYERED_METADATA {xilinx.com:interface:datatypes:1.0 {AWVALID {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} AWREADY {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} WVALID {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} WREADY {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} BVALID {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} BREADY {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} BRESP {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} ARVALID {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} ARREADY {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} RVALID {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} RREADY {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 1} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} RRESP {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 2} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} AWADDR {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 7} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} WDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} WSTRB {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 4} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} ARADDR {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 7} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} RDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}} \
+  CONFIG.s_axi_AXILiteS.MAX_BURST_LENGTH {1} \
+  CONFIG.s_axi_AXILiteS.NUM_READ_OUTSTANDING {1} \
+  CONFIG.s_axi_AXILiteS.NUM_READ_THREADS {1} \
+  CONFIG.s_axi_AXILiteS.NUM_WRITE_OUTSTANDING {1} \
+  CONFIG.s_axi_AXILiteS.NUM_WRITE_THREADS {1} \
+  CONFIG.s_axi_AXILiteS.PHASE {0.000} \
+  CONFIG.s_axi_AXILiteS.PROTOCOL {AXI4LITE} \
+  CONFIG.s_axi_AXILiteS.READ_WRITE_MODE {READ_WRITE} \
+  CONFIG.s_axi_AXILiteS.RUSER_BITS_PER_BYTE {0} \
+  CONFIG.s_axi_AXILiteS.RUSER_WIDTH {0} \
+  CONFIG.s_axi_AXILiteS.SUPPORTS_NARROW_BURST {0} \
+  CONFIG.s_axi_AXILiteS.WUSER_BITS_PER_BYTE {0} \
+  CONFIG.s_axi_AXILiteS.WUSER_WIDTH {0} " [get_ips design_1_Conv2D_0_0]
+
+
