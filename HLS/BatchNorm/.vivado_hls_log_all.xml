@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog>
+        <logs message="ERROR: [HLS 200-70] Compilation errors found: In file included from ../src/BatchNorm/BatchNorm.cpp:1:&#xD;&#xA;../src/BatchNorm/BatchNorm.cpp:22:18: error: size of array has non-integer type 'ap_uint&lt;16>'&#xD;&#xA;    Dtype_t mean[num_features];&#xD;&#xA;                 ^~~~~~~~~~~~&#xD;&#xA;../src/BatchNorm/BatchNorm.cpp:23:22: error: size of array has non-integer type 'ap_uint&lt;16>'&#xD;&#xA;    Dtype_t variance[num_features];&#xD;&#xA;                     ^~~~~~~~~~~~&#xD;&#xA;../src/BatchNorm/BatchNorm.cpp:24:26: error: size of array has non-integer type 'ap_uint&lt;16>'&#xD;&#xA;    Dtype_t running_mean[num_features] = {0};&#xD;&#xA;                         ^~~~~~~~~~~~&#xD;&#xA;../src/BatchNorm/BatchNorm.cpp:25:25: error: size of array has non-integer type 'ap_uint&lt;16>'&#xD;&#xA;    Dtype_t running_var[num_features] = {1};&#xD;&#xA;                        ^~~~~~~~~~~~&#xD;&#xA;4 errors generated.&#xD;&#xA;Failed during preprocessing.&#xD;&#xA;    while executing&#xD;&#xA;&quot;source D:/code/github/Darkness_PYNQ/HLS/BatchNorm/solution1/csynth.tcl&quot;&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls::main D:/code/github/Darkness_PYNQ/HLS/BatchNorm/solution1/csynth.tcl&quot;&#xD;&#xA;    (&quot;uplevel&quot; body line 1)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;uplevel 1 hls::main {*}$args&quot;&#xD;&#xA;    (procedure &quot;hls_proc&quot; line 5)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls_proc $argv&quot;&#xD;&#xA;" projectName="BatchNorm" solutionName="solution1" date="2024-10-15T16:24:49.685+0800"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

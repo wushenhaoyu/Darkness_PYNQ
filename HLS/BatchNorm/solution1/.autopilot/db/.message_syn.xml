@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_631" tag="SCHEDULE" content="Option &apos;relax_ii_for_timing&apos; is enabled, will increase II to preserve clock frequency constraints."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;../src/BatchNorm/BatchNorm.cpp&apos; ..."/>
+	<Message severity="ERROR" prefix="[HLS 200-70]" key="HLS_70_1454" tag="" content="Compilation errors found: In file included from ../src/BatchNorm/BatchNorm.cpp:1:
+../src/BatchNorm/BatchNorm.cpp:22:18: error: size of array has non-integer type &apos;ap_uint&lt;16&gt;&apos;
+    Dtype_t mean[num_features];
+                 ^~~~~~~~~~~~
+../src/BatchNorm/BatchNorm.cpp:23:22: error: size of array has non-integer type &apos;ap_uint&lt;16&gt;&apos;
+    Dtype_t variance[num_features];
+                     ^~~~~~~~~~~~
+../src/BatchNorm/BatchNorm.cpp:24:26: error: size of array has non-integer type &apos;ap_uint&lt;16&gt;&apos;
+    Dtype_t running_mean[num_features] = {0};
+                         ^~~~~~~~~~~~
+../src/BatchNorm/BatchNorm.cpp:25:25: error: size of array has non-integer type &apos;ap_uint&lt;16&gt;&apos;
+    Dtype_t running_var[num_features] = {1};
+                        ^~~~~~~~~~~~
+4 errors generated."/>
+</Messages>

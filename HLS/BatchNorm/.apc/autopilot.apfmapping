@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="BatchNorm.cpp" path="D:\code\github\Darkness_PYNQ\src\BatchNorm\BatchNorm.cpp"/>
+    <originFiles name="BatchNorm.h" path="D:\code\github\Darkness_PYNQ\src\BatchNorm\BatchNorm.h"/>
+    <originFiles name="BatchNorm.cpp" path="D:\code\github\Darkness_PYNQ\src\BatchNorm\BatchNorm.cpp"/>
+    <originFiles name="BatchNorm.h" path="D:\code\github\Darkness_PYNQ\src\BatchNorm\BatchNorm.h"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>
