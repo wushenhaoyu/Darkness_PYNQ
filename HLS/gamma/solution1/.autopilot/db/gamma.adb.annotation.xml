@@ -1,0 +1,13 @@
+<annotationInfo>
+<annotationInfo>
+<item  id="31" filename="../src/gamma/gamma.cpp" linenumber="9" name="exitcond" contextFuncName="gamma" moduleName="gamma" rtlName="exitcond_fu_218_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="4" fileDirectory="D:\code\git\HLS\HLS"><\/item>
+<item  id="33" filename="../src/gamma/gamma.cpp" linenumber="9" name="i" contextFuncName="gamma" moduleName="gamma" rtlName="i_fu_223_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="8" fileDirectory="D:\code\git\HLS\HLS"><\/item>
+<item  id="38" filename="../src/gamma/gamma.cpp" linenumber="11" name="tmp_2_cast" contextFuncName="gamma" moduleName="gamma" rtlName="tmp_2_cast_fu_229_p1" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="D:\code\git\HLS\HLS"><\/item>
+<item  id="39" filename="../src/gamma/gamma.cpp" linenumber="11" name="gamma_V2_sum" contextFuncName="gamma" moduleName="gamma" rtlName="gamma_V2_sum_fu_233_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="32" fileDirectory="D:\code\git\HLS\HLS"><\/item>
+<item  id="40" filename="../src/gamma/gamma.cpp" linenumber="11" name="gamma_V2_sum_cast" contextFuncName="gamma" moduleName="gamma" rtlName="gamma_V2_sum_cast_fu_238_p1" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="D:\code\git\HLS\HLS"><\/item>
+<item  id="45" filename="../src/gamma/gamma.cpp" linenumber="11" name="mlp_output_V4_sum" contextFuncName="gamma" moduleName="gamma" rtlName="mlp_output_V4_sum_fu_248_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="32" fileDirectory="D:\code\git\HLS\HLS"><\/item>
+<item  id="46" filename="../src/gamma/gamma.cpp" linenumber="11" name="mlp_output_V4_sum_ca" contextFuncName="gamma" moduleName="gamma" rtlName="mlp_output_V4_sum_ca_fu_253_p1" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="D:\code\git\HLS\HLS"><\/item>
+<item  id="51" filename="../src/gamma/gamma.cpp" linenumber="11" name="r_V" contextFuncName="gamma" moduleName="gamma" rtlName="gamma_mul_mul_16sbkb_U1" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="D:\code\git\HLS\HLS"><\/item>
+<item  id="52" filename="../src/gamma/gamma.cpp" linenumber="11" name="tmp_5" contextFuncName="gamma" moduleName="gamma" rtlName="tmp_5_reg_348" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="D:\code\git\HLS\HLS"><\/item>
+<\/annotationInfo>
+</annotationInfo>

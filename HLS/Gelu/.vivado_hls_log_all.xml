@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog>
+        <logs message="ERROR: [HLS 200-70] Failed building synthesis data model.&#xD;&#xA;command 'ap_source' returned error code&#xD;&#xA;    while executing&#xD;&#xA;&quot;source D:/code/git/HLS/HLS/Gelu/solution1/csynth.tcl&quot;&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls::main D:/code/git/HLS/HLS/Gelu/solution1/csynth.tcl&quot;&#xD;&#xA;    (&quot;uplevel&quot; body line 1)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;uplevel 1 hls::main {*}$args&quot;&#xD;&#xA;    (procedure &quot;hls_proc&quot; line 5)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls_proc $argv&quot;&#xD;&#xA;" projectName="Gelu" solutionName="solution1" date="2024-10-15T14:44:10.210+0800"/>
+        <logs message="ERROR: [XFORM 203-801] Cannot specify interface mode 'm_axi' on a non-pointer argument 'x' (../src/Gelu/GELU.cpp:3) for function 'GELU' (../src/Gelu/GELU.cpp:3). Please use a pointer (or reference) instead." projectName="Gelu" solutionName="solution1" date="2024-10-15T14:44:09.718+0800"/>
+        <logs message="ERROR: [XFORM 203-801] Cannot specify interface mode m_axi on a scalar argument 'x' (../src/Gelu/GELU.cpp:3) for function 'GELU' (../src/Gelu/GELU.cpp:3)." projectName="Gelu" solutionName="solution1" date="2024-10-15T14:44:09.704+0800"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'exp_reduce_::exp_generic&lt;double>' to 'exp_generic&lt;double>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:184)" projectName="Gelu" solutionName="solution1" date="2024-10-15T14:44:09.681+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'explog_based::generic_tanh&lt;float>' to 'generic_tanh&lt;float>' (r:/builds/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:56)" projectName="Gelu" solutionName="solution1" date="2024-10-15T14:44:09.644+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

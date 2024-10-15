@@ -1,0 +1,5 @@
+Aff_channel_mac_mbkb
+Aff_channel_mac_mcud
+Aff_channel_AXILiteS_s_axi
+Aff_channel_gmem_m_axi
+Aff_channel

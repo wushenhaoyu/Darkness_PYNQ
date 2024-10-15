@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="Aff_channel.h" path="D:\code\git\HLS\src\norm\Aff_channel.h"/>
+    <originFiles name="Aff_channel.cpp" path="D:\code\git\HLS\src\norm\Aff_channel.cpp"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>

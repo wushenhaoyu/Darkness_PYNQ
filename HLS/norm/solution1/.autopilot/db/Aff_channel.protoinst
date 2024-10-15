@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"Aff_channel": {
+			"proto_instances": {
+			}
+		}
+	}
+}

@@ -1,0 +1,530 @@
+
+
+================================================================
+== Vivado HLS Report for 'Aff_channel'
+================================================================
+* Date:           Tue Oct 15 13:53:19 2024
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        norm
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.750|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+----------------+-----+----------------+---------+
+    |        Latency       |       Interval       | Pipeline|
+    | min |       max      | min |       max      |   Type  |
+    +-----+----------------+-----+----------------+---------+
+    |    1|  63529217571271|    1|  63529217571271|   none  |
+    +-----+----------------+-----+----------------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------+-----+----------------+---------------+-----------+-----------+-----------+----------+
+        |                     |        Latency       |   Iteration   |  Initiation Interval  |    Trip   |          |
+        |      Loop Name      | min |       max      |    Latency    |  achieved |   target  |   Count   | Pipelined|
+        +---------------------+-----+----------------+---------------+-----------+-----------+-----------+----------+
+        |- Loop 1             |    0|  63529217571270| 2 ~ 969393722 |          -|          -| 0 ~ 65535 |    no    |
+        | + Loop 1.1          |    0|       969393720|   2 ~ 14792   |          -|          -| 0 ~ 65535 |    no    |
+        |  ++ Loop 1.1.1      |    0|           14790|             58|          -|          -|  0 ~ 255  |    no    |
+        |   +++ Loop 1.1.1.1  |   32|              32|              2|          -|          -|         16|    no    |
+        +---------------------+-----+----------------+---------------+-----------+-----------+-----------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 30
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond3)
+3 --> 
+	4  / (!exitcond2)
+	2  / (exitcond2)
+4 --> 
+	5  / (!exitcond1)
+	3  / (exitcond1)
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / (!exitcond)
+	15  / (exitcond)
+14 --> 
+	13  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	4  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.00>
+ST_1 : Operation 31 [1/1] (1.00ns)   --->   "%out_data_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %out_data_V)"   --->   Operation 31 'read' 'out_data_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 32 [1/1] (1.00ns)   --->   "%color_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %color_V)"   --->   Operation 32 'read' 'color_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 33 [1/1] (1.00ns)   --->   "%beta_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %beta_V)"   --->   Operation 33 'read' 'beta_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 34 [1/1] (1.00ns)   --->   "%alpha_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %alpha_V)"   --->   Operation 34 'read' 'alpha_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 35 [1/1] (1.00ns)   --->   "%input_data_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %input_data_V)"   --->   Operation 35 'read' 'input_data_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 36 [1/1] (1.00ns)   --->   "%input_height_V_read = call i16 @_ssdm_op_Read.s_axilite.i16(i16 %input_height_V)"   --->   Operation 36 'read' 'input_height_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 37 [1/1] (1.00ns)   --->   "%input_width_V_read = call i16 @_ssdm_op_Read.s_axilite.i16(i16 %input_width_V)"   --->   Operation 37 'read' 'input_width_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 38 [1/1] (1.00ns)   --->   "%dim_V_read = call i8 @_ssdm_op_Read.s_axilite.i8(i8 %dim_V)"   --->   Operation 38 'read' 'dim_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%tmp = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %out_data_V_read, i32 1, i32 31)"   --->   Operation 39 'partselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%tmp_cast = zext i31 %tmp to i41"   --->   Operation 40 'zext' 'tmp_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%tmp_1 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %color_V_read, i32 1, i32 31)"   --->   Operation 41 'partselect' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%tmp_1_cast = zext i31 %tmp_1 to i32"   --->   Operation 42 'zext' 'tmp_1_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%tmp_2 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %beta_V_read, i32 1, i32 31)"   --->   Operation 43 'partselect' 'tmp_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%tmp_2_cast = zext i31 %tmp_2 to i32"   --->   Operation 44 'zext' 'tmp_2_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%tmp_3 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %alpha_V_read, i32 1, i32 31)"   --->   Operation 45 'partselect' 'tmp_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%tmp_3_cast = zext i31 %tmp_3 to i32"   --->   Operation 46 'zext' 'tmp_3_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%tmp_5 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %input_data_V_read, i32 1, i32 31)"   --->   Operation 47 'partselect' 'tmp_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%tmp_14_cast = zext i31 %tmp_5 to i41"   --->   Operation 48 'zext' 'tmp_14_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16* %gmem), !map !85"   --->   Operation 49 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8 %dim_V), !map !93"   --->   Operation 50 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16 %input_width_V), !map !99"   --->   Operation 51 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i16 %input_height_V), !map !103"   --->   Operation 52 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([12 x i8]* @Aff_channel_str) nounwind"   --->   Operation 53 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8 %dim_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/norm/Aff_channel.cpp:14]   --->   Operation 54 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16 %input_width_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/norm/Aff_channel.cpp:15]   --->   Operation 55 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16 %input_height_V, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/norm/Aff_channel.cpp:16]   --->   Operation 56 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %gmem, [6 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i64 4294967295, [5 x i8]* @p_str3, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/norm/Aff_channel.cpp:17]   --->   Operation 57 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %input_data_V, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i64 4294967295, [1 x i8]* @bundle, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/norm/Aff_channel.cpp:17]   --->   Operation 58 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %alpha_V, [10 x i8]* @mode1, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i64 4294967295, [1 x i8]* @bundle2, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/norm/Aff_channel.cpp:18]   --->   Operation 59 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %beta_V, [10 x i8]* @mode3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i64 4294967295, [1 x i8]* @bundle4, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/norm/Aff_channel.cpp:19]   --->   Operation 60 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %color_V, [10 x i8]* @mode5, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i64 4294967295, [1 x i8]* @bundle6, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/norm/Aff_channel.cpp:20]   --->   Operation 61 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %out_data_V, [10 x i8]* @mode7, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i64 4294967295, [1 x i8]* @bundle8, [6 x i8]* @p_str4, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/norm/Aff_channel.cpp:21]   --->   Operation 62 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/norm/Aff_channel.cpp:22]   --->   Operation 63 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%rhs_V_cast = zext i16 %input_height_V_read to i24" [../src/norm/Aff_channel.cpp:30]   --->   Operation 64 'zext' 'rhs_V_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%rhs_V_1_cast = zext i16 %input_width_V_read to i40" [../src/norm/Aff_channel.cpp:30]   --->   Operation 65 'zext' 'rhs_V_1_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%rhs_V_2_cast = zext i16 %input_width_V_read to i32" [../src/norm/Aff_channel.cpp:23]   --->   Operation 66 'zext' 'rhs_V_2_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.46ns)   --->   "br label %.loopexit" [../src/norm/Aff_channel.cpp:23]   --->   Operation 67 'br' <Predicate = true> <Delay = 0.46>
+
+State 2 <SV = 1> <Delay = 2.13>
+ST_2 : Operation 68 [1/1] (0.00ns)   --->   "%i_op_assign = phi i16 [ 0, %0 ], [ %h, %.loopexit.loopexit ]"   --->   Operation 68 'phi' 'i_op_assign' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 69 [1/1] (0.00ns)   --->   "%ret_V_2 = phi i32 [ 0, %0 ], [ %next_mul1, %.loopexit.loopexit ]" [../src/norm/Aff_channel.cpp:23]   --->   Operation 69 'phi' 'ret_V_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 70 [1/1] (1.89ns)   --->   "%next_mul1 = add i32 %ret_V_2, %rhs_V_2_cast" [../src/norm/Aff_channel.cpp:23]   --->   Operation 70 'add' 'next_mul1' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 71 [1/1] (2.13ns)   --->   "%exitcond3 = icmp eq i16 %i_op_assign, %input_height_V_read" [../src/norm/Aff_channel.cpp:23]   --->   Operation 71 'icmp' 'exitcond3' <Predicate = true> <Delay = 2.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 72 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 0, i64 65535, i64 0)"   --->   Operation 72 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 73 [1/1] (1.54ns)   --->   "%h = add i16 %i_op_assign, 1" [../src/norm/Aff_channel.cpp:23]   --->   Operation 73 'add' 'h' <Predicate = true> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 74 [1/1] (0.00ns)   --->   "br i1 %exitcond3, label %1, label %.preheader631.preheader" [../src/norm/Aff_channel.cpp:23]   --->   Operation 74 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 75 [1/1] (0.46ns)   --->   "br label %.preheader631" [../src/norm/Aff_channel.cpp:24]   --->   Operation 75 'br' <Predicate = (!exitcond3)> <Delay = 0.46>
+ST_2 : Operation 76 [1/1] (0.00ns)   --->   "ret void" [../src/norm/Aff_channel.cpp:39]   --->   Operation 76 'ret' <Predicate = (exitcond3)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 2.13>
+ST_3 : Operation 77 [1/1] (0.00ns)   --->   "%i_op_assign_1 = phi i16 [ %w, %.preheader631.loopexit ], [ 0, %.preheader631.preheader ]"   --->   Operation 77 'phi' 'i_op_assign_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 78 [1/1] (0.00ns)   --->   "%i_op_assign_1_cast5 = zext i16 %i_op_assign_1 to i32" [../src/norm/Aff_channel.cpp:24]   --->   Operation 78 'zext' 'i_op_assign_1_cast5' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 79 [1/1] (2.13ns)   --->   "%exitcond2 = icmp eq i16 %i_op_assign_1, %input_width_V_read" [../src/norm/Aff_channel.cpp:24]   --->   Operation 79 'icmp' 'exitcond2' <Predicate = true> <Delay = 2.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 80 [1/1] (0.00ns)   --->   "%empty_14 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 0, i64 65535, i64 0)"   --->   Operation 80 'speclooptripcount' 'empty_14' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 81 [1/1] (1.54ns)   --->   "%w = add i16 %i_op_assign_1, 1" [../src/norm/Aff_channel.cpp:24]   --->   Operation 81 'add' 'w' <Predicate = true> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 82 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %.loopexit.loopexit, label %.preheader.preheader" [../src/norm/Aff_channel.cpp:24]   --->   Operation 82 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 83 [1/1] (1.89ns)   --->   "%tmp1 = add i32 %ret_V_2, %i_op_assign_1_cast5" [../src/norm/Aff_channel.cpp:30]   --->   Operation 83 'add' 'tmp1' <Predicate = (!exitcond2)> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 84 [1/1] (0.00ns)   --->   "%tmp1_cast = zext i32 %tmp1 to i40" [../src/norm/Aff_channel.cpp:30]   --->   Operation 84 'zext' 'tmp1_cast' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_3 : Operation 85 [1/1] (0.46ns)   --->   "br label %.preheader" [../src/norm/Aff_channel.cpp:25]   --->   Operation 85 'br' <Predicate = (!exitcond2)> <Delay = 0.46>
+ST_3 : Operation 86 [1/1] (0.00ns)   --->   "br label %.loopexit"   --->   Operation 86 'br' <Predicate = (exitcond2)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 7.64>
+ST_4 : Operation 87 [1/1] (0.00ns)   --->   "%i_op_assign_2 = phi i8 [ %c, %_ZN13ap_fixed_baseILi33ELi17ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi32ELi16ELb1ELS0_5ELS1_3ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.i ], [ 0, %.preheader.preheader ]"   --->   Operation 87 'phi' 'i_op_assign_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 88 [1/1] (0.00ns)   --->   "%ret_V = phi i24 [ %next_mul, %_ZN13ap_fixed_baseILi33ELi17ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi32ELi16ELb1ELS0_5ELS1_3ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.i ], [ 0, %.preheader.preheader ]" [../src/norm/Aff_channel.cpp:30]   --->   Operation 88 'phi' 'ret_V' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 89 [1/1] (1.68ns)   --->   "%next_mul = add i24 %ret_V, %rhs_V_cast" [../src/norm/Aff_channel.cpp:30]   --->   Operation 89 'add' 'next_mul' <Predicate = true> <Delay = 1.68> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 90 [1/1] (1.31ns)   --->   "%exitcond1 = icmp eq i8 %i_op_assign_2, %dim_V_read" [../src/norm/Aff_channel.cpp:25]   --->   Operation 90 'icmp' 'exitcond1' <Predicate = true> <Delay = 1.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 91 [1/1] (0.00ns)   --->   "%empty_15 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 0, i64 255, i64 0)"   --->   Operation 91 'speclooptripcount' 'empty_15' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 92 [1/1] (1.30ns)   --->   "%c = add i8 %i_op_assign_2, 1" [../src/norm/Aff_channel.cpp:25]   --->   Operation 92 'add' 'c' <Predicate = true> <Delay = 1.30> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 93 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %.preheader631.loopexit, label %_ZN8ap_fixedILi16ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit.preheader" [../src/norm/Aff_channel.cpp:25]   --->   Operation 93 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 94 [1/1] (0.00ns)   --->   "%lhs_V_1_cast = zext i24 %ret_V to i40" [../src/norm/Aff_channel.cpp:30]   --->   Operation 94 'zext' 'lhs_V_1_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_4 : Operation 95 [1/1] (2.82ns) (grouped into DSP with root node tmp_7)   --->   "%ret_V_1 = mul i40 %lhs_V_1_cast, %rhs_V_1_cast" [../src/norm/Aff_channel.cpp:30]   --->   Operation 95 'mul' 'ret_V_1' <Predicate = (!exitcond1)> <Delay = 2.82> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 5.55> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 96 [1/1] (2.73ns) (root node of the DSP)   --->   "%tmp_7 = add i40 %tmp1_cast, %ret_V_1" [../src/norm/Aff_channel.cpp:30]   --->   Operation 96 'add' 'tmp_7' <Predicate = (!exitcond1)> <Delay = 2.73> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 5.55> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 97 [1/1] (0.00ns)   --->   "%tmp_7_cast_cast = zext i40 %tmp_7 to i41" [../src/norm/Aff_channel.cpp:30]   --->   Operation 97 'zext' 'tmp_7_cast_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_4 : Operation 98 [1/1] (0.00ns)   --->   "%tmp_8 = call i12 @_ssdm_op_BitConcatenate.i12.i8.i4(i8 %i_op_assign_2, i4 0)" [../src/norm/Aff_channel.cpp:30]   --->   Operation 98 'bitconcatenate' 'tmp_8' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_4 : Operation 99 [1/1] (2.09ns)   --->   "%input_data_V2_sum = add i41 %tmp_7_cast_cast, %tmp_14_cast" [../src/norm/Aff_channel.cpp:30]   --->   Operation 99 'add' 'input_data_V2_sum' <Predicate = (!exitcond1)> <Delay = 2.09> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 100 [1/1] (0.00ns)   --->   "%input_data_V2_sum_ca = zext i41 %input_data_V2_sum to i64" [../src/norm/Aff_channel.cpp:30]   --->   Operation 100 'zext' 'input_data_V2_sum_ca' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_4 : Operation 101 [1/1] (0.00ns)   --->   "%gmem_addr = getelementptr i16* %gmem, i64 %input_data_V2_sum_ca" [../src/norm/Aff_channel.cpp:30]   --->   Operation 101 'getelementptr' 'gmem_addr' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_4 : Operation 102 [1/1] (0.00ns)   --->   "%tmp_5_cast = zext i12 %tmp_8 to i32" [../src/norm/Aff_channel.cpp:30]   --->   Operation 102 'zext' 'tmp_5_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_4 : Operation 103 [1/1] (1.87ns)   --->   "%color_V8_sum = add i32 %tmp_5_cast, %tmp_1_cast" [../src/norm/Aff_channel.cpp:30]   --->   Operation 103 'add' 'color_V8_sum' <Predicate = (!exitcond1)> <Delay = 1.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 104 [1/1] (0.00ns)   --->   "%color_V8_sum_cast = zext i32 %color_V8_sum to i64" [../src/norm/Aff_channel.cpp:30]   --->   Operation 104 'zext' 'color_V8_sum_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_4 : Operation 105 [1/1] (0.00ns)   --->   "%gmem_addr_1 = getelementptr i16* %gmem, i64 %color_V8_sum_cast" [../src/norm/Aff_channel.cpp:30]   --->   Operation 105 'getelementptr' 'gmem_addr_1' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_4 : Operation 106 [1/1] (0.00ns)   --->   "br label %.preheader631"   --->   Operation 106 'br' <Predicate = (exitcond1)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 8.75>
+ST_5 : Operation 107 [7/7] (8.75ns)   --->   "%gmem_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr, i32 1)" [../src/norm/Aff_channel.cpp:30]   --->   Operation 107 'readreq' 'gmem_load_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 8.75>
+ST_6 : Operation 108 [6/7] (8.75ns)   --->   "%gmem_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr, i32 1)" [../src/norm/Aff_channel.cpp:30]   --->   Operation 108 'readreq' 'gmem_load_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 109 [7/7] (8.75ns)   --->   "%gmem_addr_3_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_1, i32 16)" [../src/norm/Aff_channel.cpp:30]   --->   Operation 109 'readreq' 'gmem_addr_3_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 8.75>
+ST_7 : Operation 110 [5/7] (8.75ns)   --->   "%gmem_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr, i32 1)" [../src/norm/Aff_channel.cpp:30]   --->   Operation 110 'readreq' 'gmem_load_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 111 [6/7] (8.75ns)   --->   "%gmem_addr_3_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_1, i32 16)" [../src/norm/Aff_channel.cpp:30]   --->   Operation 111 'readreq' 'gmem_addr_3_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 8.75>
+ST_8 : Operation 112 [4/7] (8.75ns)   --->   "%gmem_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr, i32 1)" [../src/norm/Aff_channel.cpp:30]   --->   Operation 112 'readreq' 'gmem_load_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 113 [5/7] (8.75ns)   --->   "%gmem_addr_3_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_1, i32 16)" [../src/norm/Aff_channel.cpp:30]   --->   Operation 113 'readreq' 'gmem_addr_3_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 9 <SV = 8> <Delay = 8.75>
+ST_9 : Operation 114 [3/7] (8.75ns)   --->   "%gmem_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr, i32 1)" [../src/norm/Aff_channel.cpp:30]   --->   Operation 114 'readreq' 'gmem_load_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 115 [4/7] (8.75ns)   --->   "%gmem_addr_3_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_1, i32 16)" [../src/norm/Aff_channel.cpp:30]   --->   Operation 115 'readreq' 'gmem_addr_3_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 10 <SV = 9> <Delay = 8.75>
+ST_10 : Operation 116 [2/7] (8.75ns)   --->   "%gmem_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr, i32 1)" [../src/norm/Aff_channel.cpp:30]   --->   Operation 116 'readreq' 'gmem_load_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_10 : Operation 117 [3/7] (8.75ns)   --->   "%gmem_addr_3_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_1, i32 16)" [../src/norm/Aff_channel.cpp:30]   --->   Operation 117 'readreq' 'gmem_addr_3_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 11 <SV = 10> <Delay = 8.75>
+ST_11 : Operation 118 [1/7] (8.75ns)   --->   "%gmem_load_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr, i32 1)" [../src/norm/Aff_channel.cpp:30]   --->   Operation 118 'readreq' 'gmem_load_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 119 [2/7] (8.75ns)   --->   "%gmem_addr_3_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_1, i32 16)" [../src/norm/Aff_channel.cpp:30]   --->   Operation 119 'readreq' 'gmem_addr_3_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 12 <SV = 11> <Delay = 8.75>
+ST_12 : Operation 120 [1/1] (8.75ns)   --->   "%gmem_addr_read = call i16 @_ssdm_op_Read.m_axi.i16P(i16* %gmem_addr)" [../src/norm/Aff_channel.cpp:30]   --->   Operation 120 'read' 'gmem_addr_read' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 121 [1/1] (0.00ns)   --->   "%r_V_2 = sext i16 %gmem_addr_read to i24" [../src/norm/Aff_channel.cpp:30]   --->   Operation 121 'sext' 'r_V_2' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 122 [1/7] (8.75ns)   --->   "%gmem_addr_3_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_1, i32 16)" [../src/norm/Aff_channel.cpp:30]   --->   Operation 122 'readreq' 'gmem_addr_3_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 123 [1/1] (0.46ns)   --->   "br label %_ZN8ap_fixedILi16ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit" [../src/norm/Aff_channel.cpp:28]   --->   Operation 123 'br' <Predicate = true> <Delay = 0.46>
+
+State 13 <SV = 12> <Delay = 8.75>
+ST_13 : Operation 124 [1/1] (0.00ns)   --->   "%p_Val2_2 = phi i16 [ %sum_V, %_ZN13ap_fixed_baseILi33ELi17ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi16ELi8ELb1ELS0_5ELS1_3ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.i.i ], [ 0, %_ZN8ap_fixedILi16ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit.preheader ]"   --->   Operation 124 'phi' 'p_Val2_2' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 125 [1/1] (0.00ns)   --->   "%c_color = phi i5 [ %c_color_1, %_ZN13ap_fixed_baseILi33ELi17ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi16ELi8ELb1ELS0_5ELS1_3ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.i.i ], [ 0, %_ZN8ap_fixedILi16ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit.preheader ]"   --->   Operation 125 'phi' 'c_color' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 126 [1/1] (0.97ns)   --->   "%exitcond = icmp eq i5 %c_color, -16" [../src/norm/Aff_channel.cpp:28]   --->   Operation 126 'icmp' 'exitcond' <Predicate = true> <Delay = 0.97> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 127 [1/1] (0.00ns)   --->   "%empty_16 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16, i64 16, i64 16)"   --->   Operation 127 'speclooptripcount' 'empty_16' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 128 [1/1] (1.02ns)   --->   "%c_color_1 = add i5 %c_color, 1" [../src/norm/Aff_channel.cpp:28]   --->   Operation 128 'add' 'c_color_1' <Predicate = true> <Delay = 1.02> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 129 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %_ZN13ap_fixed_baseILi33ELi17ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi32ELi16ELb1ELS0_5ELS1_3ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.i, label %_ZN13ap_fixed_baseILi33ELi17ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi16ELi8ELb1ELS0_5ELS1_3ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.i.i" [../src/norm/Aff_channel.cpp:28]   --->   Operation 129 'br' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 130 [1/1] (8.75ns)   --->   "%gmem_addr_1_read = call i16 @_ssdm_op_Read.m_axi.i16P(i16* %gmem_addr_1)" [../src/norm/Aff_channel.cpp:30]   --->   Operation 130 'read' 'gmem_addr_1_read' <Predicate = (!exitcond)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_13 : Operation 131 [1/1] (0.00ns)   --->   "%tmp_9_cast = zext i8 %i_op_assign_2 to i32" [../src/norm/Aff_channel.cpp:35]   --->   Operation 131 'zext' 'tmp_9_cast' <Predicate = (exitcond)> <Delay = 0.00>
+ST_13 : Operation 132 [1/1] (1.87ns)   --->   "%alpha_V4_sum = add i32 %tmp_9_cast, %tmp_3_cast" [../src/norm/Aff_channel.cpp:35]   --->   Operation 132 'add' 'alpha_V4_sum' <Predicate = (exitcond)> <Delay = 1.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 133 [1/1] (0.00ns)   --->   "%alpha_V4_sum_cast = zext i32 %alpha_V4_sum to i64" [../src/norm/Aff_channel.cpp:35]   --->   Operation 133 'zext' 'alpha_V4_sum_cast' <Predicate = (exitcond)> <Delay = 0.00>
+ST_13 : Operation 134 [1/1] (0.00ns)   --->   "%gmem_addr_2 = getelementptr i16* %gmem, i64 %alpha_V4_sum_cast" [../src/norm/Aff_channel.cpp:35]   --->   Operation 134 'getelementptr' 'gmem_addr_2' <Predicate = (exitcond)> <Delay = 0.00>
+ST_13 : Operation 135 [1/1] (1.87ns)   --->   "%beta_V6_sum = add i32 %tmp_9_cast, %tmp_2_cast" [../src/norm/Aff_channel.cpp:35]   --->   Operation 135 'add' 'beta_V6_sum' <Predicate = (exitcond)> <Delay = 1.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 136 [1/1] (0.00ns)   --->   "%beta_V6_sum_cast = zext i32 %beta_V6_sum to i64" [../src/norm/Aff_channel.cpp:35]   --->   Operation 136 'zext' 'beta_V6_sum_cast' <Predicate = (exitcond)> <Delay = 0.00>
+ST_13 : Operation 137 [1/1] (0.00ns)   --->   "%gmem_addr_3 = getelementptr i16* %gmem, i64 %beta_V6_sum_cast" [../src/norm/Aff_channel.cpp:35]   --->   Operation 137 'getelementptr' 'gmem_addr_3' <Predicate = (exitcond)> <Delay = 0.00>
+ST_13 : Operation 138 [1/1] (2.09ns)   --->   "%out_data_V10_sum = add i41 %tmp_7_cast_cast, %tmp_cast" [../src/norm/Aff_channel.cpp:35]   --->   Operation 138 'add' 'out_data_V10_sum' <Predicate = (exitcond)> <Delay = 2.09> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.09> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 139 [1/1] (0.00ns)   --->   "%out_data_V10_sum_cas = zext i41 %out_data_V10_sum to i64" [../src/norm/Aff_channel.cpp:35]   --->   Operation 139 'zext' 'out_data_V10_sum_cas' <Predicate = (exitcond)> <Delay = 0.00>
+ST_13 : Operation 140 [1/1] (0.00ns)   --->   "%gmem_addr_4 = getelementptr i16* %gmem, i64 %out_data_V10_sum_cas" [../src/norm/Aff_channel.cpp:35]   --->   Operation 140 'getelementptr' 'gmem_addr_4' <Predicate = (exitcond)> <Delay = 0.00>
+
+State 14 <SV = 13> <Delay = 5.55>
+ST_14 : Operation 141 [1/1] (0.00ns)   --->   "%tmp_6 = sext i16 %gmem_addr_1_read to i24" [../src/norm/Aff_channel.cpp:30]   --->   Operation 141 'sext' 'tmp_6' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 142 [1/1] (2.82ns) (grouped into DSP with root node ret_V_5)   --->   "%r_V_4 = mul i24 %tmp_6, %r_V_2" [../src/norm/Aff_channel.cpp:30]   --->   Operation 142 'mul' 'r_V_4' <Predicate = true> <Delay = 2.82> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 5.55> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_14 : Operation 143 [1/1] (0.00ns)   --->   "%lhs_V = call i24 @_ssdm_op_BitConcatenate.i24.i16.i8(i16 %p_Val2_2, i8 0)" [../src/norm/Aff_channel.cpp:30]   --->   Operation 143 'bitconcatenate' 'lhs_V' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 144 [1/1] (2.73ns) (root node of the DSP)   --->   "%ret_V_5 = add i24 %r_V_4, %lhs_V" [../src/norm/Aff_channel.cpp:30]   --->   Operation 144 'add' 'ret_V_5' <Predicate = true> <Delay = 2.73> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 5.55> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_14 : Operation 145 [1/1] (0.00ns)   --->   "%sum_V = call i16 @_ssdm_op_PartSelect.i16.i24.i32.i32(i24 %ret_V_5, i32 8, i32 23)" [../src/norm/Aff_channel.cpp:30]   --->   Operation 145 'partselect' 'sum_V' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 146 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi16ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit" [../src/norm/Aff_channel.cpp:28]   --->   Operation 146 'br' <Predicate = true> <Delay = 0.00>
+
+State 15 <SV = 13> <Delay = 8.75>
+ST_15 : Operation 147 [7/7] (8.75ns)   --->   "%gmem_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_2, i32 1)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 147 'readreq' 'gmem_load_1_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 16 <SV = 14> <Delay = 8.75>
+ST_16 : Operation 148 [6/7] (8.75ns)   --->   "%gmem_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_2, i32 1)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 148 'readreq' 'gmem_load_1_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_16 : Operation 149 [7/7] (8.75ns)   --->   "%p_Val2_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_3, i32 1)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 149 'readreq' 'p_Val2_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 17 <SV = 15> <Delay = 8.75>
+ST_17 : Operation 150 [5/7] (8.75ns)   --->   "%gmem_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_2, i32 1)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 150 'readreq' 'gmem_load_1_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_17 : Operation 151 [6/7] (8.75ns)   --->   "%p_Val2_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_3, i32 1)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 151 'readreq' 'p_Val2_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 18 <SV = 16> <Delay = 8.75>
+ST_18 : Operation 152 [4/7] (8.75ns)   --->   "%gmem_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_2, i32 1)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 152 'readreq' 'gmem_load_1_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_18 : Operation 153 [5/7] (8.75ns)   --->   "%p_Val2_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_3, i32 1)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 153 'readreq' 'p_Val2_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 19 <SV = 17> <Delay = 8.75>
+ST_19 : Operation 154 [3/7] (8.75ns)   --->   "%gmem_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_2, i32 1)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 154 'readreq' 'gmem_load_1_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_19 : Operation 155 [4/7] (8.75ns)   --->   "%p_Val2_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_3, i32 1)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 155 'readreq' 'p_Val2_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 20 <SV = 18> <Delay = 8.75>
+ST_20 : Operation 156 [2/7] (8.75ns)   --->   "%gmem_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_2, i32 1)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 156 'readreq' 'gmem_load_1_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_20 : Operation 157 [3/7] (8.75ns)   --->   "%p_Val2_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_3, i32 1)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 157 'readreq' 'p_Val2_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 21 <SV = 19> <Delay = 8.75>
+ST_21 : Operation 158 [1/7] (8.75ns)   --->   "%gmem_load_1_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_2, i32 1)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 158 'readreq' 'gmem_load_1_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_21 : Operation 159 [2/7] (8.75ns)   --->   "%p_Val2_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_3, i32 1)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 159 'readreq' 'p_Val2_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 22 <SV = 20> <Delay = 8.75>
+ST_22 : Operation 160 [1/1] (8.75ns)   --->   "%gmem_addr_2_read = call i16 @_ssdm_op_Read.m_axi.i16P(i16* %gmem_addr_2)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 160 'read' 'gmem_addr_2_read' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_22 : Operation 161 [1/7] (8.75ns)   --->   "%p_Val2_req = call i1 @_ssdm_op_ReadReq.m_axi.i16P(i16* %gmem_addr_3, i32 1)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 161 'readreq' 'p_Val2_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_22 : Operation 162 [1/1] (8.75ns)   --->   "%gmem_addr_6_req = call i1 @_ssdm_op_WriteReq.m_axi.i16P(i16* %gmem_addr_4, i32 1)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 162 'writereq' 'gmem_addr_6_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 23 <SV = 21> <Delay = 8.75>
+ST_23 : Operation 163 [1/1] (8.75ns)   --->   "%p_Val2_s = call i16 @_ssdm_op_Read.m_axi.i16P(i16* %gmem_addr_3)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 163 'read' 'p_Val2_s' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 24 <SV = 22> <Delay = 5.55>
+ST_24 : Operation 164 [1/1] (0.00ns)   --->   "%r_V = sext i16 %p_Val2_2 to i24" [../src/norm/Aff_channel.cpp:35]   --->   Operation 164 'sext' 'r_V' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 165 [1/1] (0.00ns)   --->   "%tmp_4 = sext i16 %gmem_addr_2_read to i24" [../src/norm/Aff_channel.cpp:35]   --->   Operation 165 'sext' 'tmp_4' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 166 [1/1] (2.82ns) (grouped into DSP with root node ret_V_6)   --->   "%r_V_5 = mul i24 %r_V, %tmp_4" [../src/norm/Aff_channel.cpp:35]   --->   Operation 166 'mul' 'r_V_5' <Predicate = true> <Delay = 2.82> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 5.55> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_24 : Operation 167 [1/1] (0.00ns)   --->   "%rhs_V = call i24 @_ssdm_op_BitConcatenate.i24.i16.i8(i16 %p_Val2_s, i8 0)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 167 'bitconcatenate' 'rhs_V' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 168 [1/1] (2.73ns) (root node of the DSP)   --->   "%ret_V_6 = add i24 %rhs_V, %r_V_5" [../src/norm/Aff_channel.cpp:35]   --->   Operation 168 'add' 'ret_V_6' <Predicate = true> <Delay = 2.73> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 5.55> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_24 : Operation 169 [1/1] (0.00ns)   --->   "%tmp_s = call i16 @_ssdm_op_PartSelect.i16.i24.i32.i32(i24 %ret_V_6, i32 8, i32 23)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 169 'partselect' 'tmp_s' <Predicate = true> <Delay = 0.00>
+
+State 25 <SV = 23> <Delay = 8.75>
+ST_25 : Operation 170 [1/1] (8.75ns)   --->   "call void @_ssdm_op_Write.m_axi.i16P(i16* %gmem_addr_4, i16 %tmp_s, i2 -1)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 170 'write' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 26 <SV = 24> <Delay = 8.75>
+ST_26 : Operation 171 [5/5] (8.75ns)   --->   "%gmem_addr_6_resp = call i1 @_ssdm_op_WriteResp.m_axi.i16P(i16* %gmem_addr_4)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 171 'writeresp' 'gmem_addr_6_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 27 <SV = 25> <Delay = 8.75>
+ST_27 : Operation 172 [4/5] (8.75ns)   --->   "%gmem_addr_6_resp = call i1 @_ssdm_op_WriteResp.m_axi.i16P(i16* %gmem_addr_4)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 172 'writeresp' 'gmem_addr_6_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 28 <SV = 26> <Delay = 8.75>
+ST_28 : Operation 173 [3/5] (8.75ns)   --->   "%gmem_addr_6_resp = call i1 @_ssdm_op_WriteResp.m_axi.i16P(i16* %gmem_addr_4)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 173 'writeresp' 'gmem_addr_6_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 29 <SV = 27> <Delay = 8.75>
+ST_29 : Operation 174 [2/5] (8.75ns)   --->   "%gmem_addr_6_resp = call i1 @_ssdm_op_WriteResp.m_axi.i16P(i16* %gmem_addr_4)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 174 'writeresp' 'gmem_addr_6_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 30 <SV = 28> <Delay = 8.75>
+ST_30 : Operation 175 [1/5] (8.75ns)   --->   "%gmem_addr_6_resp = call i1 @_ssdm_op_WriteResp.m_axi.i16P(i16* %gmem_addr_4)" [../src/norm/Aff_channel.cpp:35]   --->   Operation 175 'writeresp' 'gmem_addr_6_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_30 : Operation 176 [1/1] (0.00ns)   --->   "br label %.preheader" [../src/norm/Aff_channel.cpp:25]   --->   Operation 176 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1ns
+The critical path consists of the following:
+	s_axi read on port 'out_data_V' [10]  (1 ns)
+
+ <State 2>: 2.14ns
+The critical path consists of the following:
+	'phi' operation ('h') with incoming values : ('h', ../src/norm/Aff_channel.cpp:23) [48]  (0 ns)
+	'icmp' operation ('exitcond3', ../src/norm/Aff_channel.cpp:23) [51]  (2.14 ns)
+
+ <State 3>: 2.14ns
+The critical path consists of the following:
+	'phi' operation ('w') with incoming values : ('w', ../src/norm/Aff_channel.cpp:24) [58]  (0 ns)
+	'icmp' operation ('exitcond2', ../src/norm/Aff_channel.cpp:24) [60]  (2.14 ns)
+
+ <State 4>: 7.64ns
+The critical path consists of the following:
+	'phi' operation ('ret.V', ../src/norm/Aff_channel.cpp:30) with incoming values : ('next_mul', ../src/norm/Aff_channel.cpp:30) [70]  (0 ns)
+	'mul' operation of DSP[79] ('ret.V', ../src/norm/Aff_channel.cpp:30) [78]  (2.82 ns)
+	'add' operation of DSP[79] ('tmp_7', ../src/norm/Aff_channel.cpp:30) [79]  (2.73 ns)
+	'add' operation ('input_data_V2_sum', ../src/norm/Aff_channel.cpp:30) [82]  (2.09 ns)
+
+ <State 5>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/norm/Aff_channel.cpp:30) [85]  (8.75 ns)
+
+ <State 6>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/norm/Aff_channel.cpp:30) [85]  (8.75 ns)
+
+ <State 7>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/norm/Aff_channel.cpp:30) [85]  (8.75 ns)
+
+ <State 8>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/norm/Aff_channel.cpp:30) [85]  (8.75 ns)
+
+ <State 9>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/norm/Aff_channel.cpp:30) [85]  (8.75 ns)
+
+ <State 10>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/norm/Aff_channel.cpp:30) [85]  (8.75 ns)
+
+ <State 11>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/norm/Aff_channel.cpp:30) [85]  (8.75 ns)
+
+ <State 12>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'gmem' (../src/norm/Aff_channel.cpp:30) [86]  (8.75 ns)
+
+ <State 13>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'gmem' (../src/norm/Aff_channel.cpp:30) [102]  (8.75 ns)
+
+ <State 14>: 5.55ns
+The critical path consists of the following:
+	'mul' operation of DSP[106] ('r_V_4', ../src/norm/Aff_channel.cpp:30) [104]  (2.82 ns)
+	'add' operation of DSP[106] ('ret.V', ../src/norm/Aff_channel.cpp:30) [106]  (2.73 ns)
+
+ <State 15>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/norm/Aff_channel.cpp:35) [115]  (8.75 ns)
+
+ <State 16>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/norm/Aff_channel.cpp:35) [115]  (8.75 ns)
+
+ <State 17>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/norm/Aff_channel.cpp:35) [115]  (8.75 ns)
+
+ <State 18>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/norm/Aff_channel.cpp:35) [115]  (8.75 ns)
+
+ <State 19>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/norm/Aff_channel.cpp:35) [115]  (8.75 ns)
+
+ <State 20>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/norm/Aff_channel.cpp:35) [115]  (8.75 ns)
+
+ <State 21>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/norm/Aff_channel.cpp:35) [115]  (8.75 ns)
+
+ <State 22>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'gmem' (../src/norm/Aff_channel.cpp:35) [116]  (8.75 ns)
+
+ <State 23>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'gmem' (../src/norm/Aff_channel.cpp:35) [123]  (8.75 ns)
+
+ <State 24>: 5.55ns
+The critical path consists of the following:
+	'mul' operation of DSP[125] ('r_V_5', ../src/norm/Aff_channel.cpp:35) [118]  (2.82 ns)
+	'add' operation of DSP[125] ('ret.V', ../src/norm/Aff_channel.cpp:35) [125]  (2.73 ns)
+
+ <State 25>: 8.75ns
+The critical path consists of the following:
+	bus write on port 'gmem' (../src/norm/Aff_channel.cpp:35) [131]  (8.75 ns)
+
+ <State 26>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem' (../src/norm/Aff_channel.cpp:35) [132]  (8.75 ns)
+
+ <State 27>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem' (../src/norm/Aff_channel.cpp:35) [132]  (8.75 ns)
+
+ <State 28>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem' (../src/norm/Aff_channel.cpp:35) [132]  (8.75 ns)
+
+ <State 29>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem' (../src/norm/Aff_channel.cpp:35) [132]  (8.75 ns)
+
+ <State 30>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem' (../src/norm/Aff_channel.cpp:35) [132]  (8.75 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

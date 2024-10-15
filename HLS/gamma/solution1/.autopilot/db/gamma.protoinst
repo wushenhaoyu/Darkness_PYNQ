@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"gamma": {
+			"proto_instances": {
+			}
+		}
+	}
+}
