@@ -1,5 +1,5 @@
 // ==============================================================
-// File generated on Tue Oct 15 13:26:24 +0800 2024
+// File generated on Wed Oct 16 15:39:52 +0800 2024
 // Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
 // SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 // IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
@@ -7,11 +7,11 @@
 // ==============================================================
 `timescale 1 ns / 1 ps
 
-module Conv2D_mac_muladdfYi_DSP48_3(
+module Conv2D_mac_muladdfYi_DSP48_1(
     input  [8 - 1:0] in0,
-    input  [20 - 1:0] in1,
-    input  [32 - 1:0] in2,
-    output [33 - 1:0]  dout);
+    input  [16 - 1:0] in1,
+    input  [15 - 1:0] in2,
+    output [23 - 1:0]  dout);
 
 wire signed [25 - 1:0]     a;
 wire signed [18 - 1:0]     b;
@@ -19,8 +19,8 @@ wire signed [48 - 1:0]     c;
 wire signed [43 - 1:0]     m;
 wire signed [48 - 1:0]     p;
 
-assign a  = $signed(in1);
-assign b  = $unsigned(in0);
+assign a  = $unsigned(in0);
+assign b  = $signed(in1);
 assign c  = $unsigned(in2);
 
 assign m  = a * b;
@@ -49,7 +49,7 @@ output[dout_WIDTH - 1:0] dout;
 
 
 
-Conv2D_mac_muladdfYi_DSP48_3 Conv2D_mac_muladdfYi_DSP48_3_U(
+Conv2D_mac_muladdfYi_DSP48_1 Conv2D_mac_muladdfYi_DSP48_1_U(
     .in0( din0 ),
     .in1( din1 ),
     .in2( din2 ),

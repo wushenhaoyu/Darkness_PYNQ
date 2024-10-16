@@ -16,10 +16,10 @@
 <EstimatedClockPeriod>8.750</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>16</Best-caseLatency>
+<Best-caseLatency>20</Best-caseLatency>
 <Average-caseLatency>undef</Average-caseLatency>
-<Worst-caseLatency>undef</Worst-caseLatency>
-<PipelineInitiationInterval>17 ~ 0</PipelineInitiationInterval>
+<Worst-caseLatency>71252331726766096</Worst-caseLatency>
+<PipelineInitiationInterval>21 ~ 71252331726766101</PipelineInitiationInterval>
 <PipelineType>none</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
@@ -28,98 +28,81 @@
 <TripCount>
 <range>
 <min>0</min>
-<max>65535</max>
+<max>4177920</max>
 </range>
 </TripCount>
-<Latency>0 ~ ?</Latency>
+<Latency>0 ~ 71252331726766080</Latency>
 <IterationLatency>
 <range>
-<min>3</min>
-<max>196751030195601408</max>
+<min>8</min>
+<max>17054498824</max>
 </range>
 </IterationLatency>
-<PipelineDepth>3 ~ 196751030195601411</PipelineDepth>
+<PipelineDepth>8 ~ 17054498824</PipelineDepth>
 <Loop1.1>
 <Name>Loop 1.1</Name>
 <TripCount>
 <range>
 <min>0</min>
-<max>2048</max>
+<max>16384</max>
 </range>
 </TripCount>
-<Latency>0 ~ 196751030195601408</Latency>
+<Latency>0 ~ 17054498816</Latency>
 <IterationLatency>
 <range>
-<min>8</min>
-<max>96069838962696</max>
+<min>14</min>
+<max>1040924</max>
 </range>
 </IterationLatency>
-<PipelineDepth>8 ~ 96069838962696</PipelineDepth>
+<PipelineDepth>14 ~ 1040924</PipelineDepth>
 <Loop1.1.1>
 <Name>Loop 1.1.1</Name>
 <TripCount>
 <range>
 <min>0</min>
-<max>2048</max>
+<max>255</max>
 </range>
 </TripCount>
-<Latency>0 ~ 96069838962688</Latency>
+<Latency>0 ~ 1040910</Latency>
 <IterationLatency>
 <range>
-<min>11</min>
-<max>46909101056</max>
+<min>2</min>
+<max>4082</max>
 </range>
 </IterationLatency>
-<PipelineDepth>11 ~ 46909101056</PipelineDepth>
+<PipelineDepth>2 ~ 4082</PipelineDepth>
 <Loop1.1.1.1>
 <Name>Loop 1.1.1.1</Name>
 <TripCount>
 <range>
 <min>0</min>
-<max>65535</max>
+<max>15</max>
 </range>
 </TripCount>
-<Latency>0 ~ 46909101045</Latency>
+<Latency>0 ~ 4080</Latency>
 <IterationLatency>
 <range>
 <min>2</min>
-<max>715787</max>
+<max>272</max>
 </range>
 </IterationLatency>
-<PipelineDepth>2 ~ 715787</PipelineDepth>
+<PipelineDepth>2 ~ 272</PipelineDepth>
 <Loop1.1.1.1.1>
 <Name>Loop 1.1.1.1.1</Name>
 <TripCount>
 <range>
 <min>0</min>
-<max>255</max>
+<max>15</max>
 </range>
 </TripCount>
-<Latency>0 ~ 715785</Latency>
+<Latency>0 ~ 270</Latency>
 <IterationLatency>
 <range>
 <min>2</min>
-<max>2807</max>
+<max>18</max>
 </range>
 </IterationLatency>
-<PipelineDepth>2 ~ 2807</PipelineDepth>
-<Loop1.1.1.1.1.1>
-<Name>Loop 1.1.1.1.1.1</Name>
-<TripCount>
-<range>
-<min>0</min>
-<max>255</max>
-</range>
-</TripCount>
-<Latency>0 ~ 2805</Latency>
-<IterationLatency>
-<range>
-<min>2</min>
-<max>11</max>
-</range>
-</IterationLatency>
-<PipelineDepth>2 ~ 11</PipelineDepth>
-</Loop1.1.1.1.1.1>
+<PipelineDepth>2 ~ 18</PipelineDepth>
 </Loop1.1.1.1.1>
 </Loop1.1.1.1>
 </Loop1.1.1>
@@ -130,9 +113,9 @@
 <AreaEstimates>
 <Resources>
 <BRAM_18K>2</BRAM_18K>
-<DSP48E>11</DSP48E>
-<FF>2720</FF>
-<LUT>2162</LUT>
+<DSP48E>12</DSP48E>
+<FF>3128</FF>
+<LUT>2665</LUT>
 </Resources>
 </AreaEstimates>
 <InterfaceSummary>
@@ -400,7 +383,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_AWREADY</name>
@@ -412,7 +395,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_AWADDR</name>
@@ -424,7 +407,7 @@
 <Dir>out</Dir>
 <Bits>32</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_AWID</name>
@@ -436,7 +419,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_AWLEN</name>
@@ -448,7 +431,7 @@
 <Dir>out</Dir>
 <Bits>8</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_AWSIZE</name>
@@ -460,7 +443,7 @@
 <Dir>out</Dir>
 <Bits>3</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_AWBURST</name>
@@ -472,7 +455,7 @@
 <Dir>out</Dir>
 <Bits>2</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_AWLOCK</name>
@@ -484,7 +467,7 @@
 <Dir>out</Dir>
 <Bits>2</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_AWCACHE</name>
@@ -496,7 +479,7 @@
 <Dir>out</Dir>
 <Bits>4</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_AWPROT</name>
@@ -508,7 +491,7 @@
 <Dir>out</Dir>
 <Bits>3</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_AWQOS</name>
@@ -520,7 +503,7 @@
 <Dir>out</Dir>
 <Bits>4</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_AWREGION</name>
@@ -532,7 +515,7 @@
 <Dir>out</Dir>
 <Bits>4</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_AWUSER</name>
@@ -544,7 +527,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_WVALID</name>
@@ -556,7 +539,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_WREADY</name>
@@ -568,7 +551,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_WDATA</name>
@@ -580,7 +563,7 @@
 <Dir>out</Dir>
 <Bits>32</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_WSTRB</name>
@@ -592,7 +575,7 @@
 <Dir>out</Dir>
 <Bits>4</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_WLAST</name>
@@ -604,7 +587,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_WID</name>
@@ -616,7 +599,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_WUSER</name>
@@ -628,7 +611,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_ARVALID</name>
@@ -640,7 +623,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_ARREADY</name>
@@ -652,7 +635,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_ARADDR</name>
@@ -664,7 +647,7 @@
 <Dir>out</Dir>
 <Bits>32</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_ARID</name>
@@ -676,7 +659,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_ARLEN</name>
@@ -688,7 +671,7 @@
 <Dir>out</Dir>
 <Bits>8</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_ARSIZE</name>
@@ -700,7 +683,7 @@
 <Dir>out</Dir>
 <Bits>3</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_ARBURST</name>
@@ -712,7 +695,7 @@
 <Dir>out</Dir>
 <Bits>2</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_ARLOCK</name>
@@ -724,7 +707,7 @@
 <Dir>out</Dir>
 <Bits>2</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_ARCACHE</name>
@@ -736,7 +719,7 @@
 <Dir>out</Dir>
 <Bits>4</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_ARPROT</name>
@@ -748,7 +731,7 @@
 <Dir>out</Dir>
 <Bits>3</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_ARQOS</name>
@@ -760,7 +743,7 @@
 <Dir>out</Dir>
 <Bits>4</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_ARREGION</name>
@@ -772,7 +755,7 @@
 <Dir>out</Dir>
 <Bits>4</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_ARUSER</name>
@@ -784,7 +767,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_RVALID</name>
@@ -796,7 +779,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_RREADY</name>
@@ -808,7 +791,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_RDATA</name>
@@ -820,7 +803,7 @@
 <Dir>in</Dir>
 <Bits>32</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_RLAST</name>
@@ -832,7 +815,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_RID</name>
@@ -844,7 +827,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_RUSER</name>
@@ -856,7 +839,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_RRESP</name>
@@ -868,7 +851,7 @@
 <Dir>in</Dir>
 <Bits>2</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_BVALID</name>
@@ -880,7 +863,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_BREADY</name>
@@ -892,7 +875,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_BRESP</name>
@@ -904,7 +887,7 @@
 <Dir>in</Dir>
 <Bits>2</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_BID</name>
@@ -916,7 +899,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 <RtlPorts>
 <name>m_axi_gmem_BUSER</name>
@@ -928,7 +911,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>float</CType>
 </RtlPorts>
 </InterfaceSummary>
 </Module>

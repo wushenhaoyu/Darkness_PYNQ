@@ -29,42 +29,42 @@
 		<link>
 			<name>source</name>
 			<type>2</type>
-			<location>D:/code/github/Darkness_PYNQ/HLS/BatchNorm/.apc/.src</location>
+			<location>D:/code/git/HLS/HLS/BatchNorm/.apc/.src</location>
 		</link>
 		<link>
 			<name>testbench</name>
 			<type>2</type>
-			<location>D:/code/github/Darkness_PYNQ/HLS/BatchNorm/.apc/.tb</location>
+			<location>D:/code/git/HLS/HLS/BatchNorm/.apc/.tb</location>
 		</link>
 		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
-			<location>D:/code/github/Darkness_PYNQ/HLS/BatchNorm/solution1/.tcls</location>
+			<location>D:/code/git/HLS/HLS/BatchNorm/solution1/.tcls</location>
 		</link>
 		<link>
 			<name>source/BatchNorm.cpp</name>
 			<type>1</type>
-			<location>D:/code/github/Darkness_PYNQ/src/BatchNorm/BatchNorm.cpp</location>
+			<location>D:/code/git/HLS/src/BatchNorm/BatchNorm.cpp</location>
 		</link>
 		<link>
 			<name>source/BatchNorm.h</name>
 			<type>1</type>
-			<location>D:/code/github/Darkness_PYNQ/src/BatchNorm/BatchNorm.h</location>
+			<location>D:/code/git/HLS/src/BatchNorm/BatchNorm.h</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>
 			<type>1</type>
-			<location>D:/code/github/Darkness_PYNQ/HLS/BatchNorm/solution1/solution1.directive</location>
+			<location>D:/code/git/HLS/HLS/BatchNorm/solution1/solution1.directive</location>
 		</link>
 		<link>
 			<name>solution1/constraints/directives.tcl</name>
 			<type>1</type>
-			<location>D:/code/github/Darkness_PYNQ/HLS/BatchNorm/solution1/directives.tcl</location>
+			<location>D:/code/git/HLS/HLS/BatchNorm/solution1/directives.tcl</location>
 		</link>
 		<link>
 			<name>solution1/constraints/script.tcl</name>
 			<type>1</type>
-			<location>D:/code/github/Darkness_PYNQ/HLS/BatchNorm/solution1/script.tcl</location>
+			<location>D:/code/git/HLS/HLS/BatchNorm/solution1/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

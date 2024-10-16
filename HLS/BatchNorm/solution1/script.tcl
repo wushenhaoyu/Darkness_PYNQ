@@ -5,10 +5,8 @@
 ############################################################
 open_project BatchNorm
 set_top BatchNorm
-add_files ../src/BatchNorm/BatchNorm.cpp
 add_files ../src/BatchNorm/BatchNorm.h
 add_files ../src/BatchNorm/BatchNorm.cpp
-add_files ../src/BatchNorm/BatchNorm.h
 open_solution "solution1"
 set_part {xc7z020clg400-2} -tool vivado
 create_clock -period 10 -name default

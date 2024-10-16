@@ -37371,9 +37371,9 @@ namespace std {
 }
 # 7 "../src/Conv2d/Conv2d.h" 2
 using namespace std;
-typedef ap_fixed<16, 8> Dtype_t;
-typedef ap_fixed<16, 8> Dtype_w;
-typedef ap_fixed<16, 8> Dtype_acc;
+typedef float Dtype_t;
+typedef float Dtype_w;
+typedef float Dtype_acc;
 void Conv2D(
     ap_uint<16> in_channel,
     ap_uint<16> out_channel,
@@ -37389,13 +37389,13 @@ void Conv2D(
 );
 # 2 "../src/Conv2d/Conv2d.cpp" 2
 void Conv2D(
-    ap_uint<16> in_channel,
-    ap_uint<16> out_channel,
-    ap_uint<8> kernel_size,
-    ap_uint<8> stride,
-    ap_uint<8> padding,
-    ap_uint<8> input_width,
-    ap_uint<8> input_height,
+    ap_uint<8> in_channel,
+    ap_uint<8> out_channel,
+    ap_uint<4> kernel_size,
+    ap_uint<4> stride,
+    ap_uint<4> padding,
+    ap_uint<12> input_width,
+    ap_uint<12> input_height,
     Dtype_t in_data[],
     Dtype_t weights[],
     Dtype_t biases[],
@@ -37419,11 +37419,14 @@ _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "
     int output_height = (input_height - kernel_size + 2 * padding) / stride + 1;
 
     for (int oc = 0; oc < out_channel; ++oc) {
-        for (int oh = 0; oh < output_height; ++oh) {
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
+
+ for (int oh = 0; oh < output_height; ++oh) {
             for (int ow = 0; ow < output_width; ++ow) {
                 Dtype_acc sum = 0;
                 for (int ic = 0; ic < in_channel; ++ic) {
-                    for (int kh = 0; kh < kernel_size; ++kh) {
+_ssdm_Unroll(0,0,0, "");
+ for (int kh = 0; kh < kernel_size; ++kh) {
                         for (int kw = 0; kw < kernel_size; ++kw) {
                             int ih = oh * stride - padding + kh;
                             int iw = ow * stride - padding + kw;
