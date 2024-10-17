@@ -1,5 +1,5 @@
 -- ==============================================================
--- File generated on Tue Oct 15 13:26:24 +0800 2024
+-- File generated on Wed Oct 16 15:39:53 +0800 2024
 -- Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
 -- SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 -- IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
@@ -41,17 +41,17 @@ port (
     ap_done               :in   STD_LOGIC;
     ap_ready              :in   STD_LOGIC;
     ap_idle               :in   STD_LOGIC;
-    in_channel_V          :out  STD_LOGIC_VECTOR(15 downto 0);
-    out_channel_V         :out  STD_LOGIC_VECTOR(15 downto 0);
-    kernel_size_V         :out  STD_LOGIC_VECTOR(7 downto 0);
-    stride_V              :out  STD_LOGIC_VECTOR(7 downto 0);
-    padding_V             :out  STD_LOGIC_VECTOR(7 downto 0);
-    input_width_V         :out  STD_LOGIC_VECTOR(7 downto 0);
-    input_height_V        :out  STD_LOGIC_VECTOR(7 downto 0);
-    in_data_V             :out  STD_LOGIC_VECTOR(31 downto 0);
-    weights_V             :out  STD_LOGIC_VECTOR(31 downto 0);
-    biases_V              :out  STD_LOGIC_VECTOR(31 downto 0);
-    out_data_V            :out  STD_LOGIC_VECTOR(31 downto 0)
+    in_channel_V          :out  STD_LOGIC_VECTOR(7 downto 0);
+    out_channel_V         :out  STD_LOGIC_VECTOR(7 downto 0);
+    kernel_size_V         :out  STD_LOGIC_VECTOR(3 downto 0);
+    stride_V              :out  STD_LOGIC_VECTOR(3 downto 0);
+    padding_V             :out  STD_LOGIC_VECTOR(3 downto 0);
+    input_width_V         :out  STD_LOGIC_VECTOR(11 downto 0);
+    input_height_V        :out  STD_LOGIC_VECTOR(11 downto 0);
+    in_data               :out  STD_LOGIC_VECTOR(31 downto 0);
+    weights               :out  STD_LOGIC_VECTOR(31 downto 0);
+    biases                :out  STD_LOGIC_VECTOR(31 downto 0);
+    out_data              :out  STD_LOGIC_VECTOR(31 downto 0)
 );
 end entity Conv2D_AXILiteS_s_axi;
 
@@ -75,44 +75,44 @@ end entity Conv2D_AXILiteS_s_axi;
 --        bit 1  - Channel 1 (ap_ready)
 --        others - reserved
 -- 0x10 : Data signal of in_channel_V
---        bit 15~0 - in_channel_V[15:0] (Read/Write)
---        others   - reserved
+--        bit 7~0 - in_channel_V[7:0] (Read/Write)
+--        others  - reserved
 -- 0x14 : reserved
 -- 0x18 : Data signal of out_channel_V
---        bit 15~0 - out_channel_V[15:0] (Read/Write)
---        others   - reserved
+--        bit 7~0 - out_channel_V[7:0] (Read/Write)
+--        others  - reserved
 -- 0x1c : reserved
 -- 0x20 : Data signal of kernel_size_V
---        bit 7~0 - kernel_size_V[7:0] (Read/Write)
+--        bit 3~0 - kernel_size_V[3:0] (Read/Write)
 --        others  - reserved
 -- 0x24 : reserved
 -- 0x28 : Data signal of stride_V
---        bit 7~0 - stride_V[7:0] (Read/Write)
+--        bit 3~0 - stride_V[3:0] (Read/Write)
 --        others  - reserved
 -- 0x2c : reserved
 -- 0x30 : Data signal of padding_V
---        bit 7~0 - padding_V[7:0] (Read/Write)
+--        bit 3~0 - padding_V[3:0] (Read/Write)
 --        others  - reserved
 -- 0x34 : reserved
 -- 0x38 : Data signal of input_width_V
---        bit 7~0 - input_width_V[7:0] (Read/Write)
---        others  - reserved
+--        bit 11~0 - input_width_V[11:0] (Read/Write)
+--        others   - reserved
 -- 0x3c : reserved
 -- 0x40 : Data signal of input_height_V
---        bit 7~0 - input_height_V[7:0] (Read/Write)
---        others  - reserved
+--        bit 11~0 - input_height_V[11:0] (Read/Write)
+--        others   - reserved
 -- 0x44 : reserved
--- 0x48 : Data signal of in_data_V
---        bit 31~0 - in_data_V[31:0] (Read/Write)
+-- 0x48 : Data signal of in_data
+--        bit 31~0 - in_data[31:0] (Read/Write)
 -- 0x4c : reserved
--- 0x50 : Data signal of weights_V
---        bit 31~0 - weights_V[31:0] (Read/Write)
+-- 0x50 : Data signal of weights
+--        bit 31~0 - weights[31:0] (Read/Write)
 -- 0x54 : reserved
--- 0x58 : Data signal of biases_V
---        bit 31~0 - biases_V[31:0] (Read/Write)
+-- 0x58 : Data signal of biases
+--        bit 31~0 - biases[31:0] (Read/Write)
 -- 0x5c : reserved
--- 0x60 : Data signal of out_data_V
---        bit 31~0 - out_data_V[31:0] (Read/Write)
+-- 0x60 : Data signal of out_data
+--        bit 31~0 - out_data[31:0] (Read/Write)
 -- 0x64 : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -139,14 +139,14 @@ architecture behave of Conv2D_AXILiteS_s_axi is
     constant ADDR_INPUT_WIDTH_V_CTRL    : INTEGER := 16#3c#;
     constant ADDR_INPUT_HEIGHT_V_DATA_0 : INTEGER := 16#40#;
     constant ADDR_INPUT_HEIGHT_V_CTRL   : INTEGER := 16#44#;
-    constant ADDR_IN_DATA_V_DATA_0      : INTEGER := 16#48#;
-    constant ADDR_IN_DATA_V_CTRL        : INTEGER := 16#4c#;
-    constant ADDR_WEIGHTS_V_DATA_0      : INTEGER := 16#50#;
-    constant ADDR_WEIGHTS_V_CTRL        : INTEGER := 16#54#;
-    constant ADDR_BIASES_V_DATA_0       : INTEGER := 16#58#;
-    constant ADDR_BIASES_V_CTRL         : INTEGER := 16#5c#;
-    constant ADDR_OUT_DATA_V_DATA_0     : INTEGER := 16#60#;
-    constant ADDR_OUT_DATA_V_CTRL       : INTEGER := 16#64#;
+    constant ADDR_IN_DATA_DATA_0        : INTEGER := 16#48#;
+    constant ADDR_IN_DATA_CTRL          : INTEGER := 16#4c#;
+    constant ADDR_WEIGHTS_DATA_0        : INTEGER := 16#50#;
+    constant ADDR_WEIGHTS_CTRL          : INTEGER := 16#54#;
+    constant ADDR_BIASES_DATA_0         : INTEGER := 16#58#;
+    constant ADDR_BIASES_CTRL           : INTEGER := 16#5c#;
+    constant ADDR_OUT_DATA_DATA_0       : INTEGER := 16#60#;
+    constant ADDR_OUT_DATA_CTRL         : INTEGER := 16#64#;
     constant ADDR_BITS         : INTEGER := 7;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -169,17 +169,17 @@ architecture behave of Conv2D_AXILiteS_s_axi is
     signal int_gie             : STD_LOGIC := '0';
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
-    signal int_in_channel_V    : UNSIGNED(15 downto 0) := (others => '0');
-    signal int_out_channel_V   : UNSIGNED(15 downto 0) := (others => '0');
-    signal int_kernel_size_V   : UNSIGNED(7 downto 0) := (others => '0');
-    signal int_stride_V        : UNSIGNED(7 downto 0) := (others => '0');
-    signal int_padding_V       : UNSIGNED(7 downto 0) := (others => '0');
-    signal int_input_width_V   : UNSIGNED(7 downto 0) := (others => '0');
-    signal int_input_height_V  : UNSIGNED(7 downto 0) := (others => '0');
-    signal int_in_data_V       : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_weights_V       : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_biases_V        : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_out_data_V      : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_in_channel_V    : UNSIGNED(7 downto 0) := (others => '0');
+    signal int_out_channel_V   : UNSIGNED(7 downto 0) := (others => '0');
+    signal int_kernel_size_V   : UNSIGNED(3 downto 0) := (others => '0');
+    signal int_stride_V        : UNSIGNED(3 downto 0) := (others => '0');
+    signal int_padding_V       : UNSIGNED(3 downto 0) := (others => '0');
+    signal int_input_width_V   : UNSIGNED(11 downto 0) := (others => '0');
+    signal int_input_height_V  : UNSIGNED(11 downto 0) := (others => '0');
+    signal int_in_data         : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_weights         : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_biases          : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_out_data        : UNSIGNED(31 downto 0) := (others => '0');
 
 
 begin
@@ -302,27 +302,27 @@ begin
                     when ADDR_ISR =>
                         rdata_data <= (1 => int_isr(1), 0 => int_isr(0), others => '0');
                     when ADDR_IN_CHANNEL_V_DATA_0 =>
-                        rdata_data <= RESIZE(int_in_channel_V(15 downto 0), 32);
+                        rdata_data <= RESIZE(int_in_channel_V(7 downto 0), 32);
                     when ADDR_OUT_CHANNEL_V_DATA_0 =>
-                        rdata_data <= RESIZE(int_out_channel_V(15 downto 0), 32);
+                        rdata_data <= RESIZE(int_out_channel_V(7 downto 0), 32);
                     when ADDR_KERNEL_SIZE_V_DATA_0 =>
-                        rdata_data <= RESIZE(int_kernel_size_V(7 downto 0), 32);
+                        rdata_data <= RESIZE(int_kernel_size_V(3 downto 0), 32);
                     when ADDR_STRIDE_V_DATA_0 =>
-                        rdata_data <= RESIZE(int_stride_V(7 downto 0), 32);
+                        rdata_data <= RESIZE(int_stride_V(3 downto 0), 32);
                     when ADDR_PADDING_V_DATA_0 =>
-                        rdata_data <= RESIZE(int_padding_V(7 downto 0), 32);
+                        rdata_data <= RESIZE(int_padding_V(3 downto 0), 32);
                     when ADDR_INPUT_WIDTH_V_DATA_0 =>
-                        rdata_data <= RESIZE(int_input_width_V(7 downto 0), 32);
+                        rdata_data <= RESIZE(int_input_width_V(11 downto 0), 32);
                     when ADDR_INPUT_HEIGHT_V_DATA_0 =>
-                        rdata_data <= RESIZE(int_input_height_V(7 downto 0), 32);
-                    when ADDR_IN_DATA_V_DATA_0 =>
-                        rdata_data <= RESIZE(int_in_data_V(31 downto 0), 32);
-                    when ADDR_WEIGHTS_V_DATA_0 =>
-                        rdata_data <= RESIZE(int_weights_V(31 downto 0), 32);
-                    when ADDR_BIASES_V_DATA_0 =>
-                        rdata_data <= RESIZE(int_biases_V(31 downto 0), 32);
-                    when ADDR_OUT_DATA_V_DATA_0 =>
-                        rdata_data <= RESIZE(int_out_data_V(31 downto 0), 32);
+                        rdata_data <= RESIZE(int_input_height_V(11 downto 0), 32);
+                    when ADDR_IN_DATA_DATA_0 =>
+                        rdata_data <= RESIZE(int_in_data(31 downto 0), 32);
+                    when ADDR_WEIGHTS_DATA_0 =>
+                        rdata_data <= RESIZE(int_weights(31 downto 0), 32);
+                    when ADDR_BIASES_DATA_0 =>
+                        rdata_data <= RESIZE(int_biases(31 downto 0), 32);
+                    when ADDR_OUT_DATA_DATA_0 =>
+                        rdata_data <= RESIZE(int_out_data(31 downto 0), 32);
                     when others =>
                         rdata_data <= (others => '0');
                     end case;
@@ -341,10 +341,10 @@ begin
     padding_V            <= STD_LOGIC_VECTOR(int_padding_V);
     input_width_V        <= STD_LOGIC_VECTOR(int_input_width_V);
     input_height_V       <= STD_LOGIC_VECTOR(int_input_height_V);
-    in_data_V            <= STD_LOGIC_VECTOR(int_in_data_V);
-    weights_V            <= STD_LOGIC_VECTOR(int_weights_V);
-    biases_V             <= STD_LOGIC_VECTOR(int_biases_V);
-    out_data_V           <= STD_LOGIC_VECTOR(int_out_data_V);
+    in_data              <= STD_LOGIC_VECTOR(int_in_data);
+    weights              <= STD_LOGIC_VECTOR(int_weights);
+    biases               <= STD_LOGIC_VECTOR(int_biases);
+    out_data             <= STD_LOGIC_VECTOR(int_out_data);
 
     process (ACLK)
     begin
@@ -476,7 +476,7 @@ begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_IN_CHANNEL_V_DATA_0) then
-                    int_in_channel_V(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_in_channel_V(15 downto 0));
+                    int_in_channel_V(7 downto 0) <= (UNSIGNED(WDATA(7 downto 0)) and wmask(7 downto 0)) or ((not wmask(7 downto 0)) and int_in_channel_V(7 downto 0));
                 end if;
             end if;
         end if;
@@ -487,7 +487,7 @@ begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_OUT_CHANNEL_V_DATA_0) then
-                    int_out_channel_V(15 downto 0) <= (UNSIGNED(WDATA(15 downto 0)) and wmask(15 downto 0)) or ((not wmask(15 downto 0)) and int_out_channel_V(15 downto 0));
+                    int_out_channel_V(7 downto 0) <= (UNSIGNED(WDATA(7 downto 0)) and wmask(7 downto 0)) or ((not wmask(7 downto 0)) and int_out_channel_V(7 downto 0));
                 end if;
             end if;
         end if;
@@ -498,7 +498,7 @@ begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_KERNEL_SIZE_V_DATA_0) then
-                    int_kernel_size_V(7 downto 0) <= (UNSIGNED(WDATA(7 downto 0)) and wmask(7 downto 0)) or ((not wmask(7 downto 0)) and int_kernel_size_V(7 downto 0));
+                    int_kernel_size_V(3 downto 0) <= (UNSIGNED(WDATA(3 downto 0)) and wmask(3 downto 0)) or ((not wmask(3 downto 0)) and int_kernel_size_V(3 downto 0));
                 end if;
             end if;
         end if;
@@ -509,7 +509,7 @@ begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_STRIDE_V_DATA_0) then
-                    int_stride_V(7 downto 0) <= (UNSIGNED(WDATA(7 downto 0)) and wmask(7 downto 0)) or ((not wmask(7 downto 0)) and int_stride_V(7 downto 0));
+                    int_stride_V(3 downto 0) <= (UNSIGNED(WDATA(3 downto 0)) and wmask(3 downto 0)) or ((not wmask(3 downto 0)) and int_stride_V(3 downto 0));
                 end if;
             end if;
         end if;
@@ -520,7 +520,7 @@ begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_PADDING_V_DATA_0) then
-                    int_padding_V(7 downto 0) <= (UNSIGNED(WDATA(7 downto 0)) and wmask(7 downto 0)) or ((not wmask(7 downto 0)) and int_padding_V(7 downto 0));
+                    int_padding_V(3 downto 0) <= (UNSIGNED(WDATA(3 downto 0)) and wmask(3 downto 0)) or ((not wmask(3 downto 0)) and int_padding_V(3 downto 0));
                 end if;
             end if;
         end if;
@@ -531,7 +531,7 @@ begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_INPUT_WIDTH_V_DATA_0) then
-                    int_input_width_V(7 downto 0) <= (UNSIGNED(WDATA(7 downto 0)) and wmask(7 downto 0)) or ((not wmask(7 downto 0)) and int_input_width_V(7 downto 0));
+                    int_input_width_V(11 downto 0) <= (UNSIGNED(WDATA(11 downto 0)) and wmask(11 downto 0)) or ((not wmask(11 downto 0)) and int_input_width_V(11 downto 0));
                 end if;
             end if;
         end if;
@@ -542,7 +542,7 @@ begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_INPUT_HEIGHT_V_DATA_0) then
-                    int_input_height_V(7 downto 0) <= (UNSIGNED(WDATA(7 downto 0)) and wmask(7 downto 0)) or ((not wmask(7 downto 0)) and int_input_height_V(7 downto 0));
+                    int_input_height_V(11 downto 0) <= (UNSIGNED(WDATA(11 downto 0)) and wmask(11 downto 0)) or ((not wmask(11 downto 0)) and int_input_height_V(11 downto 0));
                 end if;
             end if;
         end if;
@@ -552,8 +552,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_IN_DATA_V_DATA_0) then
-                    int_in_data_V(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_in_data_V(31 downto 0));
+                if (w_hs = '1' and waddr = ADDR_IN_DATA_DATA_0) then
+                    int_in_data(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_in_data(31 downto 0));
                 end if;
             end if;
         end if;
@@ -563,8 +563,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_WEIGHTS_V_DATA_0) then
-                    int_weights_V(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_weights_V(31 downto 0));
+                if (w_hs = '1' and waddr = ADDR_WEIGHTS_DATA_0) then
+                    int_weights(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_weights(31 downto 0));
                 end if;
             end if;
         end if;
@@ -574,8 +574,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_BIASES_V_DATA_0) then
-                    int_biases_V(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_biases_V(31 downto 0));
+                if (w_hs = '1' and waddr = ADDR_BIASES_DATA_0) then
+                    int_biases(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_biases(31 downto 0));
                 end if;
             end if;
         end if;
@@ -585,8 +585,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_OUT_DATA_V_DATA_0) then
-                    int_out_data_V(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_out_data_V(31 downto 0));
+                if (w_hs = '1' and waddr = ADDR_OUT_DATA_DATA_0) then
+                    int_out_data(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_out_data(31 downto 0));
                 end if;
             end if;
         end if;

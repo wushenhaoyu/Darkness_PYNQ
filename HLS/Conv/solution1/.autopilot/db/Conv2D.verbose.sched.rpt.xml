@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'Conv2D'" level="0">
-<item name = "Date">Tue Oct 15 13:26:22 2024
+<item name = "Date">Wed Oct 16 15:39:51 2024
 </item>
 <item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
 <item name = "Project">Conv</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">16, ?, 16, ?, none</column>
+<column name="">20, 71252331726766096, 20, 71252331726766096, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,12 +35,11 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">0, ?, 3 ~ 196751030195601411, -, -, 0 ~ 65535, no</column>
-<column name=" + Loop 1.1">0, 196751030195601408, 8 ~ 96069838962696, -, -, 0 ~ 2048, no</column>
-<column name="  ++ Loop 1.1.1">0, 96069838962688, 11 ~ 46909101056, -, -, 0 ~ 2048, no</column>
-<column name="   +++ Loop 1.1.1.1">0, 46909101045, 2 ~ 715787, -, -, 0 ~ 65535, no</column>
-<column name="    ++++ Loop 1.1.1.1.1">0, 715785, 2 ~ 2807, -, -, 0 ~ 255, no</column>
-<column name="     +++++ Loop 1.1.1.1.1.1">0, 2805, 2 ~ 11, -, -, 0 ~ 255, no</column>
+<column name="- Loop 1">0, 71252331726766080, 8 ~ 17054498824, -, -, 0 ~ 4177920, no</column>
+<column name=" + Loop 1.1">0, 17054498816, 14 ~ 1040924, -, -, 0 ~ 16384, no</column>
+<column name="  ++ Loop 1.1.1">0, 1040910, 2 ~ 4082, -, -, 0 ~ 255, no</column>
+<column name="   +++ Loop 1.1.1.1">0, 4080, 2 ~ 272, -, -, 0 ~ 15, no</column>
+<column name="    ++++ Loop 1.1.1.1.1">0, 270, 2 ~ 18, -, -, 0 ~ 15, no</column>
 </table>
 </item>
 </section>

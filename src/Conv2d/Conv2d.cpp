@@ -1,12 +1,12 @@
 #include "Conv2d.h"
 void Conv2D(
-    ap_uint<16> in_channel,
-    ap_uint<16> out_channel,
-    ap_uint<8> kernel_size,
-    ap_uint<8> stride,
-    ap_uint<8> padding,
-    ap_uint<8> input_width,
-    ap_uint<8> input_height,
+    ap_uint<8> in_channel,
+    ap_uint<8> out_channel,
+    ap_uint<4> kernel_size,
+    ap_uint<4> stride,
+    ap_uint<4> padding,
+    ap_uint<12> input_width,
+    ap_uint<12> input_height,
     Dtype_t in_data[],
     Dtype_t weights[],
     Dtype_t biases[],
@@ -30,10 +30,13 @@ void Conv2D(
     int output_height = (input_height - kernel_size + 2 * padding) / stride + 1;
 
     for (int oc = 0; oc < out_channel; ++oc) {
+#pragma HLS PIPELINE
+
         for (int oh = 0; oh < output_height; ++oh) {
             for (int ow = 0; ow < output_width; ++ow) {
                 Dtype_acc sum = 0;
                 for (int ic = 0; ic < in_channel; ++ic) {
+				#pragma HLS UNROLL
                     for (int kh = 0; kh < kernel_size; ++kh) {
                         for (int kw = 0; kw < kernel_size; ++kw) {
                             int ih = oh * stride - padding + kh;

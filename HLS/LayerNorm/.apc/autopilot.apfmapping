@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="LayerNorm.cpp" path="D:\code\git\HLS\src\LayerNorm\LayerNorm.cpp"/>
+    <originFiles name="LayerNorm.h" path="D:\code\git\HLS\src\LayerNorm\LayerNorm.h"/>
+    <originFiles name="LayerNorm.cpp" path="D:\code\git\HLS\src\LayerNorm\LayerNorm.cpp"/>
+    <originFiles name="LayerNorm.h" path="D:\code\git\HLS\src\LayerNorm\LayerNorm.h"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>

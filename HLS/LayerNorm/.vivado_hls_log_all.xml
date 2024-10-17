@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'sqrt_fixed&lt;17, 9>' to 'sqrt_fixed_17_9_s'." projectName="LayerNorm" solutionName="solution1" date="2024-10-17T14:25:54.758+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1.2' (../src/LayerNorm/LayerNorm.cpp:35) in function 'LayerNorm': cannot completely unroll a loop with a variable trip count." projectName="LayerNorm" solutionName="solution1" date="2024-10-17T14:25:53.726+0800" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-120] ../src/LayerNorm/LayerNorm.cpp:30: multiplication is assumed not to overflow by default, otherwise, please add option '-fwrapv'." projectName="LayerNorm" solutionName="solution1" date="2024-10-17T14:25:53.287+0800" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:271: variable-indexed range selection may cause suboptimal QoR." projectName="LayerNorm" solutionName="solution1" date="2024-10-17T14:25:53.276+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

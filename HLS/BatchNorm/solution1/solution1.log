@@ -49,3 +49,273 @@ ERROR: [HLS 200-70] Compilation errors found: In file included from ../src/Batch
     Dtype_t running_var[num_features] = {1};
                         ^~~~~~~~~~~~
 4 errors generated.
+==============================================================
+File generated on Thu Oct 17 13:23:08 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file '../src/BatchNorm/BatchNorm.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from ../src/BatchNorm/BatchNorm.cpp:1:
+../src/BatchNorm/BatchNorm.cpp:22:18: error: size of array has non-integer type 'ap_uint<8>'
+    Dtype_t mean[num_features];
+                 ^~~~~~~~~~~~
+../src/BatchNorm/BatchNorm.cpp:23:22: error: size of array has non-integer type 'ap_uint<8>'
+    Dtype_t variance[num_features];
+                     ^~~~~~~~~~~~
+../src/BatchNorm/BatchNorm.cpp:24:26: error: size of array has non-integer type 'ap_uint<8>'
+    Dtype_t running_mean[num_features] = {0};
+                         ^~~~~~~~~~~~
+../src/BatchNorm/BatchNorm.cpp:25:25: error: size of array has non-integer type 'ap_uint<8>'
+    Dtype_t running_var[num_features] = {1};
+                        ^~~~~~~~~~~~
+4 errors generated.
+==============================================================
+File generated on Thu Oct 17 13:29:54 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file '../src/BatchNorm/BatchNorm.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from ../src/BatchNorm/BatchNorm.cpp:1:
+../src/BatchNorm/BatchNorm.cpp:22:18: error: size of array has non-integer type 'ap_uint<8>'
+    Dtype_t mean[num_features];
+                 ^~~~~~~~~~~~
+../src/BatchNorm/BatchNorm.cpp:23:22: error: size of array has non-integer type 'ap_uint<8>'
+    Dtype_t variance[num_features];
+                     ^~~~~~~~~~~~
+../src/BatchNorm/BatchNorm.cpp:24:26: error: size of array has non-integer type 'ap_uint<8>'
+    Dtype_t running_mean[num_features];
+                         ^~~~~~~~~~~~
+../src/BatchNorm/BatchNorm.cpp:25:25: error: size of array has non-integer type 'ap_uint<8>'
+    Dtype_t running_var[num_features];
+                        ^~~~~~~~~~~~
+4 errors generated.
+==============================================================
+File generated on Thu Oct 17 13:55:18 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file '../src/BatchNorm/BatchNorm.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from ../src/BatchNorm/BatchNorm.cpp:1:
+../src/BatchNorm/BatchNorm.cpp:33:64: error: call to 'sqrt' is ambiguous
+                Dtype_acc normalized = (x - running_mean[c]) / sqrt(running_var[c] + eps);
+                                                               ^~~~
+D:/software/Xilinx/Vivado/2018.3/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\math.h:120:10: note: candidate function
+  double sqrt(double _X);
+         ^
+D:/software/Xilinx/Vivado/2018.3/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\cmath:433:3: note: candidate function
+  sqrt(float __x)
+  ^
+D:/software/Xilinx/Vivado/2018.3/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\cmath:437:3: note: candidate function
+  sqrt(long double __x)
+  ^
+1 error generated.
+==============================================================
+File generated on Thu Oct 17 13:56:34 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file '../src/BatchNorm/BatchNorm.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:17 . Memory (MB): peak = 103.266 ; gain = 17.930
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:17 . Memory (MB): peak = 103.266 ; gain = 17.930
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:18 . Memory (MB): peak = 180.863 ; gain = 95.527
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<17, 9>' into 'BatchNorm' (../src/BatchNorm/BatchNorm.cpp:33) automatically.
+WARNING: [SYNCHK 200-23] D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:271: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:19 . Memory (MB): peak = 228.145 ; gain = 142.809
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'sqrt_fixed<17, 9>' (D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:43:36).
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:266) in function 'sqrt_fixed<17, 9>' completely with a factor of 5.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:294) in function 'sqrt_fixed<17, 9>' completely with a factor of 9.
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<17, 9>' into 'BatchNorm' (../src/BatchNorm/BatchNorm.cpp:33) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:371:1) in function 'sqrt_fixed<17, 9>'... converting 70 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:19 . Memory (MB): peak = 299.223 ; gain = 213.887
+INFO: [HLS 200-444] Inferring multiple bus burst write of variable length on port 'gmem' (../src/BatchNorm/BatchNorm.cpp:34:64). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:20 . Memory (MB): peak = 319.586 ; gain = 234.250
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'BatchNorm' ...
+WARNING: [SYN 201-103] Legalizing function name 'sqrt_fixed<17, 9>' to 'sqrt_fixed_17_9_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sqrt_fixed_17_9_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sqrt_fixed<17, 9>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 7.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 20.196 seconds; current allocated memory: 260.799 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.189 seconds; current allocated memory: 261.896 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'BatchNorm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.288 seconds; current allocated memory: 262.567 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 3 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.134 seconds; current allocated memory: 263.143 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sqrt_fixed_17_9_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sqrt_fixed_17_9_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.252 seconds; current allocated memory: 265.162 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'BatchNorm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'BatchNorm/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'BatchNorm/num_features_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'BatchNorm/height_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'BatchNorm/width_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'BatchNorm/in_data_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'BatchNorm/out_data_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'BatchNorm/gamma_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'BatchNorm/beta_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'BatchNorm/running_mean_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'BatchNorm/running_var_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'BatchNorm' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'height_V', 'width_V', 'in_data_V', 'out_data_V', 'gamma_V', 'beta_V', 'running_mean_V' and 'running_var_V' to AXI-Lite port AXILiteS.
+INFO: [SYN 201-210] Renamed object name 'BatchNorm_sdiv_25ns_14ns_16_29_seq_1' to 'BatchNorm_sdiv_25bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'BatchNorm_mul_mul_16ns_24ns_40_1_1' to 'BatchNorm_mul_mulcud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'BatchNorm_mac_muladd_16s_16s_24ns_24_1_1' to 'BatchNorm_mac_muldEe' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'BatchNorm_mac_muldEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'BatchNorm_mul_mulcud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'BatchNorm_sdiv_25bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'BatchNorm'.
+INFO: [HLS 200-111]  Elapsed time: 0.799 seconds; current allocated memory: 267.490 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'BatchNorm_sdiv_25bkb_div'
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:23 . Memory (MB): peak = 332.488 ; gain = 247.152
+INFO: [SYSC 207-301] Generating SystemC RTL for BatchNorm.
+INFO: [VHDL 208-304] Generating VHDL RTL for BatchNorm.
+INFO: [VLOG 209-307] Generating Verilog RTL for BatchNorm.
+INFO: [HLS 200-112] Total elapsed time: 23.479 seconds; peak allocated memory: 267.490 MB.
+==============================================================
+File generated on Sat Oct 17 13:58:24 +0800 2020
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file '../src/BatchNorm/BatchNorm.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:16 . Memory (MB): peak = 103.605 ; gain = 18.008
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:16 . Memory (MB): peak = 103.605 ; gain = 18.008
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:17 . Memory (MB): peak = 181.238 ; gain = 95.641
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<17, 9>' into 'BatchNorm' (../src/BatchNorm/BatchNorm.cpp:34) automatically.
+WARNING: [SYNCHK 200-23] D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:271: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:17 . Memory (MB): peak = 228.785 ; gain = 143.188
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'sqrt_fixed<17, 9>' (D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:43:36).
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:266) in function 'sqrt_fixed<17, 9>' completely with a factor of 5.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:294) in function 'sqrt_fixed<17, 9>' completely with a factor of 9.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1' (../src/BatchNorm/BatchNorm.cpp:29) in function 'BatchNorm': cannot completely unroll a loop with a variable trip count.
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<17, 9>' into 'BatchNorm' (../src/BatchNorm/BatchNorm.cpp:34) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:371:1) in function 'sqrt_fixed<17, 9>'... converting 70 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:00 ; elapsed = 00:00:18 . Memory (MB): peak = 296.582 ; gain = 210.984
+INFO: [HLS 200-444] Inferring multiple bus burst write of variable length on port 'gmem' (../src/BatchNorm/BatchNorm.cpp:35:64). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:19 . Memory (MB): peak = 319.406 ; gain = 233.809
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'BatchNorm' ...
+WARNING: [SYN 201-103] Legalizing function name 'sqrt_fixed<17, 9>' to 'sqrt_fixed_17_9_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sqrt_fixed_17_9_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sqrt_fixed<17, 9>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 7.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 18.949 seconds; current allocated memory: 260.835 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.173 seconds; current allocated memory: 261.931 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'BatchNorm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.285 seconds; current allocated memory: 262.605 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 3 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.17 seconds; current allocated memory: 263.214 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sqrt_fixed_17_9_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sqrt_fixed_17_9_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.245 seconds; current allocated memory: 265.233 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'BatchNorm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'BatchNorm/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'BatchNorm/num_features_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'BatchNorm/height_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'BatchNorm/width_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'BatchNorm/in_data_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'BatchNorm/out_data_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'BatchNorm/gamma_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'BatchNorm/beta_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'BatchNorm/running_mean_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'BatchNorm/running_var_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'BatchNorm' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'height_V', 'width_V', 'in_data_V', 'out_data_V', 'gamma_V', 'beta_V', 'running_mean_V' and 'running_var_V' to AXI-Lite port AXILiteS.
+INFO: [SYN 201-210] Renamed object name 'BatchNorm_sdiv_25ns_14ns_16_29_seq_1' to 'BatchNorm_sdiv_25bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'BatchNorm_mul_mul_16ns_24ns_40_1_1' to 'BatchNorm_mul_mulcud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'BatchNorm_mac_muladd_16s_16s_24ns_24_1_1' to 'BatchNorm_mac_muldEe' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'BatchNorm_mac_muldEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'BatchNorm_mul_mulcud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'BatchNorm_sdiv_25bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'BatchNorm'.
+INFO: [HLS 200-111]  Elapsed time: 0.799 seconds; current allocated memory: 267.561 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'BatchNorm_sdiv_25bkb_div'
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:22 . Memory (MB): peak = 332.637 ; gain = 247.039
+INFO: [SYSC 207-301] Generating SystemC RTL for BatchNorm.
+INFO: [VHDL 208-304] Generating VHDL RTL for BatchNorm.
+INFO: [VLOG 209-307] Generating Verilog RTL for BatchNorm.
+INFO: [HLS 200-112] Total elapsed time: 22.183 seconds; peak allocated memory: 267.561 MB.
+==============================================================
+File generated on Sat Oct 17 13:59:08 +0800 2020
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.

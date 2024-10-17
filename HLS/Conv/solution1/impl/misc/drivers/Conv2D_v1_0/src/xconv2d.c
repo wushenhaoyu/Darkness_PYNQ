@@ -1,5 +1,5 @@
 // ==============================================================
-// File generated on Tue Oct 15 13:26:24 +0800 2024
+// File generated on Wed Oct 16 15:39:53 +0800 2024
 // Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
 // SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 // IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
@@ -195,71 +195,71 @@ u32 XConv2d_Get_input_height_V(XConv2d *InstancePtr) {
     return Data;
 }
 
-void XConv2d_Set_in_data_V(XConv2d *InstancePtr, u32 Data) {
+void XConv2d_Set_in_data(XConv2d *InstancePtr, u32 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XConv2d_WriteReg(InstancePtr->Axilites_BaseAddress, XCONV2D_AXILITES_ADDR_IN_DATA_V_DATA, Data);
+    XConv2d_WriteReg(InstancePtr->Axilites_BaseAddress, XCONV2D_AXILITES_ADDR_IN_DATA_DATA, Data);
 }
 
-u32 XConv2d_Get_in_data_V(XConv2d *InstancePtr) {
+u32 XConv2d_Get_in_data(XConv2d *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XConv2d_ReadReg(InstancePtr->Axilites_BaseAddress, XCONV2D_AXILITES_ADDR_IN_DATA_V_DATA);
+    Data = XConv2d_ReadReg(InstancePtr->Axilites_BaseAddress, XCONV2D_AXILITES_ADDR_IN_DATA_DATA);
     return Data;
 }
 
-void XConv2d_Set_weights_V(XConv2d *InstancePtr, u32 Data) {
+void XConv2d_Set_weights(XConv2d *InstancePtr, u32 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XConv2d_WriteReg(InstancePtr->Axilites_BaseAddress, XCONV2D_AXILITES_ADDR_WEIGHTS_V_DATA, Data);
+    XConv2d_WriteReg(InstancePtr->Axilites_BaseAddress, XCONV2D_AXILITES_ADDR_WEIGHTS_DATA, Data);
 }
 
-u32 XConv2d_Get_weights_V(XConv2d *InstancePtr) {
+u32 XConv2d_Get_weights(XConv2d *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XConv2d_ReadReg(InstancePtr->Axilites_BaseAddress, XCONV2D_AXILITES_ADDR_WEIGHTS_V_DATA);
+    Data = XConv2d_ReadReg(InstancePtr->Axilites_BaseAddress, XCONV2D_AXILITES_ADDR_WEIGHTS_DATA);
     return Data;
 }
 
-void XConv2d_Set_biases_V(XConv2d *InstancePtr, u32 Data) {
+void XConv2d_Set_biases(XConv2d *InstancePtr, u32 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XConv2d_WriteReg(InstancePtr->Axilites_BaseAddress, XCONV2D_AXILITES_ADDR_BIASES_V_DATA, Data);
+    XConv2d_WriteReg(InstancePtr->Axilites_BaseAddress, XCONV2D_AXILITES_ADDR_BIASES_DATA, Data);
 }
 
-u32 XConv2d_Get_biases_V(XConv2d *InstancePtr) {
+u32 XConv2d_Get_biases(XConv2d *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XConv2d_ReadReg(InstancePtr->Axilites_BaseAddress, XCONV2D_AXILITES_ADDR_BIASES_V_DATA);
+    Data = XConv2d_ReadReg(InstancePtr->Axilites_BaseAddress, XCONV2D_AXILITES_ADDR_BIASES_DATA);
     return Data;
 }
 
-void XConv2d_Set_out_data_V(XConv2d *InstancePtr, u32 Data) {
+void XConv2d_Set_out_data(XConv2d *InstancePtr, u32 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XConv2d_WriteReg(InstancePtr->Axilites_BaseAddress, XCONV2D_AXILITES_ADDR_OUT_DATA_V_DATA, Data);
+    XConv2d_WriteReg(InstancePtr->Axilites_BaseAddress, XCONV2D_AXILITES_ADDR_OUT_DATA_DATA, Data);
 }
 
-u32 XConv2d_Get_out_data_V(XConv2d *InstancePtr) {
+u32 XConv2d_Get_out_data(XConv2d *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XConv2d_ReadReg(InstancePtr->Axilites_BaseAddress, XCONV2D_AXILITES_ADDR_OUT_DATA_V_DATA);
+    Data = XConv2d_ReadReg(InstancePtr->Axilites_BaseAddress, XCONV2D_AXILITES_ADDR_OUT_DATA_DATA);
     return Data;
 }
 

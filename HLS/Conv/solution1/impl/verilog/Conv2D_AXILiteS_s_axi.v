@@ -1,5 +1,5 @@
 // ==============================================================
-// File generated on Tue Oct 15 13:26:24 +0800 2024
+// File generated on Wed Oct 16 15:39:53 +0800 2024
 // Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
 // SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 // IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
@@ -38,17 +38,17 @@ module Conv2D_AXILiteS_s_axi
     input  wire                          ap_done,
     input  wire                          ap_ready,
     input  wire                          ap_idle,
-    output wire [15:0]                   in_channel_V,
-    output wire [15:0]                   out_channel_V,
-    output wire [7:0]                    kernel_size_V,
-    output wire [7:0]                    stride_V,
-    output wire [7:0]                    padding_V,
-    output wire [7:0]                    input_width_V,
-    output wire [7:0]                    input_height_V,
-    output wire [31:0]                   in_data_V,
-    output wire [31:0]                   weights_V,
-    output wire [31:0]                   biases_V,
-    output wire [31:0]                   out_data_V
+    output wire [7:0]                    in_channel_V,
+    output wire [7:0]                    out_channel_V,
+    output wire [3:0]                    kernel_size_V,
+    output wire [3:0]                    stride_V,
+    output wire [3:0]                    padding_V,
+    output wire [11:0]                   input_width_V,
+    output wire [11:0]                   input_height_V,
+    output wire [31:0]                   in_data,
+    output wire [31:0]                   weights,
+    output wire [31:0]                   biases,
+    output wire [31:0]                   out_data
 );
 //------------------------Address Info-------------------
 // 0x00 : Control signals
@@ -70,44 +70,44 @@ module Conv2D_AXILiteS_s_axi
 //        bit 1  - Channel 1 (ap_ready)
 //        others - reserved
 // 0x10 : Data signal of in_channel_V
-//        bit 15~0 - in_channel_V[15:0] (Read/Write)
-//        others   - reserved
+//        bit 7~0 - in_channel_V[7:0] (Read/Write)
+//        others  - reserved
 // 0x14 : reserved
 // 0x18 : Data signal of out_channel_V
-//        bit 15~0 - out_channel_V[15:0] (Read/Write)
-//        others   - reserved
+//        bit 7~0 - out_channel_V[7:0] (Read/Write)
+//        others  - reserved
 // 0x1c : reserved
 // 0x20 : Data signal of kernel_size_V
-//        bit 7~0 - kernel_size_V[7:0] (Read/Write)
+//        bit 3~0 - kernel_size_V[3:0] (Read/Write)
 //        others  - reserved
 // 0x24 : reserved
 // 0x28 : Data signal of stride_V
-//        bit 7~0 - stride_V[7:0] (Read/Write)
+//        bit 3~0 - stride_V[3:0] (Read/Write)
 //        others  - reserved
 // 0x2c : reserved
 // 0x30 : Data signal of padding_V
-//        bit 7~0 - padding_V[7:0] (Read/Write)
+//        bit 3~0 - padding_V[3:0] (Read/Write)
 //        others  - reserved
 // 0x34 : reserved
 // 0x38 : Data signal of input_width_V
-//        bit 7~0 - input_width_V[7:0] (Read/Write)
-//        others  - reserved
+//        bit 11~0 - input_width_V[11:0] (Read/Write)
+//        others   - reserved
 // 0x3c : reserved
 // 0x40 : Data signal of input_height_V
-//        bit 7~0 - input_height_V[7:0] (Read/Write)
-//        others  - reserved
+//        bit 11~0 - input_height_V[11:0] (Read/Write)
+//        others   - reserved
 // 0x44 : reserved
-// 0x48 : Data signal of in_data_V
-//        bit 31~0 - in_data_V[31:0] (Read/Write)
+// 0x48 : Data signal of in_data
+//        bit 31~0 - in_data[31:0] (Read/Write)
 // 0x4c : reserved
-// 0x50 : Data signal of weights_V
-//        bit 31~0 - weights_V[31:0] (Read/Write)
+// 0x50 : Data signal of weights
+//        bit 31~0 - weights[31:0] (Read/Write)
 // 0x54 : reserved
-// 0x58 : Data signal of biases_V
-//        bit 31~0 - biases_V[31:0] (Read/Write)
+// 0x58 : Data signal of biases
+//        bit 31~0 - biases[31:0] (Read/Write)
 // 0x5c : reserved
-// 0x60 : Data signal of out_data_V
-//        bit 31~0 - out_data_V[31:0] (Read/Write)
+// 0x60 : Data signal of out_data
+//        bit 31~0 - out_data[31:0] (Read/Write)
 // 0x64 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
@@ -131,14 +131,14 @@ localparam
     ADDR_INPUT_WIDTH_V_CTRL    = 7'h3c,
     ADDR_INPUT_HEIGHT_V_DATA_0 = 7'h40,
     ADDR_INPUT_HEIGHT_V_CTRL   = 7'h44,
-    ADDR_IN_DATA_V_DATA_0      = 7'h48,
-    ADDR_IN_DATA_V_CTRL        = 7'h4c,
-    ADDR_WEIGHTS_V_DATA_0      = 7'h50,
-    ADDR_WEIGHTS_V_CTRL        = 7'h54,
-    ADDR_BIASES_V_DATA_0       = 7'h58,
-    ADDR_BIASES_V_CTRL         = 7'h5c,
-    ADDR_OUT_DATA_V_DATA_0     = 7'h60,
-    ADDR_OUT_DATA_V_CTRL       = 7'h64,
+    ADDR_IN_DATA_DATA_0        = 7'h48,
+    ADDR_IN_DATA_CTRL          = 7'h4c,
+    ADDR_WEIGHTS_DATA_0        = 7'h50,
+    ADDR_WEIGHTS_CTRL          = 7'h54,
+    ADDR_BIASES_DATA_0         = 7'h58,
+    ADDR_BIASES_CTRL           = 7'h5c,
+    ADDR_OUT_DATA_DATA_0       = 7'h60,
+    ADDR_OUT_DATA_CTRL         = 7'h64,
     WRIDLE                     = 2'd0,
     WRDATA                     = 2'd1,
     WRRESP                     = 2'd2,
@@ -169,17 +169,17 @@ localparam
     reg                           int_gie = 1'b0;
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
-    reg  [15:0]                   int_in_channel_V = 'b0;
-    reg  [15:0]                   int_out_channel_V = 'b0;
-    reg  [7:0]                    int_kernel_size_V = 'b0;
-    reg  [7:0]                    int_stride_V = 'b0;
-    reg  [7:0]                    int_padding_V = 'b0;
-    reg  [7:0]                    int_input_width_V = 'b0;
-    reg  [7:0]                    int_input_height_V = 'b0;
-    reg  [31:0]                   int_in_data_V = 'b0;
-    reg  [31:0]                   int_weights_V = 'b0;
-    reg  [31:0]                   int_biases_V = 'b0;
-    reg  [31:0]                   int_out_data_V = 'b0;
+    reg  [7:0]                    int_in_channel_V = 'b0;
+    reg  [7:0]                    int_out_channel_V = 'b0;
+    reg  [3:0]                    int_kernel_size_V = 'b0;
+    reg  [3:0]                    int_stride_V = 'b0;
+    reg  [3:0]                    int_padding_V = 'b0;
+    reg  [11:0]                   int_input_width_V = 'b0;
+    reg  [11:0]                   int_input_height_V = 'b0;
+    reg  [31:0]                   int_in_data = 'b0;
+    reg  [31:0]                   int_weights = 'b0;
+    reg  [31:0]                   int_biases = 'b0;
+    reg  [31:0]                   int_out_data = 'b0;
 
 //------------------------Instantiation------------------
 
@@ -288,37 +288,37 @@ always @(posedge ACLK) begin
                     rdata <= int_isr;
                 end
                 ADDR_IN_CHANNEL_V_DATA_0: begin
-                    rdata <= int_in_channel_V[15:0];
+                    rdata <= int_in_channel_V[7:0];
                 end
                 ADDR_OUT_CHANNEL_V_DATA_0: begin
-                    rdata <= int_out_channel_V[15:0];
+                    rdata <= int_out_channel_V[7:0];
                 end
                 ADDR_KERNEL_SIZE_V_DATA_0: begin
-                    rdata <= int_kernel_size_V[7:0];
+                    rdata <= int_kernel_size_V[3:0];
                 end
                 ADDR_STRIDE_V_DATA_0: begin
-                    rdata <= int_stride_V[7:0];
+                    rdata <= int_stride_V[3:0];
                 end
                 ADDR_PADDING_V_DATA_0: begin
-                    rdata <= int_padding_V[7:0];
+                    rdata <= int_padding_V[3:0];
                 end
                 ADDR_INPUT_WIDTH_V_DATA_0: begin
-                    rdata <= int_input_width_V[7:0];
+                    rdata <= int_input_width_V[11:0];
                 end
                 ADDR_INPUT_HEIGHT_V_DATA_0: begin
-                    rdata <= int_input_height_V[7:0];
+                    rdata <= int_input_height_V[11:0];
                 end
-                ADDR_IN_DATA_V_DATA_0: begin
-                    rdata <= int_in_data_V[31:0];
+                ADDR_IN_DATA_DATA_0: begin
+                    rdata <= int_in_data[31:0];
                 end
-                ADDR_WEIGHTS_V_DATA_0: begin
-                    rdata <= int_weights_V[31:0];
+                ADDR_WEIGHTS_DATA_0: begin
+                    rdata <= int_weights[31:0];
                 end
-                ADDR_BIASES_V_DATA_0: begin
-                    rdata <= int_biases_V[31:0];
+                ADDR_BIASES_DATA_0: begin
+                    rdata <= int_biases[31:0];
                 end
-                ADDR_OUT_DATA_V_DATA_0: begin
-                    rdata <= int_out_data_V[31:0];
+                ADDR_OUT_DATA_DATA_0: begin
+                    rdata <= int_out_data[31:0];
                 end
             endcase
         end
@@ -336,10 +336,10 @@ assign stride_V       = int_stride_V;
 assign padding_V      = int_padding_V;
 assign input_width_V  = int_input_width_V;
 assign input_height_V = int_input_height_V;
-assign in_data_V      = int_in_data_V;
-assign weights_V      = int_weights_V;
-assign biases_V       = int_biases_V;
-assign out_data_V     = int_out_data_V;
+assign in_data        = int_in_data;
+assign weights        = int_weights;
+assign biases         = int_biases;
+assign out_data       = int_out_data;
 // int_ap_start
 always @(posedge ACLK) begin
     if (ARESET)
@@ -436,113 +436,113 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_in_channel_V[15:0]
+// int_in_channel_V[7:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_in_channel_V[15:0] <= 0;
+        int_in_channel_V[7:0] <= 0;
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_IN_CHANNEL_V_DATA_0)
-            int_in_channel_V[15:0] <= (WDATA[31:0] & wmask) | (int_in_channel_V[15:0] & ~wmask);
+            int_in_channel_V[7:0] <= (WDATA[31:0] & wmask) | (int_in_channel_V[7:0] & ~wmask);
     end
 end
 
-// int_out_channel_V[15:0]
+// int_out_channel_V[7:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_out_channel_V[15:0] <= 0;
+        int_out_channel_V[7:0] <= 0;
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_OUT_CHANNEL_V_DATA_0)
-            int_out_channel_V[15:0] <= (WDATA[31:0] & wmask) | (int_out_channel_V[15:0] & ~wmask);
+            int_out_channel_V[7:0] <= (WDATA[31:0] & wmask) | (int_out_channel_V[7:0] & ~wmask);
     end
 end
 
-// int_kernel_size_V[7:0]
+// int_kernel_size_V[3:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_kernel_size_V[7:0] <= 0;
+        int_kernel_size_V[3:0] <= 0;
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_KERNEL_SIZE_V_DATA_0)
-            int_kernel_size_V[7:0] <= (WDATA[31:0] & wmask) | (int_kernel_size_V[7:0] & ~wmask);
+            int_kernel_size_V[3:0] <= (WDATA[31:0] & wmask) | (int_kernel_size_V[3:0] & ~wmask);
     end
 end
 
-// int_stride_V[7:0]
+// int_stride_V[3:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_stride_V[7:0] <= 0;
+        int_stride_V[3:0] <= 0;
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_STRIDE_V_DATA_0)
-            int_stride_V[7:0] <= (WDATA[31:0] & wmask) | (int_stride_V[7:0] & ~wmask);
+            int_stride_V[3:0] <= (WDATA[31:0] & wmask) | (int_stride_V[3:0] & ~wmask);
     end
 end
 
-// int_padding_V[7:0]
+// int_padding_V[3:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_padding_V[7:0] <= 0;
+        int_padding_V[3:0] <= 0;
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_PADDING_V_DATA_0)
-            int_padding_V[7:0] <= (WDATA[31:0] & wmask) | (int_padding_V[7:0] & ~wmask);
+            int_padding_V[3:0] <= (WDATA[31:0] & wmask) | (int_padding_V[3:0] & ~wmask);
     end
 end
 
-// int_input_width_V[7:0]
+// int_input_width_V[11:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_input_width_V[7:0] <= 0;
+        int_input_width_V[11:0] <= 0;
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_INPUT_WIDTH_V_DATA_0)
-            int_input_width_V[7:0] <= (WDATA[31:0] & wmask) | (int_input_width_V[7:0] & ~wmask);
+            int_input_width_V[11:0] <= (WDATA[31:0] & wmask) | (int_input_width_V[11:0] & ~wmask);
     end
 end
 
-// int_input_height_V[7:0]
+// int_input_height_V[11:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_input_height_V[7:0] <= 0;
+        int_input_height_V[11:0] <= 0;
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_INPUT_HEIGHT_V_DATA_0)
-            int_input_height_V[7:0] <= (WDATA[31:0] & wmask) | (int_input_height_V[7:0] & ~wmask);
+            int_input_height_V[11:0] <= (WDATA[31:0] & wmask) | (int_input_height_V[11:0] & ~wmask);
     end
 end
 
-// int_in_data_V[31:0]
+// int_in_data[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_in_data_V[31:0] <= 0;
+        int_in_data[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_IN_DATA_V_DATA_0)
-            int_in_data_V[31:0] <= (WDATA[31:0] & wmask) | (int_in_data_V[31:0] & ~wmask);
+        if (w_hs && waddr == ADDR_IN_DATA_DATA_0)
+            int_in_data[31:0] <= (WDATA[31:0] & wmask) | (int_in_data[31:0] & ~wmask);
     end
 end
 
-// int_weights_V[31:0]
+// int_weights[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_weights_V[31:0] <= 0;
+        int_weights[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_WEIGHTS_V_DATA_0)
-            int_weights_V[31:0] <= (WDATA[31:0] & wmask) | (int_weights_V[31:0] & ~wmask);
+        if (w_hs && waddr == ADDR_WEIGHTS_DATA_0)
+            int_weights[31:0] <= (WDATA[31:0] & wmask) | (int_weights[31:0] & ~wmask);
     end
 end
 
-// int_biases_V[31:0]
+// int_biases[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_biases_V[31:0] <= 0;
+        int_biases[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_BIASES_V_DATA_0)
-            int_biases_V[31:0] <= (WDATA[31:0] & wmask) | (int_biases_V[31:0] & ~wmask);
+        if (w_hs && waddr == ADDR_BIASES_DATA_0)
+            int_biases[31:0] <= (WDATA[31:0] & wmask) | (int_biases[31:0] & ~wmask);
     end
 end
 
-// int_out_data_V[31:0]
+// int_out_data[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_out_data_V[31:0] <= 0;
+        int_out_data[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_OUT_DATA_V_DATA_0)
-            int_out_data_V[31:0] <= (WDATA[31:0] & wmask) | (int_out_data_V[31:0] & ~wmask);
+        if (w_hs && waddr == ADDR_OUT_DATA_DATA_0)
+            int_out_data[31:0] <= (WDATA[31:0] & wmask) | (int_out_data[31:0] & ~wmask);
     end
 end
 

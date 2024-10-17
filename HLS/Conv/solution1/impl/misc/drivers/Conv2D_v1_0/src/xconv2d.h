@@ -1,5 +1,5 @@
 // ==============================================================
-// File generated on Tue Oct 15 13:26:24 +0800 2024
+// File generated on Wed Oct 16 15:39:53 +0800 2024
 // Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
 // SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 // IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
@@ -101,14 +101,14 @@ void XConv2d_Set_input_width_V(XConv2d *InstancePtr, u32 Data);
 u32 XConv2d_Get_input_width_V(XConv2d *InstancePtr);
 void XConv2d_Set_input_height_V(XConv2d *InstancePtr, u32 Data);
 u32 XConv2d_Get_input_height_V(XConv2d *InstancePtr);
-void XConv2d_Set_in_data_V(XConv2d *InstancePtr, u32 Data);
-u32 XConv2d_Get_in_data_V(XConv2d *InstancePtr);
-void XConv2d_Set_weights_V(XConv2d *InstancePtr, u32 Data);
-u32 XConv2d_Get_weights_V(XConv2d *InstancePtr);
-void XConv2d_Set_biases_V(XConv2d *InstancePtr, u32 Data);
-u32 XConv2d_Get_biases_V(XConv2d *InstancePtr);
-void XConv2d_Set_out_data_V(XConv2d *InstancePtr, u32 Data);
-u32 XConv2d_Get_out_data_V(XConv2d *InstancePtr);
+void XConv2d_Set_in_data(XConv2d *InstancePtr, u32 Data);
+u32 XConv2d_Get_in_data(XConv2d *InstancePtr);
+void XConv2d_Set_weights(XConv2d *InstancePtr, u32 Data);
+u32 XConv2d_Get_weights(XConv2d *InstancePtr);
+void XConv2d_Set_biases(XConv2d *InstancePtr, u32 Data);
+u32 XConv2d_Get_biases(XConv2d *InstancePtr);
+void XConv2d_Set_out_data(XConv2d *InstancePtr, u32 Data);
+u32 XConv2d_Get_out_data(XConv2d *InstancePtr);
 
 void XConv2d_InterruptGlobalEnable(XConv2d *InstancePtr);
 void XConv2d_InterruptGlobalDisable(XConv2d *InstancePtr);

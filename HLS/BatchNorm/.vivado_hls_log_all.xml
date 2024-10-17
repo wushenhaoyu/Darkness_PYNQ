@@ -2,9 +2,7 @@
 <vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
   <errorLogs>
     <logs>
-      <synLog>
-        <logs message="ERROR: [HLS 200-70] Compilation errors found: In file included from ../src/BatchNorm/BatchNorm.cpp:1:&#xD;&#xA;../src/BatchNorm/BatchNorm.cpp:22:18: error: size of array has non-integer type 'ap_uint&lt;16>'&#xD;&#xA;    Dtype_t mean[num_features];&#xD;&#xA;                 ^~~~~~~~~~~~&#xD;&#xA;../src/BatchNorm/BatchNorm.cpp:23:22: error: size of array has non-integer type 'ap_uint&lt;16>'&#xD;&#xA;    Dtype_t variance[num_features];&#xD;&#xA;                     ^~~~~~~~~~~~&#xD;&#xA;../src/BatchNorm/BatchNorm.cpp:24:26: error: size of array has non-integer type 'ap_uint&lt;16>'&#xD;&#xA;    Dtype_t running_mean[num_features] = {0};&#xD;&#xA;                         ^~~~~~~~~~~~&#xD;&#xA;../src/BatchNorm/BatchNorm.cpp:25:25: error: size of array has non-integer type 'ap_uint&lt;16>'&#xD;&#xA;    Dtype_t running_var[num_features] = {1};&#xD;&#xA;                        ^~~~~~~~~~~~&#xD;&#xA;4 errors generated.&#xD;&#xA;Failed during preprocessing.&#xD;&#xA;    while executing&#xD;&#xA;&quot;source D:/code/github/Darkness_PYNQ/HLS/BatchNorm/solution1/csynth.tcl&quot;&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls::main D:/code/github/Darkness_PYNQ/HLS/BatchNorm/solution1/csynth.tcl&quot;&#xD;&#xA;    (&quot;uplevel&quot; body line 1)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;uplevel 1 hls::main {*}$args&quot;&#xD;&#xA;    (procedure &quot;hls_proc&quot; line 5)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls_proc $argv&quot;&#xD;&#xA;" projectName="BatchNorm" solutionName="solution1" date="2024-10-15T16:24:49.685+0800"/>
-      </synLog>
+      <synLog/>
       <simLog/>
       <mgLog/>
       <packageLog/>
@@ -13,7 +11,11 @@
   </errorLogs>
   <warningLogs>
     <logs>
-      <synLog/>
+      <synLog>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'sqrt_fixed&lt;17, 9>' to 'sqrt_fixed_17_9_s'." projectName="BatchNorm" solutionName="solution1" date="2020-10-17T13:58:43.075+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1' (../src/BatchNorm/BatchNorm.cpp:29) in function 'BatchNorm': cannot completely unroll a loop with a variable trip count." projectName="BatchNorm" solutionName="solution1" date="2020-10-17T13:58:42.072+0800" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:271: variable-indexed range selection may cause suboptimal QoR." projectName="BatchNorm" solutionName="solution1" date="2020-10-17T13:58:41.696+0800" type="Warning"/>
+      </synLog>
       <simLog/>
       <mgLog/>
       <packageLog/>

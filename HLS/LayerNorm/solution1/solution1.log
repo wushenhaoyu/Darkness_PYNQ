@@ -1,0 +1,268 @@
+==============================================================
+File generated on Thu Oct 17 14:13:36 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file '../src/LayerNorm/LayerNorm.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from ../src/LayerNorm/LayerNorm.cpp:1:
+../src/LayerNorm/LayerNorm.cpp:37:53: error: call to 'sqrt' is ambiguous
+                Dtype_acc normalized = (x - mean) / sqrt(variance + eps);
+                                                    ^~~~
+D:/software/Xilinx/Vivado/2018.3/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\math.h:120:10: note: candidate function
+  double sqrt(double _X);
+         ^
+D:/software/Xilinx/Vivado/2018.3/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\cmath:433:3: note: candidate function
+  sqrt(float __x)
+  ^
+D:/software/Xilinx/Vivado/2018.3/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\cmath:437:3: note: candidate function
+  sqrt(long double __x)
+  ^
+1 error generated.
+==============================================================
+File generated on Thu Oct 17 14:14:53 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file '../src/LayerNorm/LayerNorm.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from ../src/LayerNorm/LayerNorm.cpp:1:
+../src/LayerNorm/LayerNorm.cpp:37:63: error: use of undeclared identifier 'running_var'
+                Dtype_acc normalized = (x - mean) / hls::sqrt(running_var[c] + eps);
+                                                              ^
+1 error generated.
+==============================================================
+File generated on Thu Oct 17 14:15:34 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file '../src/LayerNorm/LayerNorm.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from ../src/LayerNorm/LayerNorm.cpp:1:
+../src/LayerNorm/LayerNorm.cpp:37:53: error: call to 'sqrt' is ambiguous
+                Dtype_acc normalized = (x - mean) / sqrt(variance + eps);
+                                                    ^~~~
+D:/software/Xilinx/Vivado/2018.3/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\math.h:120:10: note: candidate function
+  double sqrt(double _X);
+         ^
+D:/software/Xilinx/Vivado/2018.3/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\cmath:433:3: note: candidate function
+  sqrt(float __x)
+  ^
+D:/software/Xilinx/Vivado/2018.3/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\cmath:437:3: note: candidate function
+  sqrt(long double __x)
+  ^
+1 error generated.
+==============================================================
+File generated on Thu Oct 17 14:24:15 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file '../src/LayerNorm/LayerNorm.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:16 . Memory (MB): peak = 103.285 ; gain = 17.473
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:16 . Memory (MB): peak = 103.285 ; gain = 17.473
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:17 . Memory (MB): peak = 183.371 ; gain = 97.559
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<17, 9>' into 'LayerNorm' (../src/LayerNorm/LayerNorm.cpp:37) automatically.
+WARNING: [SYNCHK 200-23] D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:271: variable-indexed range selection may cause suboptimal QoR.
+WARNING: [SYNCHK 200-120] ../src/LayerNorm/LayerNorm.cpp:30: multiplication is assumed not to overflow by default, otherwise, please add option '-fwrapv'.
+INFO: [SYNCHK 200-10] 0 error(s), 2 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:18 . Memory (MB): peak = 231.930 ; gain = 146.117
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'sqrt_fixed<17, 9>' (D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:43:36).
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:266) in function 'sqrt_fixed<17, 9>' completely with a factor of 5.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:294) in function 'sqrt_fixed<17, 9>' completely with a factor of 9.
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<17, 9>' into 'LayerNorm' (../src/LayerNorm/LayerNorm.cpp:37) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:371:1) in function 'sqrt_fixed<17, 9>'... converting 70 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:19 . Memory (MB): peak = 299.590 ; gain = 213.777
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:19 . Memory (MB): peak = 322.703 ; gain = 236.891
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'LayerNorm' ...
+WARNING: [SYN 201-103] Legalizing function name 'sqrt_fixed<17, 9>' to 'sqrt_fixed_17_9_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sqrt_fixed_17_9_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sqrt_fixed<17, 9>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 7.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 19.362 seconds; current allocated memory: 263.369 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.187 seconds; current allocated memory: 264.466 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'LayerNorm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.278 seconds; current allocated memory: 265.228 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 4 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.167 seconds; current allocated memory: 265.923 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sqrt_fixed_17_9_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sqrt_fixed_17_9_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.27 seconds; current allocated memory: 267.942 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'LayerNorm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'LayerNorm/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LayerNorm/num_features_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LayerNorm/height_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LayerNorm/width_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LayerNorm/in_data_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LayerNorm/out_data_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LayerNorm/gamma_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LayerNorm/beta_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'LayerNorm' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'height_V', 'width_V', 'in_data_V', 'out_data_V', 'gamma_V' and 'beta_V' to AXI-Lite port AXILiteS.
+INFO: [SYN 201-210] Renamed object name 'LayerNorm_sdiv_17s_17ns_16_21_seq_1' to 'LayerNorm_sdiv_17bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LayerNorm_sdiv_25ns_14ns_16_29_seq_1' to 'LayerNorm_sdiv_25cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LayerNorm_mul_mul_16ns_16ns_32_1_1' to 'LayerNorm_mul_muldEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LayerNorm_mac_muladd_16s_16s_24ns_24_1_1' to 'LayerNorm_mac_muleOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LayerNorm_mac_mulsub_16s_16s_24ns_24_1_1' to 'LayerNorm_mac_mulfYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'LayerNorm_mac_muleOg': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LayerNorm_mac_mulfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LayerNorm_mul_muldEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LayerNorm_sdiv_17bkb': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LayerNorm_sdiv_25cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'LayerNorm'.
+INFO: [HLS 200-111]  Elapsed time: 0.882 seconds; current allocated memory: 270.524 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'LayerNorm_sdiv_17bkb_div'
+INFO: [RTMG 210-282] Generating pipelined core: 'LayerNorm_sdiv_25cud_div'
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:23 . Memory (MB): peak = 337.609 ; gain = 251.797
+INFO: [SYSC 207-301] Generating SystemC RTL for LayerNorm.
+INFO: [VHDL 208-304] Generating VHDL RTL for LayerNorm.
+INFO: [VLOG 209-307] Generating Verilog RTL for LayerNorm.
+INFO: [HLS 200-112] Total elapsed time: 22.889 seconds; peak allocated memory: 270.524 MB.
+==============================================================
+File generated on Thu Oct 17 14:25:36 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file '../src/LayerNorm/LayerNorm.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:16 . Memory (MB): peak = 103.629 ; gain = 18.449
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:16 . Memory (MB): peak = 103.629 ; gain = 18.449
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:17 . Memory (MB): peak = 182.785 ; gain = 97.605
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<17, 9>' into 'LayerNorm' (../src/LayerNorm/LayerNorm.cpp:38) automatically.
+WARNING: [SYNCHK 200-23] D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:271: variable-indexed range selection may cause suboptimal QoR.
+WARNING: [SYNCHK 200-120] ../src/LayerNorm/LayerNorm.cpp:30: multiplication is assumed not to overflow by default, otherwise, please add option '-fwrapv'.
+INFO: [SYNCHK 200-10] 0 error(s), 2 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:17 . Memory (MB): peak = 232.680 ; gain = 147.500
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'sqrt_fixed<17, 9>' (D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:43:36).
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:266) in function 'sqrt_fixed<17, 9>' completely with a factor of 5.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:294) in function 'sqrt_fixed<17, 9>' completely with a factor of 9.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1.2' (../src/LayerNorm/LayerNorm.cpp:35) in function 'LayerNorm': cannot completely unroll a loop with a variable trip count.
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<17, 9>' into 'LayerNorm' (../src/LayerNorm/LayerNorm.cpp:38) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (D:/software/Xilinx/Vivado/2018.3/common/technology/autopilot/hls_sqrt_apfixed.h:371:1) in function 'sqrt_fixed<17, 9>'... converting 70 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:18 . Memory (MB): peak = 301.340 ; gain = 216.160
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:19 . Memory (MB): peak = 322.699 ; gain = 237.520
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'LayerNorm' ...
+WARNING: [SYN 201-103] Legalizing function name 'sqrt_fixed<17, 9>' to 'sqrt_fixed_17_9_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sqrt_fixed_17_9_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sqrt_fixed<17, 9>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 7.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 19.063 seconds; current allocated memory: 263.482 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.169 seconds; current allocated memory: 264.579 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'LayerNorm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.272 seconds; current allocated memory: 265.341 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 4 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.166 seconds; current allocated memory: 266.036 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sqrt_fixed_17_9_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sqrt_fixed_17_9_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.303 seconds; current allocated memory: 268.055 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'LayerNorm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'LayerNorm/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LayerNorm/num_features_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LayerNorm/height_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LayerNorm/width_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LayerNorm/in_data_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LayerNorm/out_data_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LayerNorm/gamma_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LayerNorm/beta_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'LayerNorm' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'height_V', 'width_V', 'in_data_V', 'out_data_V', 'gamma_V' and 'beta_V' to AXI-Lite port AXILiteS.
+INFO: [SYN 201-210] Renamed object name 'LayerNorm_sdiv_17s_17ns_16_21_seq_1' to 'LayerNorm_sdiv_17bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LayerNorm_sdiv_25ns_14ns_16_29_seq_1' to 'LayerNorm_sdiv_25cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LayerNorm_mul_mul_16ns_16ns_32_1_1' to 'LayerNorm_mul_muldEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LayerNorm_mac_muladd_16s_16s_24ns_24_1_1' to 'LayerNorm_mac_muleOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LayerNorm_mac_mulsub_16s_16s_24ns_24_1_1' to 'LayerNorm_mac_mulfYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'LayerNorm_mac_muleOg': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LayerNorm_mac_mulfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LayerNorm_mul_muldEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LayerNorm_sdiv_17bkb': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LayerNorm_sdiv_25cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'LayerNorm'.
+INFO: [HLS 200-111]  Elapsed time: 0.844 seconds; current allocated memory: 270.621 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'LayerNorm_sdiv_17bkb_div'
+INFO: [RTMG 210-282] Generating pipelined core: 'LayerNorm_sdiv_25cud_div'
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:22 . Memory (MB): peak = 337.129 ; gain = 251.949
+INFO: [SYSC 207-301] Generating SystemC RTL for LayerNorm.
+INFO: [VHDL 208-304] Generating VHDL RTL for LayerNorm.
+INFO: [VLOG 209-307] Generating Verilog RTL for LayerNorm.
+INFO: [HLS 200-112] Total elapsed time: 22.501 seconds; peak allocated memory: 270.621 MB.
+==============================================================
+File generated on Sat Oct 17 14:26:46 +0800 2020
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.

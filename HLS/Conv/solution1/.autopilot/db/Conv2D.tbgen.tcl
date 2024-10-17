@@ -12,32 +12,32 @@ set isEnableWaveformDebug 1
 set C_modelName {Conv2D}
 set C_modelType { void 0 }
 set C_modelArgList {
-	{ gmem int 16 regular {axi_master 2}  }
-	{ in_channel_V int 16 regular {axi_slave 0}  }
-	{ out_channel_V int 16 regular {axi_slave 0}  }
-	{ kernel_size_V int 8 regular {axi_slave 0}  }
-	{ stride_V int 8 regular {axi_slave 0}  }
-	{ padding_V int 8 regular {axi_slave 0}  }
-	{ input_width_V int 8 regular {axi_slave 0}  }
-	{ input_height_V int 8 regular {axi_slave 0}  }
-	{ in_data_V int 32 regular {axi_slave 0}  }
-	{ weights_V int 32 regular {axi_slave 0}  }
-	{ biases_V int 32 regular {axi_slave 0}  }
-	{ out_data_V int 32 regular {axi_slave 0}  }
+	{ gmem float 32 regular {axi_master 2}  }
+	{ in_channel_V int 8 regular {axi_slave 0}  }
+	{ out_channel_V int 8 regular {axi_slave 0}  }
+	{ kernel_size_V int 4 regular {axi_slave 0}  }
+	{ stride_V int 4 regular {axi_slave 0}  }
+	{ padding_V int 4 regular {axi_slave 0}  }
+	{ input_width_V int 12 regular {axi_slave 0}  }
+	{ input_height_V int 12 regular {axi_slave 0}  }
+	{ in_data int 32 regular {axi_slave 0}  }
+	{ weights int 32 regular {axi_slave 0}  }
+	{ biases int 32 regular {axi_slave 0}  }
+	{ out_data int 32 regular {axi_slave 0}  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 16, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":15,"cElement": [{"cName": "in_data.V","cData": "int16","bit_use": { "low": 0,"up": 15},"offset": { "type": "dynamic","port_name": "in_data_V","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 0,"step" : 1}]},{"cName": "weights.V","cData": "int16","bit_use": { "low": 0,"up": 15},"offset": { "type": "dynamic","port_name": "weights_V","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 0,"step" : 1}]},{"cName": "biases.V","cData": "int16","bit_use": { "low": 0,"up": 15},"offset": { "type": "dynamic","port_name": "biases_V","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 0,"step" : 1}]},{"cName": "out_data.V","cData": "int16","bit_use": { "low": 0,"up": 15},"offset": { "type": "dynamic","port_name": "out_data_V","bundle": "AXILiteS"},"direction": "WRITEONLY","cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
- 	{ "Name" : "in_channel_V", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 16, "direction" : "READONLY", "bitSlice":[{"low":0,"up":15,"cElement": [{"cName": "in_channel.V","cData": "uint16","bit_use": { "low": 0,"up": 15},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":16}, "offset_end" : {"in":23}} , 
- 	{ "Name" : "out_channel_V", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 16, "direction" : "READONLY", "bitSlice":[{"low":0,"up":15,"cElement": [{"cName": "out_channel.V","cData": "uint16","bit_use": { "low": 0,"up": 15},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":24}, "offset_end" : {"in":31}} , 
- 	{ "Name" : "kernel_size_V", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "kernel_size.V","cData": "uint8","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":32}, "offset_end" : {"in":39}} , 
- 	{ "Name" : "stride_V", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "stride.V","cData": "uint8","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":40}, "offset_end" : {"in":47}} , 
- 	{ "Name" : "padding_V", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "padding.V","cData": "uint8","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":48}, "offset_end" : {"in":55}} , 
- 	{ "Name" : "input_width_V", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "input_width.V","cData": "uint8","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":56}, "offset_end" : {"in":63}} , 
- 	{ "Name" : "input_height_V", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "input_height.V","cData": "uint8","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":64}, "offset_end" : {"in":71}} , 
- 	{ "Name" : "in_data_V", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":72}, "offset_end" : {"in":79}} , 
- 	{ "Name" : "weights_V", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":80}, "offset_end" : {"in":87}} , 
- 	{ "Name" : "biases_V", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":88}, "offset_end" : {"in":95}} , 
- 	{ "Name" : "out_data_V", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":96}, "offset_end" : {"in":103}} ]}
+	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "in_data","cData": "float","bit_use": { "low": 0,"up": 31},"offset": { "type": "dynamic","port_name": "in_data","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 0,"step" : 1}]},{"cName": "weights","cData": "float","bit_use": { "low": 0,"up": 31},"offset": { "type": "dynamic","port_name": "weights","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 0,"step" : 1}]},{"cName": "biases","cData": "float","bit_use": { "low": 0,"up": 31},"offset": { "type": "dynamic","port_name": "biases","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 0,"step" : 1}]},{"cName": "out_data","cData": "float","bit_use": { "low": 0,"up": 31},"offset": { "type": "dynamic","port_name": "out_data","bundle": "AXILiteS"},"direction": "WRITEONLY","cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
+ 	{ "Name" : "in_channel_V", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "in_channel.V","cData": "uint8","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":16}, "offset_end" : {"in":23}} , 
+ 	{ "Name" : "out_channel_V", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "out_channel.V","cData": "uint8","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":24}, "offset_end" : {"in":31}} , 
+ 	{ "Name" : "kernel_size_V", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 4, "direction" : "READONLY", "bitSlice":[{"low":0,"up":3,"cElement": [{"cName": "kernel_size.V","cData": "uint4","bit_use": { "low": 0,"up": 3},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":32}, "offset_end" : {"in":39}} , 
+ 	{ "Name" : "stride_V", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 4, "direction" : "READONLY", "bitSlice":[{"low":0,"up":3,"cElement": [{"cName": "stride.V","cData": "uint4","bit_use": { "low": 0,"up": 3},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":40}, "offset_end" : {"in":47}} , 
+ 	{ "Name" : "padding_V", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 4, "direction" : "READONLY", "bitSlice":[{"low":0,"up":3,"cElement": [{"cName": "padding.V","cData": "uint4","bit_use": { "low": 0,"up": 3},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":48}, "offset_end" : {"in":55}} , 
+ 	{ "Name" : "input_width_V", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 12, "direction" : "READONLY", "bitSlice":[{"low":0,"up":11,"cElement": [{"cName": "input_width.V","cData": "uint12","bit_use": { "low": 0,"up": 11},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":56}, "offset_end" : {"in":63}} , 
+ 	{ "Name" : "input_height_V", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 12, "direction" : "READONLY", "bitSlice":[{"low":0,"up":11,"cElement": [{"cName": "input_height.V","cData": "uint12","bit_use": { "low": 0,"up": 11},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":64}, "offset_end" : {"in":71}} , 
+ 	{ "Name" : "in_data", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":72}, "offset_end" : {"in":79}} , 
+ 	{ "Name" : "weights", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":80}, "offset_end" : {"in":87}} , 
+ 	{ "Name" : "biases", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":88}, "offset_end" : {"in":95}} , 
+ 	{ "Name" : "out_data", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":96}, "offset_end" : {"in":103}} ]}
 # RTL Port declarations: 
 set portNum 65
 set portList { 
@@ -108,7 +108,7 @@ set portList {
 	{ interrupt sc_out sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
-	{ "name": "s_axi_AXILiteS_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWADDR" },"address":[{"name":"Conv2D","role":"start","value":"0","valid_bit":"0"},{"name":"Conv2D","role":"continue","value":"0","valid_bit":"4"},{"name":"Conv2D","role":"auto_start","value":"0","valid_bit":"7"},{"name":"in_channel_V","role":"data","value":"16"},{"name":"out_channel_V","role":"data","value":"24"},{"name":"kernel_size_V","role":"data","value":"32"},{"name":"stride_V","role":"data","value":"40"},{"name":"padding_V","role":"data","value":"48"},{"name":"input_width_V","role":"data","value":"56"},{"name":"input_height_V","role":"data","value":"64"},{"name":"in_data_V","role":"data","value":"72"},{"name":"weights_V","role":"data","value":"80"},{"name":"biases_V","role":"data","value":"88"},{"name":"out_data_V","role":"data","value":"96"}] },
+	{ "name": "s_axi_AXILiteS_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWADDR" },"address":[{"name":"Conv2D","role":"start","value":"0","valid_bit":"0"},{"name":"Conv2D","role":"continue","value":"0","valid_bit":"4"},{"name":"Conv2D","role":"auto_start","value":"0","valid_bit":"7"},{"name":"in_channel_V","role":"data","value":"16"},{"name":"out_channel_V","role":"data","value":"24"},{"name":"kernel_size_V","role":"data","value":"32"},{"name":"stride_V","role":"data","value":"40"},{"name":"padding_V","role":"data","value":"48"},{"name":"input_width_V","role":"data","value":"56"},{"name":"input_height_V","role":"data","value":"64"},{"name":"in_data","role":"data","value":"72"},{"name":"weights","role":"data","value":"80"},{"name":"biases","role":"data","value":"88"},{"name":"out_data","role":"data","value":"96"}] },
 	{ "name": "s_axi_AXILiteS_AWVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWVALID" } },
 	{ "name": "s_axi_AXILiteS_AWREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWREADY" } },
 	{ "name": "s_axi_AXILiteS_WVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WVALID" } },
@@ -175,13 +175,13 @@ set NewPortList {[
  	{ "name": "m_axi_gmem_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem", "role": "BUSER" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"],
 		"CDFG" : "Conv2D",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "16", "EstimateLatencyMax" : "-1",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "20", "EstimateLatencyMax" : "71252331726766100",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -193,9 +193,9 @@ set RtlHierarchyInfo {[
 				"BlockSignal" : [
 					{"Name" : "gmem_blk_n_AR", "Type" : "RtlSignal"},
 					{"Name" : "gmem_blk_n_R", "Type" : "RtlSignal"},
-					{"Name" : "gmem_blk_n_AW", "Type" : "RtlSignal"},
 					{"Name" : "gmem_blk_n_W", "Type" : "RtlSignal"},
-					{"Name" : "gmem_blk_n_B", "Type" : "RtlSignal"}]},
+					{"Name" : "gmem_blk_n_B", "Type" : "RtlSignal"},
+					{"Name" : "gmem_blk_n_AW", "Type" : "RtlSignal"}]},
 			{"Name" : "in_channel_V", "Type" : "None", "Direction" : "I"},
 			{"Name" : "out_channel_V", "Type" : "None", "Direction" : "I"},
 			{"Name" : "kernel_size_V", "Type" : "None", "Direction" : "I"},
@@ -203,24 +203,28 @@ set RtlHierarchyInfo {[
 			{"Name" : "padding_V", "Type" : "None", "Direction" : "I"},
 			{"Name" : "input_width_V", "Type" : "None", "Direction" : "I"},
 			{"Name" : "input_height_V", "Type" : "None", "Direction" : "I"},
-			{"Name" : "in_data_V", "Type" : "None", "Direction" : "I"},
-			{"Name" : "weights_V", "Type" : "None", "Direction" : "I"},
-			{"Name" : "biases_V", "Type" : "None", "Direction" : "I"},
-			{"Name" : "out_data_V", "Type" : "None", "Direction" : "I"}]},
+			{"Name" : "in_data", "Type" : "None", "Direction" : "I"},
+			{"Name" : "weights", "Type" : "None", "Direction" : "I"},
+			{"Name" : "biases", "Type" : "None", "Direction" : "I"},
+			{"Name" : "out_data", "Type" : "None", "Direction" : "I"}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Conv2D_AXILiteS_s_axi_U", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Conv2D_gmem_m_axi_U", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Conv2D_sdiv_12s_9bkb_U1", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Conv2D_sdiv_12s_9bkb_U2", "Parent" : "0"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Conv2D_mul_mul_16cud_U3", "Parent" : "0"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Conv2D_mul_mul_24dEe_U4", "Parent" : "0"},
-	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Conv2D_mac_muladdeOg_U5", "Parent" : "0"},
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Conv2D_fadd_32ns_bkb_U1", "Parent" : "0"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Conv2D_fmul_32ns_cud_U2", "Parent" : "0"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Conv2D_sdiv_15s_5dEe_U3", "Parent" : "0"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Conv2D_sdiv_15s_5dEe_U4", "Parent" : "0"},
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Conv2D_mul_mul_16eOg_U5", "Parent" : "0"},
 	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Conv2D_mac_muladdfYi_U6", "Parent" : "0"},
-	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Conv2D_mac_muladdg8j_U7", "Parent" : "0"}]}
+	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Conv2D_mac_mul_sug8j_U7", "Parent" : "0"},
+	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Conv2D_mul_mul_16hbi_U8", "Parent" : "0"},
+	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Conv2D_mul_mul_20ibs_U9", "Parent" : "0"},
+	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Conv2D_mac_muladdjbC_U10", "Parent" : "0"},
+	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.Conv2D_mac_muladdkbM_U11", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	Conv2D {
-		gmem {Type IO LastRead 33 FirstWrite 31}
+		gmem {Type IO LastRead 35 FirstWrite 36}
 		in_channel_V {Type I LastRead 0 FirstWrite -1}
 		out_channel_V {Type I LastRead 0 FirstWrite -1}
 		kernel_size_V {Type I LastRead 0 FirstWrite -1}
@@ -228,16 +232,16 @@ set ArgLastReadFirstWriteLatency {
 		padding_V {Type I LastRead 0 FirstWrite -1}
 		input_width_V {Type I LastRead 0 FirstWrite -1}
 		input_height_V {Type I LastRead 0 FirstWrite -1}
-		in_data_V {Type I LastRead 0 FirstWrite -1}
-		weights_V {Type I LastRead 0 FirstWrite -1}
-		biases_V {Type I LastRead 0 FirstWrite -1}
-		out_data_V {Type I LastRead 0 FirstWrite -1}}}
+		in_data {Type I LastRead 0 FirstWrite -1}
+		weights {Type I LastRead 0 FirstWrite -1}
+		biases {Type I LastRead 0 FirstWrite -1}
+		out_data {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "16", "Max" : "-1"}
-	, {"Name" : "Interval", "Min" : "17", "Max" : "0"}
+	{"Name" : "Latency", "Min" : "20", "Max" : "71252331726766100"}
+	, {"Name" : "Interval", "Min" : "21", "Max" : "1107165205"}
 ]}
 
 set PipelineEnableSignalInfo {[
