@@ -1,0 +1,7 @@
+BatchNorm_sdiv_25bkb
+BatchNorm_mul_mulcud
+BatchNorm_mac_muldEe
+BatchNorm_AXILiteS_s_axi
+BatchNorm_gmem_m_axi
+sqrt_fixed_17_9_s
+BatchNorm
