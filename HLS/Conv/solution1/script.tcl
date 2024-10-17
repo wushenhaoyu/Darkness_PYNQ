@@ -5,14 +5,15 @@
 ############################################################
 open_project Conv
 set_top Conv2D
-add_files ../src/Conv2d/Conv2d.h
 add_files ../src/Conv2d/Conv2d.cpp
+add_files ../src/Conv2d/Conv2d.h
+add_files -tb ../src/Conv2d/main.cpp
 open_solution "solution1"
 set_part {xc7z020clg400-2} -tool vivado
 create_clock -period 10 -name default
 config_export -format ip_catalog -rtl verilog
 #source "./Conv/solution1/directives.tcl"
-#csim_design
+csim_design
 csynth_design
-#cosim_design
+cosim_design
 export_design -rtl verilog -format ip_catalog

@@ -1,19 +1,40 @@
-INFO: [HLS 200-10] Running 'D:/software/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/vivado_hls.exe'
-INFO: [HLS 200-10] For user '11925' on host 'wushen' (Windows NT_amd64 version 6.2) on Sat Oct 17 14:26:46 +0800 2020
-INFO: [HLS 200-10] In directory 'D:/code/git/HLS/HLS'
-INFO: [HLS 200-10] Opening project 'D:/code/git/HLS/HLS/LayerNorm'.
-INFO: [HLS 200-10] Opening solution 'D:/code/git/HLS/HLS/LayerNorm/solution1'.
+INFO: [HLS 200-10] Running 'D:/hardware/Vivado/Vivado/2018.3/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'wushen' on host 'desktop-ms2nal2' (Windows NT_amd64 version 6.2) on Thu Oct 17 17:33:01 +0800 2024
+INFO: [HLS 200-10] In directory 'D:/code/github/Darkness_PYNQ/HLS'
+INFO: [HLS 200-10] Opening project 'D:/code/github/Darkness_PYNQ/HLS/Conv'.
+INFO: [HLS 200-10] Opening solution 'D:/code/github/Darkness_PYNQ/HLS/Conv/solution1'.
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
-INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
-
-****** Vivado v2018.3 (64-bit)
-  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
-  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
-
-source run_ippack.tcl -notrace
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/software/Xilinx/Vivado/2018.3/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Sat Oct 17 14:26:52 2020...
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+WARNING: [COSIM 212-369] AXI_master port 'in_data' has a depth of '1'. Insufficient depth may result in simulation mismatch or freeze.
+WARNING: [COSIM 212-369] AXI_master port 'weights' has a depth of '1'. Insufficient depth may result in simulation mismatch or freeze.
+WARNING: [COSIM 212-369] AXI_master port 'biases' has a depth of '1'. Insufficient depth may result in simulation mismatch or freeze.
+WARNING: [COSIM 212-369] AXI_master port 'out_data' has a depth of '1'. Insufficient depth may result in simulation mismatch or freeze.
+   Build using "D:/hardware/Vivado/Vivado/2018.3/msys64/mingw64/bin/g++"
+   Compiling main.cpp_pre.cpp.tb.cpp
+   Compiling Conv2d.cpp_pre.cpp.tb.cpp
+   Compiling apatb_Conv2D.cpp
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+Output data:
+OUT[0][0][0] = 7.280000
+OUT[0][0][1] = 11.180000
+OUT[0][1][0] = 7.520000
+OUT[0][1][1] = 11.820001
+OUT[0][2][0] = 17.850000
+OUT[0][2][1] = 11.820001
+OUT[1][0][0] = 7.520000
+OUT[1][0][1] = 11.180000
+OUT[1][1][0] = 7.280000
+OUT[1][1][1] = 16.639999
+OUT[1][2][0] = 26.299999
+OUT[1][2][1] = 18.320000
+OUT[2][0][0] = 29.100002
+OUT[2][0][1] = 45.389999
+OUT[2][1][0] = 31.260000
+OUT[2][1][1] = 21.200001
+OUT[2][2][0] = 32.779999
+OUT[2][2][1] = 22.400002
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...

@@ -83,7 +83,7 @@
       "impl\/misc\/Conv2D_ap_fadd_2_full_dsp_32_ip.tcl",
       "impl\/misc\/Conv2D_ap_fmul_1_max_dsp_32_ip.tcl"
     ],
-    "DesignXml": "D:\/code\/git\/HLS\/HLS\/Conv\/solution1\/.autopilot\/db\/Conv2D.design.xml"
+    "DesignXml": "D:\/code\/github\/Darkness_PYNQ\/HLS\/Conv\/solution1\/.autopilot\/db\/Conv2D.design.xml"
   },
   "SubcoreInfo": {
     "HasXpmMemory": false,
@@ -1218,7 +1218,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2024-10-16 15:39:54 +0800",
+    "Time": "2024-10-17 17:22:17 +0800",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.3"
   }

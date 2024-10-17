@@ -569,3 +569,228 @@ INFO: [SYSC 207-301] Generating SystemC RTL for Conv2D.
 INFO: [VHDL 208-304] Generating VHDL RTL for Conv2D.
 INFO: [VLOG 209-307] Generating Verilog RTL for Conv2D.
 INFO: [HLS 200-112] Total elapsed time: 13.943 seconds; peak allocated memory: 203.896 MB.
+==============================================================
+File generated on Thu Oct 17 16:42:23 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+File generated on Thu Oct 17 17:07:44 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+File generated on Thu Oct 17 17:13:35 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file '../src/Conv2d/Conv2d.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:34 . Memory (MB): peak = 103.297 ; gain = 47.148
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:34 . Memory (MB): peak = 103.297 ; gain = 47.148
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:36 . Memory (MB): peak = 152.230 ; gain = 96.082
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:36 . Memory (MB): peak = 186.766 ; gain = 130.617
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (../src/Conv2d/Conv2d.cpp:32) in function 'Conv2D' for pipelining.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1' (../src/Conv2d/Conv2d.cpp:35) in function 'Conv2D': cannot completely unroll a loop with a variable trip count.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1.1' (../src/Conv2d/Conv2d.cpp:36) in function 'Conv2D': cannot completely unroll a loop with a variable trip count.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1.1.1' (../src/Conv2d/Conv2d.cpp:38) in function 'Conv2D': cannot completely unroll a loop with a variable trip count.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1.1.1.1' (../src/Conv2d/Conv2d.cpp:40) in function 'Conv2D': cannot completely unroll a loop with a variable trip count.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1.1.1.1.1' (../src/Conv2d/Conv2d.cpp:41) in function 'Conv2D': cannot completely unroll a loop with a variable trip count.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:38 . Memory (MB): peak = 245.043 ; gain = 188.895
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (../src/Conv2d/Conv2d.cpp:32:22) in function 'Conv2D'.
+INFO: [HLS 200-444] Inferring multiple bus burst write of variable length on port 'gmem' (../src/Conv2d/Conv2d.cpp:54:17). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:38 . Memory (MB): peak = 257.477 ; gain = 201.328
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'Conv2D' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Conv2D' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive: Loop contains subloop(s) not being unrolled or flattened.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 39.575 seconds; current allocated memory: 200.988 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 5 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.525 seconds; current allocated memory: 201.967 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Conv2D' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/in_channel_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/out_channel_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/kernel_size_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/stride_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/padding_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/input_width_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/input_height_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/in_data' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/weights' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/biases' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/out_data' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'Conv2D' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'in_channel_V', 'out_channel_V', 'kernel_size_V', 'stride_V', 'padding_V', 'input_width_V', 'input_height_V', 'in_data', 'weights', 'biases' and 'out_data' to AXI-Lite port AXILiteS.
+INFO: [SYN 201-210] Renamed object name 'Conv2D_fadd_32ns_32ns_32_4_full_dsp_1' to 'Conv2D_fadd_32ns_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_fmul_32ns_32ns_32_3_max_dsp_1' to 'Conv2D_fmul_32ns_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_sdiv_15s_5ns_15_19_seq_1' to 'Conv2D_sdiv_15s_5dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mul_mul_16ns_8ns_24_1_1' to 'Conv2D_mul_mul_16eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mac_muladd_8ns_16s_15ns_23_1_1' to 'Conv2D_mac_muladdfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mac_mul_sub_4ns_15ns_4ns_19_1_1' to 'Conv2D_mac_mul_sug8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mul_mul_16s_23s_32_1_1' to 'Conv2D_mul_mul_16hbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mul_mul_20ns_12ns_32_1_1' to 'Conv2D_mul_mul_20ibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mac_muladd_12ns_4ns_24ns_24_1_1' to 'Conv2D_mac_muladdjbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mac_muladd_12ns_19s_32ns_33_1_1' to 'Conv2D_mac_muladdkbM' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_fadd_32ns_bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_fmul_32ns_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mac_mul_sug8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mac_muladdfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mac_muladdjbC': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mac_muladdkbM': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mul_mul_16eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mul_mul_16hbi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mul_mul_20ibs': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_sdiv_15s_5dEe': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Conv2D'.
+INFO: [HLS 200-111]  Elapsed time: 1.132 seconds; current allocated memory: 203.956 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'Conv2D_sdiv_15s_5dEe_div'
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:04 ; elapsed = 00:00:47 . Memory (MB): peak = 264.039 ; gain = 207.891
+INFO: [SYSC 207-301] Generating SystemC RTL for Conv2D.
+INFO: [VHDL 208-304] Generating VHDL RTL for Conv2D.
+INFO: [VLOG 209-307] Generating Verilog RTL for Conv2D.
+INFO: [HLS 200-112] Total elapsed time: 47.4 seconds; peak allocated memory: 203.956 MB.
+==============================================================
+File generated on Thu Oct 17 17:14:59 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+File generated on Thu Oct 17 17:21:39 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file '../src/Conv2d/Conv2d.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:28 . Memory (MB): peak = 103.328 ; gain = 18.527
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:28 . Memory (MB): peak = 103.328 ; gain = 18.527
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:30 . Memory (MB): peak = 151.328 ; gain = 66.527
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:30 . Memory (MB): peak = 187.066 ; gain = 102.266
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (../src/Conv2d/Conv2d.cpp:32) in function 'Conv2D' for pipelining.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1' (../src/Conv2d/Conv2d.cpp:35) in function 'Conv2D': cannot completely unroll a loop with a variable trip count.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1.1' (../src/Conv2d/Conv2d.cpp:36) in function 'Conv2D': cannot completely unroll a loop with a variable trip count.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1.1.1' (../src/Conv2d/Conv2d.cpp:38) in function 'Conv2D': cannot completely unroll a loop with a variable trip count.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1.1.1.1' (../src/Conv2d/Conv2d.cpp:40) in function 'Conv2D': cannot completely unroll a loop with a variable trip count.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1.1.1.1.1' (../src/Conv2d/Conv2d.cpp:41) in function 'Conv2D': cannot completely unroll a loop with a variable trip count.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:31 . Memory (MB): peak = 244.371 ; gain = 159.570
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (../src/Conv2d/Conv2d.cpp:32:22) in function 'Conv2D'.
+INFO: [HLS 200-444] Inferring multiple bus burst write of variable length on port 'gmem' (../src/Conv2d/Conv2d.cpp:53:17). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:32 . Memory (MB): peak = 257.270 ; gain = 172.469
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'Conv2D' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Conv2D' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive: Loop contains subloop(s) not being unrolled or flattened.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 32.525 seconds; current allocated memory: 200.982 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 5 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.453 seconds; current allocated memory: 201.961 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Conv2D' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/in_channel_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/out_channel_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/kernel_size_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/stride_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/padding_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/input_width_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/input_height_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/in_data' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/weights' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/biases' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv2D/out_data' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'Conv2D' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'in_channel_V', 'out_channel_V', 'kernel_size_V', 'stride_V', 'padding_V', 'input_width_V', 'input_height_V', 'in_data', 'weights', 'biases' and 'out_data' to AXI-Lite port AXILiteS.
+INFO: [SYN 201-210] Renamed object name 'Conv2D_fadd_32ns_32ns_32_4_full_dsp_1' to 'Conv2D_fadd_32ns_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_fmul_32ns_32ns_32_3_max_dsp_1' to 'Conv2D_fmul_32ns_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_sdiv_15s_5ns_15_19_seq_1' to 'Conv2D_sdiv_15s_5dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mul_mul_16ns_8ns_24_1_1' to 'Conv2D_mul_mul_16eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mac_muladd_8ns_16s_15ns_23_1_1' to 'Conv2D_mac_muladdfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mac_mul_sub_4ns_15ns_4ns_19_1_1' to 'Conv2D_mac_mul_sug8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mul_mul_16s_23s_32_1_1' to 'Conv2D_mul_mul_16hbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mul_mul_20ns_12ns_32_1_1' to 'Conv2D_mul_mul_20ibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mac_muladd_12ns_4ns_24ns_24_1_1' to 'Conv2D_mac_muladdjbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv2D_mac_muladd_12ns_19s_32ns_33_1_1' to 'Conv2D_mac_muladdkbM' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_fadd_32ns_bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_fmul_32ns_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mac_mul_sug8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mac_muladdfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mac_muladdjbC': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mac_muladdkbM': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mul_mul_16eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mul_mul_16hbi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_mul_mul_20ibs': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv2D_sdiv_15s_5dEe': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Conv2D'.
+INFO: [HLS 200-111]  Elapsed time: 1.226 seconds; current allocated memory: 203.934 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'Conv2D_sdiv_15s_5dEe_div'
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:05 ; elapsed = 00:00:40 . Memory (MB): peak = 264.242 ; gain = 179.441
+INFO: [SYSC 207-301] Generating SystemC RTL for Conv2D.
+INFO: [VHDL 208-304] Generating VHDL RTL for Conv2D.
+INFO: [VLOG 209-307] Generating Verilog RTL for Conv2D.
+INFO: [HLS 200-112] Total elapsed time: 39.817 seconds; peak allocated memory: 203.934 MB.
+==============================================================
+File generated on Thu Oct 17 17:22:40 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+File generated on Thu Oct 17 17:25:03 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+File generated on Thu Oct 17 17:27:38 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+File generated on Thu Oct 17 17:33:01 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================

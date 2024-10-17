@@ -51,15 +51,15 @@
                                 								
                                 <option id="gnu.cpp.compiler.option.include.paths.1476771104" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/include"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/include/etc"/>
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/win64/tools/auto_cc/include"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/win64/tools/auto_cc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/include/ap_sysc"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/include/etc"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/include/ap_sysc"/>
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/win64/tools/systemc/include"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/win64/tools/systemc/include"/>
                                     								
                                 </option>
                                 								
@@ -85,15 +85,15 @@
                                 								
                                 <option id="gnu.c.compiler.option.include.paths.388032097" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/include"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/include/etc"/>
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/win64/tools/auto_cc/include"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/win64/tools/auto_cc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/include/ap_sysc"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/include/etc"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/include/ap_sysc"/>
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/win64/tools/systemc/include"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/win64/tools/systemc/include"/>
                                     								
                                 </option>
                                 								
@@ -115,7 +115,7 @@
                                 								
                                 <option id="gnu.c.link.option.paths.135175443" name="Library search path (-L)" superClass="gnu.c.link.option.paths" valueType="libPaths">
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/win64/tools/systemc/lib"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/win64/tools/systemc/lib"/>
                                     								
                                 </option>
                                 								
@@ -129,7 +129,7 @@
                                 								
                                 <option id="gnu.cpp.link.option.paths.696071853" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/win64/tools/systemc/lib"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/win64/tools/systemc/lib"/>
                                     								
                                 </option>
                                 								
@@ -157,9 +157,39 @@
                         					
                     </folderInfo>
                     					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1392932301.1362732463" name="main.cpp" rcbsApplicability="disable" resourcePath="testbench/main.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1619795642.587014682">
+                        						
+                        <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1619795642.587014682" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1619795642">
+                            							
+                            <option id="gnu.cpp.compiler.option.preprocessor.def.234682109" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
+                            							
+                            <option id="gnu.cpp.compiler.option.include.paths.565845783" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+                                								
+                                <listOptionValue builtIn="false" value="D:/code/github/Darkness_PYNQ/HLS"/>
+                                								
+                                <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/include/etc"/>
+                                								
+                                <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/win64/tools/auto_cc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/include/ap_sysc"/>
+                                								
+                                <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/win64/tools/systemc/include"/>
+                                							
+                            </option>
+                            							
+                            <option id="gnu.cpp.compiler.option.other.other.1377409089" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+                            							
+                            <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.573258530" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+                            						
+                        </tool>
+                        					
+                    </fileInfo>
+                    					
                     <sourceEntries>
                         						
-                        <entry excluding="solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding="*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
@@ -219,15 +249,15 @@
                                 								
                                 <option id="gnu.cpp.compiler.option.include.paths.349802443" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/include"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/include/etc"/>
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/win64/tools/auto_cc/include"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/win64/tools/auto_cc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/include/ap_sysc"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/include/etc"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/include/ap_sysc"/>
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/win64/tools/systemc/include"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/win64/tools/systemc/include"/>
                                     								
                                 </option>
                                 								
@@ -243,15 +273,15 @@
                                 								
                                 <option id="gnu.c.compiler.option.include.paths.1664868663" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/include"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/include/etc"/>
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/win64/tools/auto_cc/include"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/win64/tools/auto_cc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/include/ap_sysc"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/include/etc"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/include/ap_sysc"/>
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/win64/tools/systemc/include"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/win64/tools/systemc/include"/>
                                     								
                                 </option>
                                 								
@@ -263,7 +293,7 @@
                                 								
                                 <option id="gnu.c.link.option.paths.1261884787" name="Library search path (-L)" superClass="gnu.c.link.option.paths" valueType="libPaths">
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/win64/tools/systemc/lib"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/win64/tools/systemc/lib"/>
                                     								
                                 </option>
                                 								
@@ -277,7 +307,7 @@
                                 								
                                 <option id="gnu.cpp.link.option.paths.2064757103" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
                                     									
-                                    <listOptionValue builtIn="false" value="D:/software/Xilinx/Vivado/2018.3/win64/tools/systemc/lib"/>
+                                    <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/win64/tools/systemc/lib"/>
                                     								
                                 </option>
                                 								
@@ -305,9 +335,39 @@
                         					
                     </folderInfo>
                     					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.release.2094958653.337749334" name="main.cpp" rcbsApplicability="disable" resourcePath="testbench/main.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.827914543.2066845615">
+                        						
+                        <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.827914543.2066845615" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.827914543">
+                            							
+                            <option id="gnu.cpp.compiler.option.preprocessor.def.1320533086" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
+                            							
+                            <option id="gnu.cpp.compiler.option.include.paths.1533915757" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+                                								
+                                <listOptionValue builtIn="false" value="D:/code/github/Darkness_PYNQ/HLS"/>
+                                								
+                                <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/include/etc"/>
+                                								
+                                <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/win64/tools/auto_cc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/include/ap_sysc"/>
+                                								
+                                <listOptionValue builtIn="false" value="D:/hardware/Vivado/Vivado/2018.3/win64/tools/systemc/include"/>
+                                							
+                            </option>
+                            							
+                            <option id="gnu.cpp.compiler.option.other.other.699013583" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+                            							
+                            <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1658010229" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+                            						
+                        </tool>
+                        					
+                    </fileInfo>
+                    					
                     <sourceEntries>
                         						
-                        <entry excluding="solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding="*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				

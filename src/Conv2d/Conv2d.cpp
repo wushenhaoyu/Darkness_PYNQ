@@ -30,20 +30,19 @@ void Conv2D(
     int output_height = (input_height - kernel_size + 2 * padding) / stride + 1;
 
     for (int oc = 0; oc < out_channel; ++oc) {
-#pragma HLS PIPELINE
+    #pragma HLS PIPELINE
 
         for (int oh = 0; oh < output_height; ++oh) {
             for (int ow = 0; ow < output_width; ++ow) {
                 Dtype_acc sum = 0;
                 for (int ic = 0; ic < in_channel; ++ic) {
-				#pragma HLS UNROLL
+                    #pragma HLS UNROLL
                     for (int kh = 0; kh < kernel_size; ++kh) {
                         for (int kw = 0; kw < kernel_size; ++kw) {
                             int ih = oh * stride - padding + kh;
                             int iw = ow * stride - padding + kw;
 
                             if (ih >= 0 && ih < input_height && iw >= 0 && iw < input_width) {
-
                                 sum += in_data[ic * input_height * input_width + ih * input_width + iw] *
                                        weights[oc * in_channel * kernel_size * kernel_size +
                                                ic * kernel_size * kernel_size + kh * kernel_size + kw];
