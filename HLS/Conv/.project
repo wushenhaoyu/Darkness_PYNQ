@@ -57,6 +57,11 @@
 			<location>D:/code/github/Darkness_PYNQ/src/Conv2d/main.cpp</location>
 		</link>
 		<link>
+			<name>solution1/constraints/.xml.directive</name>
+			<type>1</type>
+			<location>D:/code/github/Darkness_PYNQ/HLS/Conv/solution1/solution1.directive</location>
+		</link>
+		<link>
 			<name>solution1/constraints/directives.tcl</name>
 			<type>1</type>
 			<location>D:/code/github/Darkness_PYNQ/HLS/Conv/solution1/directives.tcl</location>

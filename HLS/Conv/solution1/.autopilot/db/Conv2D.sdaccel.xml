@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'Conv2D'" level="0">
-<item name = "Date">Thu Oct 17 17:22:12 2024
+<item name = "Date">Thu Oct 17 18:33:13 2024
 </item>
 <item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
 <item name = "Project">Conv</item>
@@ -348,7 +348,7 @@
 <item name = "Max Delay">8.75</item>
 <item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
 <keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
-<column name="'gmem_addr_wr_req', ../src/Conv2d/Conv2d.cpp:53">writereq, 8.75, 8.75, -, -, -, m_axi, request, &apos;gmem&apos;, -, -, -, -, -</column>
+<column name="'gmem_addr_wr_req', ../src/Conv2d/Conv2d.cpp:57">writereq, 8.75, 8.75, -, -, -, m_axi, request, &apos;gmem&apos;, -, -, -, -, -</column>
 </table>
 </item>
 </section>

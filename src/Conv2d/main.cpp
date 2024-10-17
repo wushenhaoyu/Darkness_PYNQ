@@ -12,54 +12,69 @@
 #define OUTPUT_WIDTH ((INPUT_WIDTH - KERNEL_SIZE + 2 * PADDING) / STRIDE + 1)
 #define OUTPUT_HEIGHT ((INPUT_HEIGHT - KERNEL_SIZE + 2 * PADDING) / STRIDE + 1)
 
-
-
 int main(void) {
-    Dtype_t in_data[INPUT_HEIGHT][INPUT_WIDTH][IN_CHANNEL];
-    Dtype_w weights[KERNEL_SIZE][KERNEL_SIZE][IN_CHANNEL][OUT_CHANNEL];
+    // Input/Output in CHW format
+    Dtype_t in_data[IN_CHANNEL][INPUT_HEIGHT][INPUT_WIDTH];
+    Dtype_w weights[OUT_CHANNEL][IN_CHANNEL][KERNEL_SIZE][KERNEL_SIZE];
     Dtype_t biases[OUT_CHANNEL];
-    Dtype_t out_data[OUTPUT_HEIGHT][OUTPUT_WIDTH][OUT_CHANNEL];
+    Dtype_t out_data[OUT_CHANNEL][OUTPUT_HEIGHT][OUTPUT_WIDTH];
 
-    // Initialize input data with a simple pattern (e.g., increasing integers)
-    for (int i = 0; i < INPUT_HEIGHT; i++) {
-        for (int j = 0; j < INPUT_WIDTH; j++) {
-            for (int cin = 0; cin < IN_CHANNEL; cin++) {
-                in_data[i][j][cin] = i * INPUT_WIDTH * IN_CHANNEL + j * IN_CHANNEL + cin;
-                in_data[i][j][cin] *= 0.1;
+    // Initialize input data (CHW format)
+    for (int c = 0; c < IN_CHANNEL; c++) {
+        for (int h = 0; h < INPUT_HEIGHT; h++) {
+            for (int w = 0; w < INPUT_WIDTH; w++) {
+            	in_data[c][h][w]=c*INPUT_WIDTH+h;
             }
         }
     }
 
-    // Initialize weights with a simple pattern (e.g., increasing integers)
-    for (int i = 0; i < KERNEL_SIZE; i++) {
-        for (int j = 0; j < KERNEL_SIZE; j++) {
-            for (int cin = 0; cin < IN_CHANNEL; cin++) {
-                for (int cout = 0; cout < OUT_CHANNEL; cout++) {
-                    weights[i][j][cin][cout] = i * KERNEL_SIZE * IN_CHANNEL * OUT_CHANNEL + j * IN_CHANNEL * OUT_CHANNEL + cin * OUT_CHANNEL + cout;
-                    weights[i][j][cin][cout] *= 0.1;
+    // Initialize weights (OIHW format)
+    for (int oc = 0; oc < OUT_CHANNEL; oc++) {
+        for (int ic = 0; ic < IN_CHANNEL; ic++) {
+            for (int kh = 0; kh < KERNEL_SIZE; kh++) {
+                for (int kw = 0; kw < KERNEL_SIZE; kw++) {
+                	weights[oc][ic][kh][kw]=oc*KERNEL_SIZE+ic;
                 }
             }
         }
     }
 
-    // Initialize biases to zero
-    for (int cout = 0; cout < OUT_CHANNEL; cout++) {
-        biases[cout] = 0.0;
+    printf("Input Data:\n");
+    for (int c = 0; c < IN_CHANNEL; c++) {
+        for (int h = 0; h < INPUT_HEIGHT; h++) {
+            for (int w = 0; w < INPUT_WIDTH; w++) {
+                printf("in_data[%d][%d][%d] = %f\n", c, h, w, in_data[c][h][w]);
+            }
+        }
     }
 
-    // Call the convolution function
-    Conv2D(IN_CHANNEL, OUT_CHANNEL, KERNEL_SIZE, STRIDE, PADDING, INPUT_WIDTH, INPUT_HEIGHT,
-           &in_data[0][0][0], // Pass a flat array to the function
-           &weights[0][0][0][0],
-           &biases[0],
-           &out_data[0][0][0]);
+    // Print weights
+    printf("Weights:\n");
+    for (int oc = 0; oc < OUT_CHANNEL; oc++) {
+        for (int ic = 0; ic < IN_CHANNEL; ic++) {
+            for (int kh = 0; kh < KERNEL_SIZE; kh++) {
+                for (int kw = 0; kw < KERNEL_SIZE; kw++) {
+                    printf("weights[%d][%d][%d][%d] = %f\n", oc, ic, kh, kw, weights[oc][ic][kh][kw]);
+                }
+            }
+        }
+    }
 
-    // Print the output data
-    printf("Output data:\n");
-    for (int i = 0; i < OUTPUT_HEIGHT; i++) {
-        for (int j = 0; j < OUTPUT_WIDTH; j++) {
-            for (int cout = 0; cout < OUT_CHANNEL; cout++) {
-                printf("OUT[%d][%d][%d] = %f\n", i, j, cout, out_data[i][j][cout]);
+    // Initialize biases
+    for (int oc = 0; oc < OUT_CHANNEL; oc++) {
+        biases[oc] = 0.0;
+    }
+
+    // Call the Conv2D function directly with 3D/4D arrays
+    Conv2D(IN_CHANNEL, OUT_CHANNEL, KERNEL_SIZE, STRIDE, PADDING, INPUT_WIDTH, INPUT_HEIGHT,
+           in_data[0][0], weights[0][0][0], biases, out_data[0][0]);
+
+    // Print the output data in CHW format
+    printf("Output data (CHW format):\n");
+    for (int oc = 0; oc < OUT_CHANNEL; oc++) {
+        for (int h = 0; h < OUTPUT_HEIGHT; h++) {
+            for (int w = 0; w < OUTPUT_WIDTH; w++) {
+                printf("OUT[%d][%d][%d] = %f\n", oc, h, w, out_data[oc][h][w]);
             }
         }
     }

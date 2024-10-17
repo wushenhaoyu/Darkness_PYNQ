@@ -5,9 +5,9 @@
 ############################################################
 open_project Conv
 set_top Conv2D
-add_files ../src/Conv2d/Conv2d.cpp
 add_files ../src/Conv2d/Conv2d.h
-add_files -tb ../src/Conv2d/main.cpp
+add_files ../src/Conv2d/Conv2d.cpp
+add_files -tb ../src/Conv2d/main.cpp -cflags "-Wno-unknown-pragmas"
 open_solution "solution1"
 set_part {xc7z020clg400-2} -tool vivado
 create_clock -period 10 -name default

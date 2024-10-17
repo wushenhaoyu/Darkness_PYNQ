@@ -1,5 +1,5 @@
 INFO: [HLS 200-10] Running 'D:/hardware/Vivado/Vivado/2018.3/bin/unwrapped/win64.o/vivado_hls.exe'
-INFO: [HLS 200-10] For user 'wushen' on host 'desktop-ms2nal2' (Windows NT_amd64 version 6.2) on Thu Oct 17 17:33:01 +0800 2024
+INFO: [HLS 200-10] For user 'wushen' on host 'desktop-ms2nal2' (Windows NT_amd64 version 6.2) on Thu Oct 17 19:09:51 +0800 2024
 INFO: [HLS 200-10] In directory 'D:/code/github/Darkness_PYNQ/HLS'
 INFO: [HLS 200-10] Opening project 'D:/code/github/Darkness_PYNQ/HLS/Conv'.
 INFO: [HLS 200-10] Opening solution 'D:/code/github/Darkness_PYNQ/HLS/Conv/solution1'.
@@ -17,24 +17,80 @@ WARNING: [COSIM 212-369] AXI_master port 'out_data' has a depth of '1'. Insuffic
    Compiling apatb_Conv2D.cpp
    Generating cosim.tv.exe
 INFO: [COSIM 212-302] Starting C TB testing ... 
-Output data:
-OUT[0][0][0] = 7.280000
-OUT[0][0][1] = 11.180000
-OUT[0][1][0] = 7.520000
-OUT[0][1][1] = 11.820001
-OUT[0][2][0] = 17.850000
-OUT[0][2][1] = 11.820001
-OUT[1][0][0] = 7.520000
-OUT[1][0][1] = 11.180000
-OUT[1][1][0] = 7.280000
-OUT[1][1][1] = 16.639999
-OUT[1][2][0] = 26.299999
-OUT[1][2][1] = 18.320000
-OUT[2][0][0] = 29.100002
-OUT[2][0][1] = 45.389999
-OUT[2][1][0] = 31.260000
-OUT[2][1][1] = 21.200001
-OUT[2][2][0] = 32.779999
-OUT[2][2][1] = 22.400002
+Input Data:
+in_data[0][0][0] = 0.000000
+in_data[0][0][1] = 0.000000
+in_data[0][0][2] = 0.000000
+in_data[0][1][0] = 1.000000
+in_data[0][1][1] = 1.000000
+in_data[0][1][2] = 1.000000
+in_data[0][2][0] = 2.000000
+in_data[0][2][1] = 2.000000
+in_data[0][2][2] = 2.000000
+in_data[1][0][0] = 3.000000
+in_data[1][0][1] = 3.000000
+in_data[1][0][2] = 3.000000
+in_data[1][1][0] = 4.000000
+in_data[1][1][1] = 4.000000
+in_data[1][1][2] = 4.000000
+in_data[1][2][0] = 5.000000
+in_data[1][2][1] = 5.000000
+in_data[1][2][2] = 5.000000
+Weights:
+weights[0][0][0][0] = 0.000000
+weights[0][0][0][1] = 0.000000
+weights[0][0][0][2] = 0.000000
+weights[0][0][1][0] = 0.000000
+weights[0][0][1][1] = 0.000000
+weights[0][0][1][2] = 0.000000
+weights[0][0][2][0] = 0.000000
+weights[0][0][2][1] = 0.000000
+weights[0][0][2][2] = 0.000000
+weights[0][1][0][0] = 1.000000
+weights[0][1][0][1] = 1.000000
+weights[0][1][0][2] = 1.000000
+weights[0][1][1][0] = 1.000000
+weights[0][1][1][1] = 1.000000
+weights[0][1][1][2] = 1.000000
+weights[0][1][2][0] = 1.000000
+weights[0][1][2][1] = 1.000000
+weights[0][1][2][2] = 1.000000
+weights[1][0][0][0] = 3.000000
+weights[1][0][0][1] = 3.000000
+weights[1][0][0][2] = 3.000000
+weights[1][0][1][0] = 3.000000
+weights[1][0][1][1] = 3.000000
+weights[1][0][1][2] = 3.000000
+weights[1][0][2][0] = 3.000000
+weights[1][0][2][1] = 3.000000
+weights[1][0][2][2] = 3.000000
+weights[1][1][0][0] = 4.000000
+weights[1][1][0][1] = 4.000000
+weights[1][1][0][2] = 4.000000
+weights[1][1][1][0] = 4.000000
+weights[1][1][1][1] = 4.000000
+weights[1][1][1][2] = 4.000000
+weights[1][1][2][0] = 4.000000
+weights[1][1][2][1] = 4.000000
+weights[1][1][2][2] = 4.000000
+Output data (CHW format):
+OUT[0][0][0] = 14.000000
+OUT[0][0][1] = 21.000000
+OUT[0][0][2] = 14.000000
+OUT[0][1][0] = 24.000000
+OUT[0][1][1] = 36.000000
+OUT[0][1][2] = 24.000000
+OUT[0][2][0] = 18.000000
+OUT[0][2][1] = 27.000000
+OUT[0][2][2] = 18.000000
+OUT[1][0][0] = 62.000000
+OUT[1][0][1] = 93.000000
+OUT[1][0][2] = 62.000000
+OUT[1][1][0] = 114.000000
+OUT[1][1][1] = 171.000000
+OUT[1][1][2] = 114.000000
+OUT[1][2][0] = 90.000000
+OUT[1][2][1] = 135.000000
+OUT[1][2][2] = 90.000000
 INFO: [COSIM 212-333] Generating C post check test bench ...
 INFO: [COSIM 212-12] Generating RTL test bench ...
