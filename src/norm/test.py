@@ -20,8 +20,7 @@ def process_matrix(input_matrix, a_values, b_values, transformation_matrix):
     C, H, W = input_matrix.shape
 
     # 对每个通道乘以 a，再加上 b
-    for c in range(C):
-        input_matrix[c] = input_matrix[c] * a_values[c] + b_values[c]
+    
 
     # 重新 reshape 为 (H * W, C)
     reshaped_matrix = input_matrix.reshape(C, H * W).T  # 转置为 (H * W, C)
@@ -31,7 +30,8 @@ def process_matrix(input_matrix, a_values, b_values, transformation_matrix):
 
     # 再 reshape 回 (C, H, W)
     output_matrix = transformed_matrix.T.reshape(C, H, W)
-
+    for c in range(C):
+        output_matrix[c] = output_matrix[c] * a_values[c] + b_values[c]
     return output_matrix
 def generate_index_based_matrices(C, H, W):
     """
