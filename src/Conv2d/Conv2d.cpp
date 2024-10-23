@@ -9,7 +9,7 @@ void Conv2D(
     ap_uint<12> input_width,
     ap_uint<12> input_height,
     Dtype_t in_data[],   // Input in CHW format
-    Dtype_t weights[],   // Weights in OIHW format (Out_channel, In_channel, Height, Width)
+    Dtype_w weights[],   // Weights in OIHW format (Out_channel, In_channel, Height, Width)
     Dtype_t biases[],    // Biases for each output channel
     Dtype_t out_data[]   // Output in CHW format
 ) {

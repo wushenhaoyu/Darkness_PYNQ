@@ -2,13 +2,13 @@
 #include "Conv2d.h"
 
 
-#define IN_CHANNEL 2
-#define OUT_CHANNEL 2
-#define KERNEL_SIZE 3
-#define STRIDE 1
-#define PADDING 1
-#define INPUT_WIDTH 3
-#define INPUT_HEIGHT 3
+#define IN_CHANNEL 10
+#define OUT_CHANNEL 4
+#define KERNEL_SIZE 4
+#define STRIDE 2
+#define PADDING 3
+#define INPUT_WIDTH 6
+#define INPUT_HEIGHT 19
 #define OUTPUT_WIDTH ((INPUT_WIDTH - KERNEL_SIZE + 2 * PADDING) / STRIDE + 1)
 #define OUTPUT_HEIGHT ((INPUT_HEIGHT - KERNEL_SIZE + 2 * PADDING) / STRIDE + 1)
 
@@ -65,7 +65,7 @@ int main(void) {
         biases[oc] = 0.0;
     }
 
-    // Call the Conv2D function directly with 3D/4D arrays
+//     Call the Conv2D function directly with 3D/4D arrays
     Conv2D(IN_CHANNEL, OUT_CHANNEL, KERNEL_SIZE, STRIDE, PADDING, INPUT_WIDTH, INPUT_HEIGHT,
            in_data[0][0], weights[0][0][0], biases, out_data[0][0]);
 
