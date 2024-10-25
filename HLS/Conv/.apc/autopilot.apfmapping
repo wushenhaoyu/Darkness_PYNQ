@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
+<<<<<<< HEAD
     <originFiles name="Conv2d.cpp" path="D:\code\git\HLS\src\Conv2d\Conv2d.cpp"/>
     <originFiles name="Conv2d.h" path="D:\code\git\HLS\src\Conv2d\Conv2d.h"/>
   </source>
   <testbench>
     <originFiles name="main.cpp" path="D:\code\git\HLS\src\Conv2d\main.cpp"/>
+=======
+    <originFiles name="Conv2d.cpp" path="D:\Common_Workbase\Darkness_PYNQ\src\Conv2d\Conv2d.cpp"/>
+    <originFiles name="Conv2d.h" path="D:\Common_Workbase\Darkness_PYNQ\src\Conv2d\Conv2d.h"/>
+  </source>
+  <testbench>
+    <originFiles name="main.cpp" path="D:\Common_Workbase\Darkness_PYNQ\src\Conv2d\main.cpp"/>
+>>>>>>> 58250f75abf7dc781b9ce512737f0ae7bde7267e
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

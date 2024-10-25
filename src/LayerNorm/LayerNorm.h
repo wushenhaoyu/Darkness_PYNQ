@@ -6,8 +6,20 @@
 #include <hls_math.h>
 #include <cstdlib>
 using namespace std;
-typedef ap_fixed<16, 8> Dtype_t;   // Data type for input, output, and bias
-typedef ap_fixed<16, 8> Dtype_w;   // Data type for weights
-typedef ap_fixed<16, 8> Dtype_acc; // Data type for accumulation
+//typedef ap_fixed<16, 8> Dtype_t;   // Data type for input, output, and bias
+//typedef ap_fixed<16, 8> Dtype_w;   // Data type for weights
+//typedef ap_fixed<16, 8> Dtype_acc; // Data type for accumulation
+typedef float Dtype_t;   // Data type for input, output, and bias
+typedef float Dtype_w;   // Data type for weights
+typedef float Dtype_acc; // Data type for accumulation
 
+void LayerNorm(
+    ap_uint<8> num_features,
+    ap_uint<16> height,
+    ap_uint<16> width,
+    Dtype_t in_data[],
+    Dtype_t out_data[],
+    Dtype_t gamma[],
+    Dtype_t beta[]
+);
 #endif
