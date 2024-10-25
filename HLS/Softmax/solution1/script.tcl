@@ -5,13 +5,14 @@
 ############################################################
 open_project Softmax
 set_top Softmax3D
-add_files ../src/softmax/softmax.cpp
 add_files ../src/softmax/softmax.h
+add_files ../src/softmax/softmax.cpp
+add_files -tb ../src/softmax/main.cpp
 open_solution "solution1"
 set_part {xc7z020clg400-2} -tool vivado
 create_clock -period 10 -name default
 #source "./Softmax/solution1/directives.tcl"
-#csim_design
+csim_design
 csynth_design
-#cosim_design
+cosim_design
 export_design -format ip_catalog

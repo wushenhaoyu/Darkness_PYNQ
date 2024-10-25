@@ -2,6 +2,7 @@
 #define __GELU__H_
 #include <ap_int.h>
 #include <iostream>
+#include <cmath>
 #include <hls_math.h>
 #include <cstdlib>
 using namespace std;

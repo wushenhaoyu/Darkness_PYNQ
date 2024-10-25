@@ -1,13 +1,14 @@
-<project xmlns="com.autoesl.autopilot.project" top="Softmax3D" name="Softmax">
+<project xmlns="com.autoesl.autopilot.project" name="Softmax" top="Softmax3D">
+    <files>
+        <file name="../src/softmax/softmax.h" sc="0" tb="false" cflags=""/>
+        <file name="../src/softmax/softmax.cpp" sc="0" tb="false" cflags=""/>
+        <file name="../../../src/softmax/main.cpp" sc="0" tb="1" cflags=""/>
+    </files>
     <includePaths/>
     <libraryPaths/>
     <Simulation>
-        <SimFlow name="csim"/>
+        <SimFlow name="csim" csimMode="0" lastCsimMode="0"/>
     </Simulation>
-    <files xmlns="">
-        <file name="../src/softmax/softmax.h" sc="0" tb="false" cflags="" blackbox="false"/>
-        <file name="../src/softmax/softmax.cpp" sc="0" tb="false" cflags="" blackbox="false"/>
-    </files>
     <solutions xmlns="">
         <solution name="solution1" status="active"/>
     </solutions>

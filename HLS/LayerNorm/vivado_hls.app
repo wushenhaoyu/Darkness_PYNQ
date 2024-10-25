@@ -1,13 +1,14 @@
-<project xmlns="com.autoesl.autopilot.project" top="LayerNorm" name="LayerNorm">
+<project xmlns="com.autoesl.autopilot.project" name="LayerNorm" top="LayerNorm">
+    <files>
+        <file name="../src/LayerNorm/LayerNorm.h" sc="0" tb="false" cflags=""/>
+        <file name="../src/LayerNorm/LayerNorm.cpp" sc="0" tb="false" cflags=""/>
+        <file name="../../../src/LayerNorm/main.cpp" sc="0" tb="1" cflags=""/>
+    </files>
     <includePaths/>
     <libraryPaths/>
     <Simulation>
-        <SimFlow name="csim"/>
+        <SimFlow name="csim" csimMode="0" lastCsimMode="0"/>
     </Simulation>
-    <files xmlns="">
-        <file name="../src/LayerNorm/LayerNorm.h" sc="0" tb="false" cflags="" blackbox="false"/>
-        <file name="../src/LayerNorm/LayerNorm.cpp" sc="0" tb="false" cflags="" blackbox="false"/>
-    </files>
     <solutions xmlns="">
         <solution name="solution1" status="active"/>
     </solutions>

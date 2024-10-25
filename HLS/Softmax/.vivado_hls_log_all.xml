@@ -2,7 +2,10 @@
 <vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
   <errorLogs>
     <logs>
-      <synLog/>
+      <synLog>
+        <logs message="ERROR: [HLS 200-70] Synthesizability check failed.&#xD;&#xA;command 'ap_source' returned error code&#xD;&#xA;    while executing&#xD;&#xA;&quot;source D:/Common_Workbase/Darkness_PYNQ/HLS/Softmax/solution1/csynth.tcl&quot;&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls::main D:/Common_Workbase/Darkness_PYNQ/HLS/Softmax/solution1/csynth.tcl&quot;&#xD;&#xA;    (&quot;uplevel&quot; body line 1)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;uplevel 1 hls::main {*}$args&quot;&#xD;&#xA;    (procedure &quot;hls_proc&quot; line 5)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls_proc $argv&quot;&#xD;&#xA;" projectName="Softmax" solutionName="solution1" date="2024-10-25T19:35:22.653+0800"/>
+        <logs message="ERROR: [SYNCHK 200-79] Cannot find the top function 'Softmax3D' in the design. Possible causes are: (1) the top function name is misspelled; (2) the top function is nonexistent or declared as static." projectName="Softmax" solutionName="solution1" date="2024-10-25T19:35:22.521+0800"/>
+      </synLog>
       <simLog/>
       <mgLog/>
       <packageLog/>
@@ -11,12 +14,7 @@
   </errorLogs>
   <warningLogs>
     <logs>
-      <synLog>
-        <logs message="WARNING: [SCHED 204-65] Unable to satisfy pipeline directive: Loop contains subloop(s) not being unrolled or flattened." projectName="Softmax" solutionName="solution1" date="2024-10-25T15:45:24.739+0800" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1.1.1' (../src/softmax/softmax.cpp:28) in function 'Softmax3D': cannot completely unroll a loop with a variable trip count." projectName="Softmax" solutionName="solution1" date="2024-10-25T15:45:24.159+0800" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1.1' (../src/softmax/softmax.cpp:21) in function 'Softmax3D': cannot completely unroll a loop with a variable trip count." projectName="Softmax" solutionName="solution1" date="2024-10-25T15:45:24.133+0800" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1' (../src/softmax/softmax.cpp:20) in function 'Softmax3D': cannot completely unroll a loop with a variable trip count." projectName="Softmax" solutionName="solution1" date="2024-10-25T15:45:24.118+0800" type="Warning"/>
-      </synLog>
+      <synLog/>
       <simLog/>
       <mgLog/>
       <packageLog/>

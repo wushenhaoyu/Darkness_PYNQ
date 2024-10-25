@@ -29,42 +29,47 @@
 		<link>
 			<name>source</name>
 			<type>2</type>
-			<location>D:/code/git/HLS/HLS/Softmax/.apc/.src</location>
+			<location>D:/Common_Workbase/Darkness_PYNQ/HLS/Softmax/.apc/.src</location>
 		</link>
 		<link>
 			<name>testbench</name>
 			<type>2</type>
-			<location>D:/code/git/HLS/HLS/Softmax/.apc/.tb</location>
+			<location>D:/Common_Workbase/Darkness_PYNQ/HLS/Softmax/.apc/.tb</location>
 		</link>
 		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
-			<location>D:/code/git/HLS/HLS/Softmax/solution1/.tcls</location>
+			<location>D:/Common_Workbase/Darkness_PYNQ/HLS/Softmax/solution1/.tcls</location>
 		</link>
 		<link>
 			<name>source/softmax.cpp</name>
 			<type>1</type>
-			<location>D:/code/git/HLS/src/softmax/softmax.cpp</location>
+			<location>D:/Common_Workbase/Darkness_PYNQ/src/softmax/softmax.cpp</location>
 		</link>
 		<link>
 			<name>source/softmax.h</name>
 			<type>1</type>
-			<location>D:/code/git/HLS/src/softmax/softmax.h</location>
+			<location>D:/Common_Workbase/Darkness_PYNQ/src/softmax/softmax.h</location>
+		</link>
+		<link>
+			<name>testbench/main.cpp</name>
+			<type>1</type>
+			<location>D:/Common_Workbase/Darkness_PYNQ/src/softmax/main.cpp</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>
 			<type>1</type>
-			<location>D:/code/git/HLS/HLS/Softmax/solution1/solution1.directive</location>
+			<location>D:/Common_Workbase/Darkness_PYNQ/HLS/Softmax/solution1/solution1.directive</location>
 		</link>
 		<link>
 			<name>solution1/constraints/directives.tcl</name>
 			<type>1</type>
-			<location>D:/code/git/HLS/HLS/Softmax/solution1/directives.tcl</location>
+			<location>D:/Common_Workbase/Darkness_PYNQ/HLS/Softmax/solution1/directives.tcl</location>
 		</link>
 		<link>
 			<name>solution1/constraints/script.tcl</name>
 			<type>1</type>
-			<location>D:/code/git/HLS/HLS/Softmax/solution1/script.tcl</location>
+			<location>D:/Common_Workbase/Darkness_PYNQ/HLS/Softmax/solution1/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

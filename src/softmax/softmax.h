@@ -4,6 +4,7 @@
 #include <ap_int.h>
 #include <iostream>
 #include <hls_math.h>
+#include <math.h>
 #include <cstdlib>
 using namespace std;
 //typedef ap_fixed<16, 8> Dtype_t;   // Data type for input, output, and bias

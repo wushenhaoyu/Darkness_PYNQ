@@ -5,13 +5,14 @@
 ############################################################
 open_project Tanh
 set_top Tanh
-add_files ../src/Tanh/Tanh.cpp
 add_files ../src/Tanh/Tanh.h
+add_files ../src/Tanh/Tanh.cpp
+add_files -tb ../src/Tanh/main.cpp
 open_solution "solution1"
 set_part {xc7z020clg400-2} -tool vivado
 create_clock -period 10 -name default
 #source "./Tanh/solution1/directives.tcl"
-#csim_design
+csim_design
 csynth_design
-#cosim_design
+cosim_design
 export_design -format ip_catalog

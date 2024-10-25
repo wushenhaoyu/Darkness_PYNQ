@@ -5,15 +5,15 @@
 ############################################################
 open_project LayerNorm
 set_top LayerNorm
-add_files ../src/LayerNorm/LayerNorm.cpp
 add_files ../src/LayerNorm/LayerNorm.h
 add_files ../src/LayerNorm/LayerNorm.cpp
-add_files ../src/LayerNorm/LayerNorm.h
+add_files -tb ../src/LayerNorm/main.cpp
 open_solution "solution1"
 set_part {xc7z020clg400-2} -tool vivado
 create_clock -period 10 -name default
+config_export -format ip_catalog -rtl verilog
 source "./LayerNorm/solution1/directives.tcl"
-#csim_design
+csim_design
 csynth_design
-#cosim_design
+cosim_design
 export_design -rtl verilog -format ip_catalog

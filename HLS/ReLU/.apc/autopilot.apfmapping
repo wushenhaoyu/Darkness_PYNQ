@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="ReLU.h" path="D:\code\git\HLS\src\ReLU\ReLU.h"/>
-    <originFiles name="ReLU.cpp" path="D:\code\git\HLS\src\ReLU\ReLU.cpp"/>
+    <originFiles name="ReLU.h" path="D:\Common_Workbase\Darkness_PYNQ\src\ReLU\ReLU.h"/>
+    <originFiles name="ReLU.cpp" path="D:\Common_Workbase\Darkness_PYNQ\src\ReLU\ReLU.cpp"/>
   </source>
-  <testbench/>
+  <testbench>
+    <originFiles name="main.cpp" path="D:\Common_Workbase\Darkness_PYNQ\src\ReLU\main.cpp"/>
+  </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>
