@@ -23,7 +23,7 @@ void BatchNorm(
     #pragma HLS INTERFACE s_axilite port=width
     #pragma HLS INTERFACE s_axilite port=return
 
-    const Dtype_t eps = 1e-5;  // 防止除以�?
+    const Dtype_t eps = 1e-5;  //
 
     // Batch Normalization
     for (int c = 0; c < num_features; ++c) {

@@ -47,6 +47,7 @@ int main() {
 //        }
 //    }
 
+
     // µ÷ÓÃ Aff_channel º¯Êý
     Aff_channel(DIM, INPUT_WIDTH, INPUT_HEIGHT, input_data[0][0], alpha, beta, color[0], out_data[0][0]);
 
