@@ -37375,24 +37375,48 @@ typedef float Dtype_t;
 typedef float Dtype_w;
 typedef float Dtype_acc;
 void GELU(
-    Dtype_t x,
-    Dtype_t* out
+    ap_uint<12> input_width,
+    ap_uint<12> input_height,
+    ap_uint<8> input_depth,
+    Dtype_t in_data[],
+    Dtype_t out_data[]
 );
 # 2 "../src/Gelu/GELU.cpp" 2
+
 void GELU(
-    Dtype_t x,
-    Dtype_t* out
+    ap_uint<12> input_width,
+    ap_uint<12> input_height,
+    ap_uint<8> input_depth,
+    Dtype_t in_data[],
+    Dtype_t out_data[]
 ) {
-_ssdm_op_SpecInterface(out, "m_axi", 0, 0, "", 0, 4294967295, "gmem", "slave", "", 16, 16, 16, 16, "", "");
-_ssdm_op_SpecInterface(x, "m_axi", 0, 0, "", 0, 4294967295, "gmem", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(in_data, "m_axi", 0, 0, "", 0, 4294967295, "gmem", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(out_data, "m_axi", 0, 0, "", 0, 4294967295, "gmem", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(&input_width, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&input_height, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&input_depth, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 
 
-
  Dtype_t coef = 0.044715;
-    Dtype_t sqrt_2_div_pi = sqrt(2.0 / 3.14159265358979323846);
-    Dtype_t x_cube = x * x * x;
-    Dtype_t tanh_arg = sqrt_2_div_pi * (x + coef * x_cube);
-    Dtype_t tanh_val = tanh(tanh_arg);
-    *out = 0.5 * x * (1 + tanh_val);
+    Dtype_t sqrt_2_div_pi = std::sqrt(2.0 / 3.14159265358979323846);
+
+
+    for (int d = 0; d < input_depth; ++d) {
+_ssdm_Unroll(0,0,0, "");
+ for (int h = 0; h < input_height; ++h) {
+
+            for (int w = 0; w < input_width; ++w) {
+
+                int index = d * input_height * input_width + h * input_width + w;
+
+
+                Dtype_t x = in_data[index];
+                Dtype_t x_cube = x * x * x;
+                Dtype_t tanh_arg = sqrt_2_div_pi * (x + coef * x_cube);
+                Dtype_t tanh_val = std::tanh(tanh_arg);
+                out_data[index] = 0.5 * x * (1 + tanh_val);
+            }
+        }
+    }
 }

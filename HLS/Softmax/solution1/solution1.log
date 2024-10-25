@@ -1,0 +1,201 @@
+==============================================================
+File generated on Fri Oct 25 15:28:43 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file '../src/softmax/softmax.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 103.156 ; gain = 18.383
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 103.156 ; gain = 18.383
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 148.887 ; gain = 64.113
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'std::exp' into 'Softmax3D' (../src/softmax/softmax.cpp:27) automatically.
+ERROR: [SYNCHK 200-61] ../src/softmax/softmax.cpp:22: unsupported memory access on variable 'in_data' which is (or contains) an array with unknown size at compile time.
+INFO: [SYNCHK 200-10] 1 error(s), 0 warning(s).
+ERROR: [HLS 200-70] Synthesizability check failed.
+==============================================================
+File generated on Fri Oct 25 15:29:40 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file '../src/softmax/softmax.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 103.457 ; gain = 18.082
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 103.457 ; gain = 18.082
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 149.191 ; gain = 63.816
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'std::exp' into 'Softmax3D' (../src/softmax/softmax.cpp:27) automatically.
+ERROR: [SYNCHK 200-61] ../src/softmax/softmax.cpp:22: unsupported memory access on variable 'in_data' which is (or contains) an array with unknown size at compile time.
+INFO: [SYNCHK 200-10] 1 error(s), 0 warning(s).
+ERROR: [HLS 200-70] Synthesizability check failed.
+==============================================================
+File generated on Fri Oct 25 15:30:15 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file '../src/softmax/softmax.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 102.953 ; gain = 17.250
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 102.953 ; gain = 17.250
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 149.488 ; gain = 63.785
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'std::exp' into 'Softmax3D' (../src/softmax/softmax.cpp:26) automatically.
+ERROR: [SYNCHK 200-61] ../src/softmax/softmax.cpp:21: unsupported memory access on variable 'in_data' which is (or contains) an array with unknown size at compile time.
+INFO: [SYNCHK 200-10] 1 error(s), 0 warning(s).
+ERROR: [HLS 200-70] Synthesizability check failed.
+==============================================================
+File generated on Fri Oct 25 15:41:11 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file '../src/softmax/softmax.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 103.293 ; gain = 17.785
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 103.293 ; gain = 17.785
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 149.695 ; gain = 64.188
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'std::exp' into 'Softmax3D' (../src/softmax/softmax.cpp:29) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 184.023 ; gain = 98.516
+INFO: [XFORM 203-602] Inlining function 'std::exp' into 'Softmax3D' (../src/softmax/softmax.cpp:29) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 240.227 ; gain = 154.719
+INFO: [HLS 200-444] Inferring multiple bus burst write of variable length on port 'gmem' (../src/softmax/softmax.cpp:33:47). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 252.270 ; gain = 166.762
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'Softmax3D' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Softmax3D' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 10.284 seconds; current allocated memory: 195.607 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 4 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.121 seconds; current allocated memory: 196.071 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Softmax3D' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'Softmax3D/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Softmax3D/channel_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Softmax3D/height_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Softmax3D/width_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Softmax3D/in_data' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Softmax3D/out_data' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'Softmax3D' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'channel_V', 'height_V', 'width_V', 'in_data' and 'out_data' to AXI-Lite port AXILiteS.
+INFO: [SYN 201-210] Renamed object name 'Softmax3D_faddfsub_32ns_32ns_32_4_full_dsp_1' to 'Softmax3D_faddfsubkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Softmax3D_fdiv_32ns_32ns_32_12_1' to 'Softmax3D_fdiv_32cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Softmax3D_fexp_32ns_32ns_32_8_full_dsp_1' to 'Softmax3D_fexp_32dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Softmax3D_mul_mul_24ns_12ns_36_1_1' to 'Softmax3D_mul_muleOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Softmax3D_mac_muladd_12ns_24ns_12ns_32_1_1' to 'Softmax3D_mac_mulfYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'Softmax3D_faddfsubkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Softmax3D_fdiv_32cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Softmax3D_fexp_32dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Softmax3D_mac_mulfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Softmax3D_mul_muleOg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Softmax3D'.
+INFO: [HLS 200-111]  Elapsed time: 0.384 seconds; current allocated memory: 197.458 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 255.020 ; gain = 169.512
+INFO: [SYSC 207-301] Generating SystemC RTL for Softmax3D.
+INFO: [VHDL 208-304] Generating VHDL RTL for Softmax3D.
+INFO: [VLOG 209-307] Generating Verilog RTL for Softmax3D.
+INFO: [HLS 200-112] Total elapsed time: 12.38 seconds; peak allocated memory: 197.458 MB.
+==============================================================
+File generated on Fri Oct 25 15:45:14 +0800 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg400-2'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file '../src/softmax/softmax.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 103.133 ; gain = 17.477
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 103.133 ; gain = 17.477
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 150.355 ; gain = 64.699
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'std::exp' into 'Softmax3D' (../src/softmax/softmax.cpp:30) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 182.520 ; gain = 96.863
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (../src/softmax/softmax.cpp:17) in function 'Softmax3D' for pipelining.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1' (../src/softmax/softmax.cpp:20) in function 'Softmax3D': cannot completely unroll a loop with a variable trip count.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1.1' (../src/softmax/softmax.cpp:21) in function 'Softmax3D': cannot completely unroll a loop with a variable trip count.
+WARNING: [XFORM 203-503] Cannot unroll loop 'Loop-1.1.1.1' (../src/softmax/softmax.cpp:28) in function 'Softmax3D': cannot completely unroll a loop with a variable trip count.
+INFO: [XFORM 203-602] Inlining function 'std::exp' into 'Softmax3D' (../src/softmax/softmax.cpp:30) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 239.984 ; gain = 154.328
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (../src/softmax/softmax.cpp:17:18) in function 'Softmax3D'.
+INFO: [HLS 200-444] Inferring multiple bus burst write of variable length on port 'gmem' (../src/softmax/softmax.cpp:34:47). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 252.316 ; gain = 166.660
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'Softmax3D' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Softmax3D' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive: Loop contains subloop(s) not being unrolled or flattened.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 10.318 seconds; current allocated memory: 195.614 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 3 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.181 seconds; current allocated memory: 196.214 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Softmax3D' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'Softmax3D/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Softmax3D/channel_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Softmax3D/height_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Softmax3D/width_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Softmax3D/in_data' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Softmax3D/out_data' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'Softmax3D' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'channel_V', 'height_V', 'width_V', 'in_data' and 'out_data' to AXI-Lite port AXILiteS.
+INFO: [SYN 201-210] Renamed object name 'Softmax3D_faddfsub_32ns_32ns_32_4_full_dsp_1' to 'Softmax3D_faddfsubkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Softmax3D_fdiv_32ns_32ns_32_12_1' to 'Softmax3D_fdiv_32cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Softmax3D_fexp_32ns_32ns_32_8_full_dsp_1' to 'Softmax3D_fexp_32dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Softmax3D_mul_mul_12ns_12ns_24_1_1' to 'Softmax3D_mul_muleOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Softmax3D_mul_mul_12ns_24ns_36_1_1' to 'Softmax3D_mul_mulfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Softmax3D_mac_muladd_12ns_12ns_36ns_36_1_1' to 'Softmax3D_mac_mulg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Softmax3D_mac_muladd_12ns_24ns_12ns_32_1_1' to 'Softmax3D_mac_mulhbi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'Softmax3D_faddfsubkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Softmax3D_fdiv_32cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Softmax3D_fexp_32dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Softmax3D_mac_mulg8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Softmax3D_mac_mulhbi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Softmax3D_mul_muleOg': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Softmax3D_mul_mulfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Softmax3D'.
+INFO: [HLS 200-111]  Elapsed time: 0.544 seconds; current allocated memory: 197.680 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 255.605 ; gain = 169.949
+INFO: [SYSC 207-301] Generating SystemC RTL for Softmax3D.
+INFO: [VHDL 208-304] Generating VHDL RTL for Softmax3D.
+INFO: [VLOG 209-307] Generating Verilog RTL for Softmax3D.
+INFO: [HLS 200-112] Total elapsed time: 12.739 seconds; peak allocated memory: 197.680 MB.

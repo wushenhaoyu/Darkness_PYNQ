@@ -1,0 +1,473 @@
+
+
+================================================================
+== Vivado HLS Report for 'LeakyReLU'
+================================================================
+* Date:           Fri Oct 25 16:05:11 2024
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        LeakyReLU
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.750|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+--------------+-----+--------------+---------+
+    |       Latency      |      Interval      | Pipeline|
+    | min |      max     | min |      max     |   Type  |
+    +-----+--------------+-----+--------------+---------+
+    |    1|  686876033026|    1|  686876033026|   none  |
+    +-----+--------------+-----+--------------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+--------------+------------+-----------+-----------+--------------+----------+
+        |             |       Latency      |  Iteration |  Initiation Interval  |     Trip     |          |
+        |  Loop Name  | min |      max     |   Latency  |  achieved |   target  |     Count    | Pipelined|
+        +-------------+-----+--------------+------------+-----------+-----------+--------------+----------+
+        |- Loop 1     |    0|  686876033025| 11 ~ 40961 |          -|          -| 0 ~ 16769025 |    no    |
+        | + Loop 1.1  |    0|         40950|          10|          -|          -|   0 ~ 4095   |    no    |
+        +-------------+-----+--------------+------------+-----------+-----------+--------------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 28
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond_flatten)
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / (!exitcond)
+	2  / (exitcond)
+13 --> 
+	14  / (!tmp_2)
+	22  / (tmp_2)
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	12  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	21  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 6.55>
+ST_1 : Operation 29 [1/1] (1.00ns)   --->   "%alpha_read = call float @_ssdm_op_Read.s_axilite.float(float %alpha)"   --->   Operation 29 'read' 'alpha_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 30 [1/1] (1.00ns)   --->   "%out_data_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %out_data)"   --->   Operation 30 'read' 'out_data_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 31 [1/1] (1.00ns)   --->   "%in_data_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %in_data)"   --->   Operation 31 'read' 'in_data_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 32 [1/1] (1.00ns)   --->   "%width_V_read = call i12 @_ssdm_op_Read.s_axilite.i12(i12 %width_V)"   --->   Operation 32 'read' 'width_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 33 [1/1] (1.00ns)   --->   "%height_V_read = call i12 @_ssdm_op_Read.s_axilite.i12(i12 %height_V)"   --->   Operation 33 'read' 'height_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 34 [1/1] (1.00ns)   --->   "%channel_V_read = call i12 @_ssdm_op_Read.s_axilite.i12(i12 %channel_V)"   --->   Operation 34 'read' 'channel_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%tmp = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %out_data_read, i32 2, i32 31)"   --->   Operation 35 'partselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%tmp_cast = zext i30 %tmp to i37"   --->   Operation 36 'zext' 'tmp_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%tmp_1 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %in_data_read, i32 2, i32 31)"   --->   Operation 37 'partselect' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%tmp_1_cast = zext i30 %tmp_1 to i37"   --->   Operation 38 'zext' 'tmp_1_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %gmem), !map !62"   --->   Operation 39 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i12 %channel_V), !map !67"   --->   Operation 40 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i12 %height_V), !map !73"   --->   Operation 41 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i12 %width_V), !map !77"   --->   Operation 42 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %alpha), !map !81"   --->   Operation 43 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([10 x i8]* @LeakyReLU_str) nounwind"   --->   Operation 44 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float* %gmem, [6 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i64 4294967295, [5 x i8]* @p_str2, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/LeakyReLU/LeakyReLU.cpp:12]   --->   Operation 45 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %in_data, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i64 4294967295, [1 x i8]* @bundle, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/LeakyReLU/LeakyReLU.cpp:12]   --->   Operation 46 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %out_data, [10 x i8]* @mode1, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i64 4294967295, [1 x i8]* @bundle2, [6 x i8]* @p_str3, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/LeakyReLU/LeakyReLU.cpp:13]   --->   Operation 47 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(float %alpha, [10 x i8]* @p_str4, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/LeakyReLU/LeakyReLU.cpp:14]   --->   Operation 48 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i12 %width_V, [10 x i8]* @p_str4, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/LeakyReLU/LeakyReLU.cpp:15]   --->   Operation 49 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i12 %height_V, [10 x i8]* @p_str4, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/LeakyReLU/LeakyReLU.cpp:16]   --->   Operation 50 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i12 %channel_V, [10 x i8]* @p_str4, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/LeakyReLU/LeakyReLU.cpp:17]   --->   Operation 51 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str4, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [../src/LeakyReLU/LeakyReLU.cpp:18]   --->   Operation 52 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%rhs_V_cast = zext i12 %height_V_read to i24" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 53 'zext' 'rhs_V_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%rhs_V_1_cast = zext i12 %width_V_read to i36" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 54 'zext' 'rhs_V_1_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%rhs_V_2_cast = zext i12 %width_V_read to i24"   --->   Operation 55 'zext' 'rhs_V_2_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%tmp_5 = zext i12 %width_V_read to i32"   --->   Operation 56 'zext' 'tmp_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%cast = zext i12 %channel_V_read to i24"   --->   Operation 57 'zext' 'cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (5.55ns) (root node of the DSP)   --->   "%bound = mul i24 %rhs_V_cast, %cast" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 58 'mul' 'bound' <Predicate = true> <Delay = 5.55> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 5.55> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 59 [1/1] (0.46ns)   --->   "br label %1" [../src/LeakyReLU/LeakyReLU.cpp:19]   --->   Operation 59 'br' <Predicate = true> <Delay = 0.46>
+
+State 2 <SV = 1> <Delay = 7.96>
+ST_2 : Operation 60 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i24 [ 0, %0 ], [ %indvar_flatten_next, %6 ]"   --->   Operation 60 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 61 [1/1] (0.00ns)   --->   "%i_op_assign = phi i12 [ 0, %0 ], [ %ret_V_1_mid2_v_v_v_v, %6 ]" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 61 'phi' 'i_op_assign' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 62 [1/1] (0.00ns)   --->   "%i_op_assign_1 = phi i12 [ 0, %0 ], [ %h, %6 ]"   --->   Operation 62 'phi' 'i_op_assign_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 63 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [../src/LeakyReLU/LeakyReLU.cpp:20]   --->   Operation 63 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 64 [1/1] (2.03ns)   --->   "%exitcond_flatten = icmp eq i24 %indvar_flatten, %bound" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 64 'icmp' 'exitcond_flatten' <Predicate = true> <Delay = 2.03> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 65 [1/1] (1.68ns)   --->   "%indvar_flatten_next = add i24 %indvar_flatten, 1"   --->   Operation 65 'add' 'indvar_flatten_next' <Predicate = true> <Delay = 1.68> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 66 [1/1] (0.00ns)   --->   "br i1 %exitcond_flatten, label %7, label %.reset" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 66 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 67 [1/1] (1.82ns)   --->   "%exitcond1 = icmp eq i12 %i_op_assign_1, %height_V_read" [../src/LeakyReLU/LeakyReLU.cpp:21]   --->   Operation 67 'icmp' 'exitcond1' <Predicate = (!exitcond_flatten)> <Delay = 1.82> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 68 [1/1] (0.59ns)   --->   "%i_op_assign_1_mid2 = select i1 %exitcond1, i12 0, i12 %i_op_assign_1" [../src/LeakyReLU/LeakyReLU.cpp:21]   --->   Operation 68 'select' 'i_op_assign_1_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.59> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.59> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 69 [1/1] (1.54ns)   --->   "%c7 = add i12 %i_op_assign, 1" [../src/LeakyReLU/LeakyReLU.cpp:19]   --->   Operation 69 'add' 'c7' <Predicate = (!exitcond_flatten)> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 70 [1/1] (0.59ns)   --->   "%ret_V_1_mid2_v_v_v_v = select i1 %exitcond1, i12 %c7, i12 %i_op_assign" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 70 'select' 'ret_V_1_mid2_v_v_v_v' <Predicate = (!exitcond_flatten)> <Delay = 0.59> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.59> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 71 [1/1] (0.00ns)   --->   "%ret_V_1_mid2_v_v_v = zext i12 %ret_V_1_mid2_v_v_v_v to i24" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 71 'zext' 'ret_V_1_mid2_v_v_v' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 72 [1/1] (5.55ns) (root node of the DSP)   --->   "%ret_V_1_mid2_v_v = mul i24 %rhs_V_cast, %ret_V_1_mid2_v_v_v" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 72 'mul' 'ret_V_1_mid2_v_v' <Predicate = (!exitcond_flatten)> <Delay = 5.55> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 5.55> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 73 [1/1] (0.00ns)   --->   "ret void" [../src/LeakyReLU/LeakyReLU.cpp:31]   --->   Operation 73 'ret' <Predicate = (exitcond_flatten)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 5.55>
+ST_3 : Operation 74 [1/1] (0.00ns)   --->   "%ret_V_1_mid2_v = zext i24 %ret_V_1_mid2_v_v to i36" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 74 'zext' 'ret_V_1_mid2_v' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 75 [1/1] (5.55ns) (root node of the DSP)   --->   "%ret_V_1_mid2 = mul i36 %rhs_V_1_cast, %ret_V_1_mid2_v" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 75 'mul' 'ret_V_1_mid2' <Predicate = true> <Delay = 5.55> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 5.55> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 4 <SV = 3> <Delay = 7.54>
+ST_4 : Operation 76 [1/1] (0.00ns)   --->   "%lhs_V_2_cast = zext i12 %i_op_assign_1_mid2 to i24" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 76 'zext' 'lhs_V_2_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 77 [1/1] (2.82ns) (grouped into DSP with root node ret_V_1)   --->   "%ret_V = mul i24 %rhs_V_2_cast, %lhs_V_2_cast" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 77 'mul' 'ret_V' <Predicate = true> <Delay = 2.82> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 5.55> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 78 [1/1] (0.00ns) (grouped into DSP with root node ret_V_1)   --->   "%rhs_V_3_cast = zext i24 %ret_V to i36" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 78 'zext' 'rhs_V_3_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 79 [1/1] (2.73ns) (root node of the DSP)   --->   "%ret_V_1 = add i36 %rhs_V_3_cast, %ret_V_1_mid2" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 79 'add' 'ret_V_1' <Predicate = true> <Delay = 2.73> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 5.55> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 80 [1/1] (0.00ns)   --->   "%tmp_3_cast = zext i36 %ret_V_1 to i37" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 80 'zext' 'tmp_3_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 81 [1/1] (1.99ns)   --->   "%in_data2_sum = add i37 %tmp_3_cast, %tmp_1_cast" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 81 'add' 'in_data2_sum' <Predicate = true> <Delay = 1.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 82 [1/1] (0.00ns)   --->   "%in_data2_sum_cast = zext i37 %in_data2_sum to i64" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 82 'zext' 'in_data2_sum_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 83 [1/1] (0.00ns)   --->   "%gmem_addr = getelementptr inbounds float* %gmem, i64 %in_data2_sum_cast" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 83 'getelementptr' 'gmem_addr' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 8.75>
+ST_5 : Operation 84 [7/7] (8.75ns)   --->   "%gmem_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %gmem_addr, i32 %tmp_5)" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 84 'readreq' 'gmem_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 8.75>
+ST_6 : Operation 85 [6/7] (8.75ns)   --->   "%gmem_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %gmem_addr, i32 %tmp_5)" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 85 'readreq' 'gmem_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 8.75>
+ST_7 : Operation 86 [5/7] (8.75ns)   --->   "%gmem_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %gmem_addr, i32 %tmp_5)" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 86 'readreq' 'gmem_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 8.75>
+ST_8 : Operation 87 [4/7] (8.75ns)   --->   "%gmem_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %gmem_addr, i32 %tmp_5)" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 87 'readreq' 'gmem_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 9 <SV = 8> <Delay = 8.75>
+ST_9 : Operation 88 [3/7] (8.75ns)   --->   "%gmem_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %gmem_addr, i32 %tmp_5)" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 88 'readreq' 'gmem_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 10 <SV = 9> <Delay = 8.75>
+ST_10 : Operation 89 [2/7] (8.75ns)   --->   "%gmem_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %gmem_addr, i32 %tmp_5)" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 89 'readreq' 'gmem_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 11 <SV = 10> <Delay = 8.75>
+ST_11 : Operation 90 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [../src/LeakyReLU/LeakyReLU.cpp:20]   --->   Operation 90 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 91 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [../src/LeakyReLU/LeakyReLU.cpp:20]   --->   Operation 91 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 92 [1/7] (8.75ns)   --->   "%gmem_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %gmem_addr, i32 %tmp_5)" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 92 'readreq' 'gmem_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 93 [1/1] (0.46ns)   --->   "br label %.preheader" [../src/LeakyReLU/LeakyReLU.cpp:22]   --->   Operation 93 'br' <Predicate = true> <Delay = 0.46>
+
+State 12 <SV = 11> <Delay = 8.75>
+ST_12 : Operation 94 [1/1] (0.00ns)   --->   "%i_op_assign_2 = phi i12 [ %w, %5 ], [ 0, %.reset ]"   --->   Operation 94 'phi' 'i_op_assign_2' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 95 [1/1] (1.82ns)   --->   "%exitcond = icmp eq i12 %i_op_assign_2, %width_V_read" [../src/LeakyReLU/LeakyReLU.cpp:22]   --->   Operation 95 'icmp' 'exitcond' <Predicate = true> <Delay = 1.82> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 96 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 0, i64 4095, i64 0)"   --->   Operation 96 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 97 [1/1] (1.54ns)   --->   "%w = add i12 %i_op_assign_2, 1" [../src/LeakyReLU/LeakyReLU.cpp:22]   --->   Operation 97 'add' 'w' <Predicate = true> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 98 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %6, label %2" [../src/LeakyReLU/LeakyReLU.cpp:22]   --->   Operation 98 'br' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 99 [1/1] (0.00ns)   --->   "%rhs_V_4_cast = zext i12 %i_op_assign_2 to i36" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 99 'zext' 'rhs_V_4_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_12 : Operation 100 [1/1] (1.99ns)   --->   "%ret_V_2 = add i36 %rhs_V_4_cast, %ret_V_1" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 100 'add' 'ret_V_2' <Predicate = (!exitcond)> <Delay = 1.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 101 [1/1] (8.75ns)   --->   "%gmem_addr_read = call float @_ssdm_op_Read.m_axi.floatP(float* %gmem_addr)" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 101 'read' 'gmem_addr_read' <Predicate = (!exitcond)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_12 : Operation 102 [1/1] (1.54ns)   --->   "%h = add i12 %i_op_assign_1_mid2, 1" [../src/LeakyReLU/LeakyReLU.cpp:21]   --->   Operation 102 'add' 'h' <Predicate = (exitcond)> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 103 [1/1] (0.00ns)   --->   "br label %1" [../src/LeakyReLU/LeakyReLU.cpp:21]   --->   Operation 103 'br' <Predicate = (exitcond)> <Delay = 0.00>
+
+State 13 <SV = 12> <Delay = 8.43>
+ST_13 : Operation 104 [1/1] (0.00ns)   --->   "%tmp_4_cast = zext i36 %ret_V_2 to i37" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 104 'zext' 'tmp_4_cast' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 105 [1/1] (0.00ns)   --->   "%in_data_load_to_int = bitcast float %gmem_addr_read to i32" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 105 'bitcast' 'in_data_load_to_int' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 106 [1/1] (0.00ns)   --->   "%tmp_7 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %in_data_load_to_int, i32 23, i32 30)" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 106 'partselect' 'tmp_7' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 107 [1/1] (0.00ns)   --->   "%tmp_3 = trunc i32 %in_data_load_to_int to i23" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 107 'trunc' 'tmp_3' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 108 [1/1] (1.31ns)   --->   "%notlhs = icmp ne i8 %tmp_7, -1" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 108 'icmp' 'notlhs' <Predicate = true> <Delay = 1.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 109 [1/1] (2.02ns)   --->   "%notrhs = icmp eq i23 %tmp_3, 0" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 109 'icmp' 'notrhs' <Predicate = true> <Delay = 2.02> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 110 [1/1] (0.00ns) (grouped into LUT with out node tmp_2)   --->   "%tmp_9 = or i1 %notrhs, %notlhs" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 110 'or' 'tmp_9' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 111 [1/1] (5.24ns)   --->   "%tmp_s = fcmp ogt float %gmem_addr_read, 0.000000e+00" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 111 'fcmp' 'tmp_s' <Predicate = true> <Delay = 5.24> <Core = "FCmp">   --->   Core 110 'FCmp' <Latency = 0> <II = 1> <Delay = 5.24> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 112 [1/1] (0.80ns) (out node of the LUT)   --->   "%tmp_2 = and i1 %tmp_9, %tmp_s" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 112 'and' 'tmp_2' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 113 [1/1] (0.00ns)   --->   "br i1 %tmp_2, label %3, label %4" [../src/LeakyReLU/LeakyReLU.cpp:23]   --->   Operation 113 'br' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 114 [3/3] (8.43ns)   --->   "%tmp_6 = fmul float %gmem_addr_read, %alpha_read" [../src/LeakyReLU/LeakyReLU.cpp:26]   --->   Operation 114 'fmul' 'tmp_6' <Predicate = (!tmp_2)> <Delay = 8.43> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 115 [1/1] (1.99ns)   --->   "%out_data4_sum = add i37 %tmp_cast, %tmp_4_cast" [../src/LeakyReLU/LeakyReLU.cpp:26]   --->   Operation 115 'add' 'out_data4_sum' <Predicate = (!tmp_2)> <Delay = 1.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 116 [1/1] (0.00ns)   --->   "%out_data4_sum_cast = zext i37 %out_data4_sum to i64" [../src/LeakyReLU/LeakyReLU.cpp:26]   --->   Operation 116 'zext' 'out_data4_sum_cast' <Predicate = (!tmp_2)> <Delay = 0.00>
+ST_13 : Operation 117 [1/1] (0.00ns)   --->   "%gmem_addr_2 = getelementptr inbounds float* %gmem, i64 %out_data4_sum_cast" [../src/LeakyReLU/LeakyReLU.cpp:26]   --->   Operation 117 'getelementptr' 'gmem_addr_2' <Predicate = (!tmp_2)> <Delay = 0.00>
+ST_13 : Operation 118 [1/1] (1.99ns)   --->   "%out_data4_sum6 = add i37 %tmp_cast, %tmp_4_cast" [../src/LeakyReLU/LeakyReLU.cpp:24]   --->   Operation 118 'add' 'out_data4_sum6' <Predicate = (tmp_2)> <Delay = 1.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 119 [1/1] (0.00ns)   --->   "%out_data4_sum6_cast = zext i37 %out_data4_sum6 to i64" [../src/LeakyReLU/LeakyReLU.cpp:24]   --->   Operation 119 'zext' 'out_data4_sum6_cast' <Predicate = (tmp_2)> <Delay = 0.00>
+ST_13 : Operation 120 [1/1] (0.00ns)   --->   "%gmem_addr_1 = getelementptr inbounds float* %gmem, i64 %out_data4_sum6_cast" [../src/LeakyReLU/LeakyReLU.cpp:24]   --->   Operation 120 'getelementptr' 'gmem_addr_1' <Predicate = (tmp_2)> <Delay = 0.00>
+
+State 14 <SV = 13> <Delay = 8.43>
+ST_14 : Operation 121 [2/3] (8.43ns)   --->   "%tmp_6 = fmul float %gmem_addr_read, %alpha_read" [../src/LeakyReLU/LeakyReLU.cpp:26]   --->   Operation 121 'fmul' 'tmp_6' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 8.75>
+ST_15 : Operation 122 [1/3] (8.43ns)   --->   "%tmp_6 = fmul float %gmem_addr_read, %alpha_read" [../src/LeakyReLU/LeakyReLU.cpp:26]   --->   Operation 122 'fmul' 'tmp_6' <Predicate = true> <Delay = 8.43> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 2> <II = 1> <Delay = 8.43> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 123 [1/1] (8.75ns)   --->   "%gmem_addr_3_req = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %gmem_addr_2, i32 1)" [../src/LeakyReLU/LeakyReLU.cpp:26]   --->   Operation 123 'writereq' 'gmem_addr_3_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 16 <SV = 15> <Delay = 8.75>
+ST_16 : Operation 124 [1/1] (8.75ns)   --->   "call void @_ssdm_op_Write.m_axi.floatP(float* %gmem_addr_2, float %tmp_6, i4 -1)" [../src/LeakyReLU/LeakyReLU.cpp:26]   --->   Operation 124 'write' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 17 <SV = 16> <Delay = 8.75>
+ST_17 : Operation 125 [5/5] (8.75ns)   --->   "%gmem_addr_3_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %gmem_addr_2)" [../src/LeakyReLU/LeakyReLU.cpp:26]   --->   Operation 125 'writeresp' 'gmem_addr_3_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 18 <SV = 17> <Delay = 8.75>
+ST_18 : Operation 126 [4/5] (8.75ns)   --->   "%gmem_addr_3_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %gmem_addr_2)" [../src/LeakyReLU/LeakyReLU.cpp:26]   --->   Operation 126 'writeresp' 'gmem_addr_3_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 19 <SV = 18> <Delay = 8.75>
+ST_19 : Operation 127 [3/5] (8.75ns)   --->   "%gmem_addr_3_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %gmem_addr_2)" [../src/LeakyReLU/LeakyReLU.cpp:26]   --->   Operation 127 'writeresp' 'gmem_addr_3_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 20 <SV = 19> <Delay = 8.75>
+ST_20 : Operation 128 [2/5] (8.75ns)   --->   "%gmem_addr_3_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %gmem_addr_2)" [../src/LeakyReLU/LeakyReLU.cpp:26]   --->   Operation 128 'writeresp' 'gmem_addr_3_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 21 <SV = 20> <Delay = 8.75>
+ST_21 : Operation 129 [1/5] (8.75ns)   --->   "%gmem_addr_3_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %gmem_addr_2)" [../src/LeakyReLU/LeakyReLU.cpp:26]   --->   Operation 129 'writeresp' 'gmem_addr_3_resp' <Predicate = (!tmp_2)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_21 : Operation 130 [1/1] (0.00ns)   --->   "br label %5"   --->   Operation 130 'br' <Predicate = (!tmp_2)> <Delay = 0.00>
+ST_21 : Operation 131 [1/1] (0.00ns)   --->   "br label %.preheader" [../src/LeakyReLU/LeakyReLU.cpp:22]   --->   Operation 131 'br' <Predicate = true> <Delay = 0.00>
+
+State 22 <SV = 13> <Delay = 8.75>
+ST_22 : Operation 132 [1/1] (8.75ns)   --->   "%gmem_addr_2_req = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %gmem_addr_1, i32 1)" [../src/LeakyReLU/LeakyReLU.cpp:24]   --->   Operation 132 'writereq' 'gmem_addr_2_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 23 <SV = 14> <Delay = 8.75>
+ST_23 : Operation 133 [1/1] (8.75ns)   --->   "call void @_ssdm_op_Write.m_axi.floatP(float* %gmem_addr_1, float %gmem_addr_read, i4 -1)" [../src/LeakyReLU/LeakyReLU.cpp:24]   --->   Operation 133 'write' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 24 <SV = 15> <Delay = 8.75>
+ST_24 : Operation 134 [5/5] (8.75ns)   --->   "%gmem_addr_2_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %gmem_addr_1)" [../src/LeakyReLU/LeakyReLU.cpp:24]   --->   Operation 134 'writeresp' 'gmem_addr_2_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 25 <SV = 16> <Delay = 8.75>
+ST_25 : Operation 135 [4/5] (8.75ns)   --->   "%gmem_addr_2_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %gmem_addr_1)" [../src/LeakyReLU/LeakyReLU.cpp:24]   --->   Operation 135 'writeresp' 'gmem_addr_2_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 26 <SV = 17> <Delay = 8.75>
+ST_26 : Operation 136 [3/5] (8.75ns)   --->   "%gmem_addr_2_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %gmem_addr_1)" [../src/LeakyReLU/LeakyReLU.cpp:24]   --->   Operation 136 'writeresp' 'gmem_addr_2_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 27 <SV = 18> <Delay = 8.75>
+ST_27 : Operation 137 [2/5] (8.75ns)   --->   "%gmem_addr_2_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %gmem_addr_1)" [../src/LeakyReLU/LeakyReLU.cpp:24]   --->   Operation 137 'writeresp' 'gmem_addr_2_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 28 <SV = 19> <Delay = 8.75>
+ST_28 : Operation 138 [1/5] (8.75ns)   --->   "%gmem_addr_2_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %gmem_addr_1)" [../src/LeakyReLU/LeakyReLU.cpp:24]   --->   Operation 138 'writeresp' 'gmem_addr_2_resp' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_28 : Operation 139 [1/1] (0.00ns)   --->   "br label %5" [../src/LeakyReLU/LeakyReLU.cpp:25]   --->   Operation 139 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 6.55ns
+The critical path consists of the following:
+	s_axi read on port 'height_V' [12]  (1 ns)
+	'mul' operation of DSP[37] ('bound', ../src/LeakyReLU/LeakyReLU.cpp:23) [37]  (5.55 ns)
+
+ <State 2>: 7.96ns
+The critical path consists of the following:
+	'phi' operation ('h') with incoming values : ('h', ../src/LeakyReLU/LeakyReLU.cpp:21) [42]  (0 ns)
+	'icmp' operation ('exitcond1', ../src/LeakyReLU/LeakyReLU.cpp:21) [49]  (1.82 ns)
+	'select' operation ('ret_V_1_mid2_v_v_v_v', ../src/LeakyReLU/LeakyReLU.cpp:23) [53]  (0.59 ns)
+	'mul' operation of DSP[55] ('ret_V_1_mid2_v_v', ../src/LeakyReLU/LeakyReLU.cpp:23) [55]  (5.55 ns)
+
+ <State 3>: 5.55ns
+The critical path consists of the following:
+	'mul' operation of DSP[57] ('ret_V_1_mid2', ../src/LeakyReLU/LeakyReLU.cpp:23) [57]  (5.55 ns)
+
+ <State 4>: 7.54ns
+The critical path consists of the following:
+	'mul' operation of DSP[61] ('ret.V', ../src/LeakyReLU/LeakyReLU.cpp:23) [59]  (2.82 ns)
+	'add' operation of DSP[61] ('ret.V', ../src/LeakyReLU/LeakyReLU.cpp:23) [61]  (2.73 ns)
+	'add' operation ('in_data2_sum', ../src/LeakyReLU/LeakyReLU.cpp:23) [63]  (1.99 ns)
+
+ <State 5>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:23) [66]  (8.75 ns)
+
+ <State 6>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:23) [66]  (8.75 ns)
+
+ <State 7>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:23) [66]  (8.75 ns)
+
+ <State 8>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:23) [66]  (8.75 ns)
+
+ <State 9>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:23) [66]  (8.75 ns)
+
+ <State 10>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:23) [66]  (8.75 ns)
+
+ <State 11>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:23) [66]  (8.75 ns)
+
+ <State 12>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:23) [78]  (8.75 ns)
+
+ <State 13>: 8.43ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_6', ../src/LeakyReLU/LeakyReLU.cpp:26) [89]  (8.43 ns)
+
+ <State 14>: 8.43ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_6', ../src/LeakyReLU/LeakyReLU.cpp:26) [89]  (8.43 ns)
+
+ <State 15>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:26) [93]  (8.75 ns)
+
+ <State 16>: 8.75ns
+The critical path consists of the following:
+	bus write on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:26) [94]  (8.75 ns)
+
+ <State 17>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:26) [95]  (8.75 ns)
+
+ <State 18>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:26) [95]  (8.75 ns)
+
+ <State 19>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:26) [95]  (8.75 ns)
+
+ <State 20>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:26) [95]  (8.75 ns)
+
+ <State 21>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:26) [95]  (8.75 ns)
+
+ <State 22>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:24) [101]  (8.75 ns)
+
+ <State 23>: 8.75ns
+The critical path consists of the following:
+	bus write on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:24) [102]  (8.75 ns)
+
+ <State 24>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:24) [103]  (8.75 ns)
+
+ <State 25>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:24) [103]  (8.75 ns)
+
+ <State 26>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:24) [103]  (8.75 ns)
+
+ <State 27>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:24) [103]  (8.75 ns)
+
+ <State 28>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem' (../src/LeakyReLU/LeakyReLU.cpp:24) [103]  (8.75 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
