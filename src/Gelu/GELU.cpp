@@ -1,6 +1,5 @@
 #include "GELU.h"
 
-
 void GELU(
     ap_uint<12> input_width,
     ap_uint<12> input_height,
@@ -29,6 +28,7 @@ void GELU(
 
                 // GELU����
                 Dtype_t x = in_data[index];
+<<<<<<< HEAD
 
                 // ʹ�ö���ʽ���ƶ�����ֱ�ӵ���tanh
                 Dtype_t x_cube = x * x * x;
@@ -36,10 +36,16 @@ void GELU(
 
                 // ����GELUֵ��ʹ��һ���򵥵Ķ���ʽ�����tanh
                 // ʹ�� x * (1 + x * (coef * x_square)) ���н���
-                Dtype_t gelu_value = 0.5 * x * (1 + std::tanh(sqrt_2_div_pi * (x + coef * x_cube)));
+                Dtype_t gelu_value = 0.5 * x * (1 + sqrt_2_div_pi * (x + coef * x_cube));
 
                 // ������
                 out_data[index] = gelu_value; // GELU��ʽ
+=======
+                Dtype_t x_cube = x * x * x;
+                Dtype_t tanh_arg = sqrt_2_div_pi * (x + coef * x_cube);
+                Dtype_t tanh_val = std::tanh(tanh_arg);
+                out_data[index] = 0.5 * x * (1 + tanh_val); // GELU��ʽ
+>>>>>>> 0e99d854d578cffcb683aac662ed044e66a5fd83
             }
         }
     }

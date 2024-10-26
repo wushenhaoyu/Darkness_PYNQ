@@ -1,8 +1,8 @@
 #include "MatrixPow.h"
 
 void MatrixPow(
-    ap_uint<12> rows,        // 矩阵的行数
-    ap_uint<12> cols,        // 矩阵的列数
+    ap_uint<12> rows,        // 矩阵的行�?
+    ap_uint<12> cols,        // 矩阵的列�?
     Dtype_t A[],             // 输入矩阵 A
     Dtype_t exponent,        // 幂次
     Dtype_t C[]              // 输出矩阵 C
@@ -19,7 +19,7 @@ void MatrixPow(
         #pragma HLS UNROLL
         for (int j = 0; j < cols; ++j) {
             #pragma HLS UNROLL
-            // 执行幂次运算并存储结果
+            // 执行幂次运算并存储结�?
             C[i * cols + j] = std::pow(A[i * cols + j], exponent);
         }
     }
