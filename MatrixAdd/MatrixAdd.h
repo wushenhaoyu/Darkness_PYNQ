@@ -14,8 +14,8 @@ typedef float Dtype_w;    // Data type for weights
 typedef float Dtype_acc;  // Data type for accumulation
 
 void MatrixAdd(
-    ap_uint<12> rows,         // 矩阵的行数
-    ap_uint<12> cols,         // 矩阵的列数
+    ap_uint<12> rows,         // 矩阵的行�?
+    ap_uint<12> cols,         // 矩阵的列�?
     Dtype_t A[],              // 输入矩阵 A
     Dtype_t B[],              // 输入矩阵 B
     Dtype_t C[]               // 输出矩阵 C

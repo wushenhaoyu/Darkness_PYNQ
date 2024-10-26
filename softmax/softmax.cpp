@@ -15,12 +15,7 @@ void Softmax(
 	#pragma HLS INTERFACE s_axilite port=channel
 	#pragma HLS INTERFACE s_axilite port=return
     for (int c = 0; c < channel; ++c) {
-<<<<<<< HEAD
-	#pragma HLS UNROLL
-=======
-	#pragma HLS PIPELINE
->>>>>>> 0e99d854d578cffcb683aac662ed044e66a5fd83
-
+#pragma HLS UNROLL
         for (int h = 0; h < height; ++h) {
             for (int w = 0; w < width; ++w) {
 
@@ -30,6 +25,7 @@ void Softmax(
                 Dtype_t sum_exp = 0;
 
                 for (int k = 0; k < channel; ++k) {
+#pragma HLS UNROLL
                     int idx = k * height * width + h * width + w;
                     sum_exp += exp(in_data[idx] - max_val);
                 }
