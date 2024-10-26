@@ -14,10 +14,10 @@ typedef float Dtype_w;    // Data type for weights
 typedef float Dtype_acc;  // Data type for accumulation
 
 void MatrixMul(
-    ap_uint<12> height,       // 图像的高度
-    ap_uint<12> width,        // 图像的宽度
-    Dtype_t in_data[],        // 输入图像，格式为一维数组
-    Dtype_t mul[],            // 乘数矩阵，格式为一维数组
-    Dtype_t out_data[]        // 输出图像，格式为一维数组
+    ap_uint<12> height,       // 图像的高�?
+    ap_uint<12> width,        // 图像的宽�?
+    Dtype_t in_data[],        // 输入图像，格式为�?维数�?
+    Dtype_t mul[],            // 乘数矩阵，格式为�?维数�?
+    Dtype_t out_data[]        // 输出图像，格式为�?维数�?
 );
 #endif
