@@ -30,6 +30,7 @@ void BatchNorm(
 #pragma HLS UNROLL
         for (int h = 0; h < height; ++h) {
             for (int w = 0; w < width; ++w) {
+#pragma HLS UNROLL
                 Dtype_acc x = in_data[c * height * width + h * width + w];
                 Dtype_acc normalized = (x - running_mean[c]) / hls::sqrt(running_var[c] + eps);
                 out_data[c * height * width + h * width + w] = gamma[c] * normalized + beta[c];

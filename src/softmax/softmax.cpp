@@ -15,7 +15,11 @@ void Softmax(
 	#pragma HLS INTERFACE s_axilite port=channel
 	#pragma HLS INTERFACE s_axilite port=return
     for (int c = 0; c < channel; ++c) {
+<<<<<<< HEAD
+	#pragma HLS UNROLL
+=======
 	#pragma HLS PIPELINE
+>>>>>>> 0e99d854d578cffcb683aac662ed044e66a5fd83
 
         for (int h = 0; h < height; ++h) {
             for (int w = 0; w < width; ++w) {
