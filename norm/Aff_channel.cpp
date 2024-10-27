@@ -26,9 +26,10 @@ void Aff_channel(
 	    for (int h = 0; h < input_height; ++h) {
 	        for (int w = 0; w < input_width; ++w) {
 	            for (int c = 0; c < dim; ++c) {
+#pragma HLS UNROLL
 	                Dtype_acc sum = 0;
 	                for (int c_color = 0; c_color < dim; ++c_color) {
-						#pragma HLS UNROLL
+
 	                    // 将输入数据展平并计算
 	                    int index = c_color * size + h * input_width + w;
 	                    sum += (input_data[index] ) * color[c*dim+c_color];

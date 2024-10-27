@@ -29,8 +29,7 @@ void GELU(
 
                 // GELU����
                 Dtype_t x = in_data[index];
-                Dtype_t x_cube = x * x * x;
-                Dtype_t tanh_arg = sqrt_2_div_pi * (x + coef * x_cube);
+                Dtype_t tanh_arg = sqrt_2_div_pi * (x + coef * x * x * x);
                 Dtype_t tanh_val = std::tanh(tanh_arg);
                 out_data[index] = 0.5 * x * (1 + tanh_val); // GELU��ʽ
             }
