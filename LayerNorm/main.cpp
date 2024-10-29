@@ -16,15 +16,10 @@ int main() {
     for (int c = 0; c < DIM; c++) {
         for (int h = 0; h < INPUT_HEIGHT; h++) {
             for (int w = 0; w < INPUT_WIDTH; w++) {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                 input_data[c][h][w] = c+h+w;
-=======
-                input_data[c][h][w] = c*2+h+w;
->>>>>>> 0e99d854d578cffcb683aac662ed044e66a5fd83
-=======
-                input_data[c][h][w] = c*2+h+w;
->>>>>>> 0e99d854d578cffcb683aac662ed044e66a5fd83
+
+
             }
         }
     }

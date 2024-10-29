@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-import torch
-import torch.nn as nn
-=======
-=======
->>>>>>> 0e99d854d578cffcb683aac662ed044e66a5fd83
+
 # import torch
 # import torch.nn as nn
 
@@ -59,10 +53,7 @@ class query_SABlock(nn.Layer):
         x = self.norm1(x)  # 进行层归一化
         x = x.transpose([2, 0, 1])  
         return x
-<<<<<<< HEAD
->>>>>>> 0e99d854d578cffcb683aac662ed044e66a5fd83
-=======
->>>>>>> 0e99d854d578cffcb683aac662ed044e66a5fd83
+
 
 # 定义输入张量的维度
 DIM = 16           # 通道数
@@ -70,42 +61,35 @@ INPUT_HEIGHT = 10  # 高度
 INPUT_WIDTH = 10   # 宽度
 
 # 初始化输入数据
-<<<<<<< HEAD
-<<<<<<< HEAD
-input_data = torch.zeros(DIM, INPUT_HEIGHT, INPUT_WIDTH)
-=======
+
+
 input_data = paddle.zeros([DIM, INPUT_HEIGHT, INPUT_WIDTH])
->>>>>>> 0e99d854d578cffcb683aac662ed044e66a5fd83
-=======
-input_data = paddle.zeros([DIM, INPUT_HEIGHT, INPUT_WIDTH])
->>>>>>> 0e99d854d578cffcb683aac662ed044e66a5fd83
+
 for c in range(DIM):
     for h in range(INPUT_HEIGHT):
         for w in range(INPUT_WIDTH):
             input_data[c, h, w] = c + h + w
 
-# 初始化 gamma 和 beta
-<<<<<<< HEAD
-<<<<<<< HEAD
-gamma = torch.tensor([c for c in range(DIM)], dtype=torch.float32)
-beta = torch.tensor([c for c in range(DIM)], dtype=torch.float32)
+# # 初始化 gamma 和 beta
+# <<<<<<< HEAD
+# <<<<<<< HEAD
+# gamma = torch.tensor([c for c in range(DIM)], dtype=torch.float32)
+# beta = torch.tensor([c for c in range(DIM)], dtype=torch.float32)
 
-# 创建 LayerNorm 实例并设置为 eval 模式
-layer_norm = nn.LayerNorm([DIM,INPUT_HEIGHT, INPUT_WIDTH])  # 只对高度和宽度进行归一化
-layer_norm.eval()  # 设置为评估模式
+# # 创建 LayerNorm 实例并设置为 eval 模式
+# layer_norm = nn.LayerNorm([DIM,INPUT_HEIGHT, INPUT_WIDTH])  # 只对高度和宽度进行归一化
+# layer_norm.eval()  # 设置为评估模式
 
-# 执行层归一化
-output_data = layer_norm(input_data)  # 先进行层归一化
+# # 执行层归一化
+# output_data = layer_norm(input_data)  # 先进行层归一化
 
-# 应用 gamma 和 beta
-output_data = output_data * gamma.view(DIM, 1, 1) + beta.view(DIM, 1, 1)
+# # 应用 gamma 和 beta
+# output_data = output_data * gamma.view(DIM, 1, 1) + beta.view(DIM, 1, 1)
 
 # 打印结果
 
-print("\nOutput Data:\n", output_data)
-=======
-=======
->>>>>>> 0e99d854d578cffcb683aac662ed044e66a5fd83
+# print("\nOutput Data:\n", output_data)
+
 gamma = paddle.to_tensor([c for c in range(DIM)], dtype=paddle.float32)
 beta = paddle.to_tensor([c for c in range(DIM)], dtype=paddle.float32)
 
@@ -117,9 +101,6 @@ output_data = gamma.reshape([DIM, 1, 1]) * output + beta.reshape([DIM, 1, 1])
 
 # 打印结果
 print("Output Shape:", output.shape)
-<<<<<<< HEAD
 print("Output Data:\n", output_data)
->>>>>>> 0e99d854d578cffcb683aac662ed044e66a5fd83
-=======
-print("Output Data:\n", output_data)
->>>>>>> 0e99d854d578cffcb683aac662ed044e66a5fd83
+
+
