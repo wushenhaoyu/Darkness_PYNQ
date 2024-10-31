@@ -56,7 +56,6 @@ global_net_conv_large_proj_0_output_shape = (
     32,
     (CAMERA_HEIGHT + 2 * 1 - 3) // 2 + 1, 
     (CAMERA_WIDTH + 2 * 1 - 3) // 2 + 1, 
-    
 )
 global_net_conv_large_proj_0_out = xlnk.cma_array(shape=global_net_conv_large_proj_0_output_shape, cacheable=0, dtype=np.float32)
 

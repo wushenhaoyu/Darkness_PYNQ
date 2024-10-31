@@ -30,13 +30,16 @@ void Conv2D(
     int output_height = (input_height - kernel_size + 2 * padding) / stride + 1;
 
     for (int oc = 0; oc < out_channel; ++oc) {
-    #pragma HLS PIPELINE
+#pragma HLS UNROLL
         for (int oh = 0; oh < output_height; ++oh) {
+#pragma HLS UNROLL
             for (int ow = 0; ow < output_width; ++ow) {
+#pragma HLS UNROLL
                 Dtype_acc sum = 0;
 
                 for (int ic = 0; ic < in_channel; ++ic) {
-                    #pragma HLS UNROLL
+#pragma HLS PIPELINE
+
                     for (int kh = 0; kh < kernel_size; ++kh) {
                         for (int kw = 0; kw < kernel_size; ++kw) {
                             int ih = oh * stride - padding + kh;
@@ -59,3 +62,53 @@ void Conv2D(
         }
     }
 }
+
+void Conv2D_Death(
+    Dtype_t in_data[],   // Input in CHW format
+    Dtype_w weights[],   // Weights in OIHW format (Out_channel, In_channel, Height, Width)
+    Dtype_t biases[],    // Biases for each output channel
+    Dtype_t out_data[]   // Output in CHW format
+) {
+    #pragma HLS INTERFACE m_axi depth=4294967295 port=in_data offset=slave
+    #pragma HLS INTERFACE m_axi depth=4294967295 port=weights offset=slave
+    #pragma HLS INTERFACE m_axi depth=4294967295 port=biases offset=slave
+    #pragma HLS INTERFACE m_axi depth=4294967295 port=out_data offset=slave
+    #pragma HLS INTERFACE s_axilite port=return
+	const int c = 3;
+	const int width = 640;
+	const int height = 480;
+	const int kernel = 3;
+    for (int oc = 0; oc < c; ++oc) {
+#pragma HLS UNROLL
+        for (int oh = 0; oh < height; ++oh) {
+   for (int ow = 0; ow < width; ++ow) {
+                Dtype_acc sum = 0;
+#pragma HLS PIPELINE
+                for (int ic = 0; ic < c; ++ic) {
+#pragma HLS UNROLL
+
+                    for (int kh = 0; kh < kernel; ++kh) {
+#pragma HLS UNROLL
+                        for (int kw = 0; kw < kernel; ++kw) {
+#pragma HLS UNROLL
+                            int ih = oh  - 1 + kh;
+                            int iw = ow  - 1 + kw;
+
+                            // Check if the input indices are within the bounds
+                            if (ih >= 0 && ih < height && iw >= 0 && iw < width) {
+                                // Adjust indices for CHW format (input and output)
+                                sum += in_data[ic * height * width + ih * width + iw] *
+                                       weights[oc * c * kernel * kernel +
+                                               ic * kernel * kernel + kh * kernel + kw];
+                            }
+                        }
+                    }
+                }
+
+                // Store the result in CHW format
+                out_data[oc * height * width + oh * width + ow] = sum + biases[oc];
+            }
+        }
+    }
+}
+

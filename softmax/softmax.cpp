@@ -36,3 +36,38 @@ void Softmax(
         }
     }
 }
+
+
+void Softmax_Death(
+    Dtype_t in_data[],
+    Dtype_t out_data[]
+) {
+    #pragma HLS INTERFACE m_axi depth=4294967295 port=in_data offset=slave
+    #pragma HLS INTERFACE m_axi depth=4294967295 port=out_data offset=slave
+    #pragma HLS INTERFACE s_axilite port=return
+
+    const int C = 3;
+    const int H = 480;
+    const int W = 640;
+
+    for (int c = 0; c < C; ++c) {
+        #pragma HLS UNROLL
+        for (int h = 0; h < H; ++h) {
+            for (int w = 0; w < W; ++w) {
+                #pragma HLS PIPELINE
+
+                Dtype_t max_val = in_data[c * H * W + h * W + w];
+                Dtype_t sum_exp = 0;
+
+                for (int k = 0; k < C; ++k) {
+                    int idx = k * H * W + h * W + w;
+                    Dtype_t exp_val = exp(in_data[idx] - max_val);
+                    sum_exp += exp_val;
+                }
+
+                out_data[c * H * W + h * W + w] = exp(in_data[c * H * W + h * W + w] - max_val) / sum_exp;
+            }
+        }
+    }
+}
+

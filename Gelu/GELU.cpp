@@ -22,8 +22,11 @@ void GELU(
     for (int d = 0; d < input_depth; ++d) {
 	#pragma HLS UNROLL
         for (int h = 0; h < input_height; ++h) {
+#pragma HLS UNROLL
 
             for (int w = 0; w < input_width; ++w) {
+				#pragma HLS UNROLL
+
                 // ����ƫ�����������ݴ洢ΪCHW��ʽ
                 int index = d * input_height * input_width + h * input_width + w;
 

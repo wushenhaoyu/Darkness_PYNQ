@@ -5,9 +5,9 @@
 #include <hls_math.h>
 #include <cstdlib>
 using namespace std;
-typedef float Dtype_t;   // Data type for input, output, and bias
-typedef float Dtype_w;   // Data type for weights
-typedef float Dtype_acc; // Data type for accumulation
+typedef ap_fixed<16,5> Dtype_t;   // Data type for input, output, and bias
+typedef ap_fixed<16,5> Dtype_w;   // Data type for weights
+typedef ap_fixed<16,5> Dtype_acc; // Data type for accumulation
 void Conv2D(
     ap_uint<8> in_channel,
     ap_uint<8> out_channel,

@@ -25,3 +25,24 @@ void ReLU(
         }
     }
 }
+
+
+
+void ReLU_Death(
+    Dtype_t in_data[],
+    Dtype_t out_data[]
+) {
+    #pragma HLS INTERFACE m_axi depth=4294967295 port=in_data offset=slave
+    #pragma HLS INTERFACE m_axi depth=4294967295 port=out_data offset=slave
+    #pragma HLS INTERFACE s_axilite port=return
+
+    for (int c = 0; c < 3; ++c) {
+	#pragma HLS UNROLL
+        for (int h = 0; h < 480; ++h) {
+            for (int w = 0; w < 640; ++w) {
+                int index = c * 480 * 640 + h * 640 + w;
+                out_data[index] = std::max(Dtype_t(0), in_data[index]);
+            }
+        }
+    }
+}
