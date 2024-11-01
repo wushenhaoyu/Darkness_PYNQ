@@ -40,6 +40,7 @@ void ReLU_Death(
 	#pragma HLS UNROLL
         for (int h = 0; h < 480; ++h) {
             for (int w = 0; w < 640; ++w) {
+#pragma HLS PIPELINE
                 int index = c * 480 * 640 + h * 640 + w;
                 out_data[index] = std::max(Dtype_t(0), in_data[index]);
             }
