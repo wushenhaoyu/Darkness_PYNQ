@@ -16,8 +16,8 @@ void MatrixAdd(
     // ????
     for (int d = 0; d < 3; d++) {
 #pragma HLS UNROLL
-        for (int i = 0; i < width; ++i) {
-            for (int j = 0; j < height; ++j) {
+        for (int i = 0; i < height; ++i) {
+            for (int j = 0; j < width; ++j) {
                 #pragma HLS PIPELINE
                 C[d * height * width + i * width + j] = A[d * height * width + i * width + j] + B[d * height * width + i * width + j];
             }

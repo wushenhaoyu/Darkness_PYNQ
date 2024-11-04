@@ -105,11 +105,13 @@ np.copyto(conv2_weight, readbinfile("bin/out_conv_0_weight.bin", (3, 3, 3, 3)))
 conv2_bias = xlnk.cma_array(shape=(3,), cacheable=0, dtype=np.float32)
 np.copyto(conv2_bias, readbinfile("bin/out_conv_0_bias.bin", 3))
 
-
-x = 0
-cache1 = 0
-cache2 = 0
-cache3 = 0
+channel = 3
+height = 480
+width = 640
+x = xlnk.cma_array(shape=(channel,height,width),cacheable=0,dtype=np.float32)
+cache1 = xlnk.cma_array(shape=(channel,height,width),cacheable=0,dtype=np.float32)
+cache2 = xlnk.cma_array(shape=(channel,height,width),cacheable=0,dtype=np.float32)
+cache3 = xlnk.cma_array(shape=(channel,height,width),cacheable=0,dtype=np.float32)
 RunConv(conv,x,conv0_weight,conv0_bias,cache1)
 RunReLU(ReLU,cache1,cache2)
 RunConv(conv,cache2,conv1_weight,conv1_bias,cache3)

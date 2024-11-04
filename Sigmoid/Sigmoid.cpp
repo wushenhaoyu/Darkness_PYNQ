@@ -15,6 +15,7 @@ void  Sigmoid_Death(
     for (int c = 0; c < num_features; ++c) {
         #pragma HLS UNROLL
         for (int h = 0; h < height; ++h) {
+#pragma HLS  UNROLL factor = 2
             for (int w = 0; w < width; ++w) {
                 #pragma HLS PIPELINE
                 Dtype_acc x = in_data[c * height * width + h * width + w];
