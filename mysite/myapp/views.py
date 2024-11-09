@@ -11,9 +11,7 @@ from collections import defaultdict
 import cv2
 import numpy as np
 from ultralytics import YOLO
-from flask import Flask, Response, render_template,g
 import cv2
-app = Flask(__name__)
 # 加载YOLOv8模型
 camera = None
 model = YOLO('yolo11n.pt')
@@ -67,6 +65,7 @@ class Camera_Accept_Object:
             pass
         while self.start:  
             self.waitting_send = False
+            a = time.time()
             _, img = camera.read()  # 读取视频每一帧
             # img = cv2.imread("99.png")
             img = cv2.resize(img, (320, 240))  # 按要求调整图像大小(resolution必须为元组)
@@ -75,7 +74,7 @@ class Camera_Accept_Object:
             image = np.transpose(img, (2, 0, 1))  # 从 HWC 转为 CHW
             image = image.astype(np.float32) / 255.0  # 转为 float32 类型并除以255归一化
             img_data = image.tobytes()
-
+            
             # 计算数据长度
             data_length = len(img_data)
             # 发送帧头 0xAA
@@ -90,8 +89,9 @@ class Camera_Accept_Object:
             # 发送帧尾 0xAF
             self.client.send(struct.pack("B", 0xAF))
             self.waitting_send = True
-            while self.waitting_send:
-                pass
+            print(time.time()-a)
+            #while self.waitting_send:
+            #    pass
     def deal_with_data(self):
         # print(self.func)
         if self.func ==  b'\x01':

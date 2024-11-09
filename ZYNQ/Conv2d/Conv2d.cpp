@@ -30,15 +30,15 @@ void Conv2D(
     int output_height = (input_height - kernel_size + 2 * padding) / stride + 1;
 
     for (int oc = 0; oc < out_channel; ++oc) {
-#pragma HLS UNROLL
+
         for (int oh = 0; oh < output_height; ++oh) {
-#pragma HLS UNROLL
+
             for (int ow = 0; ow < output_width; ++ow) {
-#pragma HLS UNROLL
+
                 Dtype_acc sum = 0;
 
                 for (int ic = 0; ic < in_channel; ++ic) {
-#pragma HLS PIPELINE
+
 
                     for (int kh = 0; kh < kernel_size; ++kh) {
                         for (int kw = 0; kw < kernel_size; ++kw) {
@@ -114,41 +114,41 @@ void Conv2D_Death(
 }
 
 
-#define IMG_WIDTH  320    // ÊäÈëÍ¼Ïñ¿í¶È
-#define IMG_HEIGHT 240    // ÊäÈëÍ¼Ïñ¸ß¶È
-#define CHANNELS 3        // ÊäÈëºÍÊä³öÍ¨µÀÊý
-#define KERNEL_SIZE 3     // ¾í»ýºË´óÐ¡
+#define IMG_WIDTH  320    // ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½
+#define IMG_HEIGHT 240    // ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ß¶ï¿½
+#define CHANNELS 3        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½
+#define KERNEL_SIZE 3     // ï¿½ï¿½ï¿½ï¿½ï¿½Ë´ï¿½Ð¡
 
-typedef ap_fixed<16, 8> data_t; // ¶¨ÒåÊý¾ÝÀàÐÍ
+typedef ap_fixed<16, 8> data_t; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 void conv2d_pipelined(data_t input[CHANNELS][IMG_HEIGHT][IMG_WIDTH],
-                      data_t weights[CHANNELS][CHANNELS][KERNEL_SIZE][KERNEL_SIZE], // ¾í»ýºËÈ¨ÖØ
-                      data_t biases[CHANNELS], // Æ«ÖÃ
+                      data_t weights[CHANNELS][CHANNELS][KERNEL_SIZE][KERNEL_SIZE], // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½
+                      data_t biases[CHANNELS], // Æ«ï¿½ï¿½
                       data_t output[CHANNELS][IMG_HEIGHT][IMG_WIDTH]) {
 #pragma HLS INTERFACE m_axi depth=4294967295 port=output offset=slave
 #pragma HLS INTERFACE m_axi depth=4294967295 port=input offset=slave
 #pragma HLS INTERFACE s_axilite port=return
-    // ¾í»ý´°¿Ú»º´æ
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú»ï¿½ï¿½ï¿½
     data_t window[CHANNELS][KERNEL_SIZE][KERNEL_SIZE];
 
-    // Ö÷Ñ­»·£¬±éÀúÃ¿¸öÊä³öÍ¨µÀ
-    for (int c_out = 0; c_out < CHANNELS; c_out++) {   // ±éÀúÊä³öÍ¨µÀ
-        for (int i = 0; i < IMG_HEIGHT; i++) {         // ±éÀú¸ß¶È
-            for (int j = 0; j < IMG_WIDTH; j++) {      // ±éÀú¿í¶È
-#pragma HLS pipeline II=1 // ÆôÓÃÁ÷Ë®Ïß£¬II=1 ±íÊ¾Ã¿¸öÊ±ÖÓÖÜÆÚ´¦ÀíÒ»¸öÊý¾Ý
+    // ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½
+    for (int c_out = 0; c_out < CHANNELS; c_out++) {   // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½
+        for (int i = 0; i < IMG_HEIGHT; i++) {         // ï¿½ï¿½ï¿½ï¿½ï¿½ß¶ï¿½
+            for (int j = 0; j < IMG_WIDTH; j++) {      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#pragma HLS pipeline II=1 // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë®ï¿½ß£ï¿½II=1 ï¿½ï¿½Ê¾Ã¿ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-                // ³õÊ¼»¯¾í»ý½á¹ûÎªÆ«ÖÃ
+                // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªÆ«ï¿½ï¿½
                 data_t sum = biases[c_out];
 
-                // ¶ÔÃ¿¸öÊäÈëÍ¨µÀ½øÐÐ¾í»ý¼ÆËã
+                // ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 for (int c_in = 0; c_in < CHANNELS; c_in++) {
-                    // Ìî³ä´°¿Ú»º´æ£¨¼ÓÔØ 3x3 ´°¿Ú£©
+                    // ï¿½ï¿½ä´°ï¿½Ú»ï¿½ï¿½æ£¨ï¿½ï¿½ï¿½ï¿½ 3x3 ï¿½ï¿½ï¿½Ú£ï¿½
                     for (int ki = 0; ki < KERNEL_SIZE; ki++) {
                         for (int kj = 0; kj < KERNEL_SIZE; kj++) {
-                            int row = i + ki - 1;  // ¼ÆËãÊäÈëÍ¼ÏñÖÐµÄÐÐË÷Òý£¬´øÌî³ä
-                            int col = j + kj - 1;  // ¼ÆËãÊäÈëÍ¼ÏñÖÐµÄÁÐË÷Òý£¬´øÌî³ä
+                            int row = i + ki - 1;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+                            int col = j + kj - 1;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-                            // Èç¹ûÔ½½çÔòÌî³ä 0£¬·ñÔò¶ÁÈ¡ input Êý¾Ý
+                            // ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ input ï¿½ï¿½ï¿½ï¿½
                             if (row >= 0 && row < IMG_HEIGHT && col >= 0 && col < IMG_WIDTH) {
                                 window[c_in][ki][kj] = input[c_in][row][col];
                             } else {
@@ -157,54 +157,54 @@ void conv2d_pipelined(data_t input[CHANNELS][IMG_HEIGHT][IMG_WIDTH],
                         }
                     }
 
-                    // ÀÛ¼Ó¾í»ý¼ÆËã
+                    // ï¿½Û¼Ó¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     for (int ki = 0; ki < KERNEL_SIZE; ki++) {
                         for (int kj = 0; kj < KERNEL_SIZE; kj++) {
-#pragma HLS unroll // Õ¹¿ªÑ­»·£¬¼ÓËÙ¼ÆËã
+#pragma HLS unroll // Õ¹ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¼ï¿½ï¿½ï¿½
                             sum += window[c_in][ki][kj] * weights[c_out][c_in][ki][kj];
                         }
                     }
                 }
 
-                // ReLU ²Ù×÷
-                output[c_out][i][j] = (sum > 0) ? sum : static_cast<data_t>(0); // Èç¹û sum ´óÓÚ 0 ÔòÊä³ö sum£¬·ñÔòÊä³ö 0
+                // ReLU ï¿½ï¿½ï¿½ï¿½
+                output[c_out][i][j] = (sum > 0) ? sum : static_cast<data_t>(0); // ï¿½ï¿½ï¿½ sum ï¿½ï¿½ï¿½ï¿½ 0 ï¿½ï¿½ï¿½ï¿½ï¿½ sumï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0
             }
         }
     }
 }
 
 
-#include <cmath> // ÎªÁËÊ¹ÓÃ exp º¯Êý
+#include <cmath> // Îªï¿½ï¿½Ê¹ï¿½ï¿½ exp ï¿½ï¿½ï¿½ï¿½
 
 void conv2d_pipelined1(data_t input[CHANNELS][IMG_HEIGHT][IMG_WIDTH],
-                      data_t weights[CHANNELS][CHANNELS][KERNEL_SIZE][KERNEL_SIZE], // ¾í»ýºËÈ¨ÖØ
-                      data_t biases[CHANNELS], // Æ«ÖÃ
+                      data_t weights[CHANNELS][CHANNELS][KERNEL_SIZE][KERNEL_SIZE], // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½
+                      data_t biases[CHANNELS], // Æ«ï¿½ï¿½
                       data_t output[CHANNELS][IMG_HEIGHT][IMG_WIDTH]) {
 #pragma HLS INTERFACE m_axi depth=4294967295 port=output offset=slave
 #pragma HLS INTERFACE m_axi depth=4294967295 port=input offset=slave
 #pragma HLS INTERFACE s_axilite port=return
 
-    // ¾í»ý´°¿Ú»º´æ
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú»ï¿½ï¿½ï¿½
     data_t window[CHANNELS][KERNEL_SIZE][KERNEL_SIZE];
 
-    // Ö÷Ñ­»·£¬±éÀúÃ¿¸öÊä³öÍ¨µÀ
-    for (int c_out = 0; c_out < CHANNELS; c_out++) {   // ±éÀúÊä³öÍ¨µÀ
-        for (int i = 0; i < IMG_HEIGHT; i++) {         // ±éÀú¸ß¶È
-            for (int j = 0; j < IMG_WIDTH; j++) {      // ±éÀú¿í¶È
-#pragma HLS pipeline II=1 // ÆôÓÃÁ÷Ë®Ïß£¬II=1 ±íÊ¾Ã¿¸öÊ±ÖÓÖÜÆÚ´¦ÀíÒ»¸öÊý¾Ý
+    // ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½
+    for (int c_out = 0; c_out < CHANNELS; c_out++) {   // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½
+        for (int i = 0; i < IMG_HEIGHT; i++) {         // ï¿½ï¿½ï¿½ï¿½ï¿½ß¶ï¿½
+            for (int j = 0; j < IMG_WIDTH; j++) {      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#pragma HLS pipeline II=1 // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë®ï¿½ß£ï¿½II=1 ï¿½ï¿½Ê¾Ã¿ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-                // ³õÊ¼»¯¾í»ý½á¹ûÎªÆ«ÖÃ
+                // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªÆ«ï¿½ï¿½
                 data_t sum = biases[c_out];
 
-                // ¶ÔÃ¿¸öÊäÈëÍ¨µÀ½øÐÐ¾í»ý¼ÆËã
+                // ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 for (int c_in = 0; c_in < CHANNELS; c_in++) {
-                    // Ìî³ä´°¿Ú»º´æ£¨¼ÓÔØ KERNEL_SIZE x KERNEL_SIZE ´°¿Ú£©
+                    // ï¿½ï¿½ä´°ï¿½Ú»ï¿½ï¿½æ£¨ï¿½ï¿½ï¿½ï¿½ KERNEL_SIZE x KERNEL_SIZE ï¿½ï¿½ï¿½Ú£ï¿½
                     for (int ki = 0; ki < KERNEL_SIZE; ki++) {
                         for (int kj = 0; kj < KERNEL_SIZE; kj++) {
-                            int row = i + ki - 1;  // ¼ÆËãÊäÈëÍ¼ÏñÖÐµÄÐÐË÷Òý£¬´øÌî³ä
-                            int col = j + kj - 1;  // ¼ÆËãÊäÈëÍ¼ÏñÖÐµÄÁÐË÷Òý£¬´øÌî³ä
+                            int row = i + ki - 1;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+                            int col = j + kj - 1;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-                            // Èç¹ûÔ½½çÔòÌî³ä 0£¬·ñÔò¶ÁÈ¡ input Êý¾Ý
+                            // ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ input ï¿½ï¿½ï¿½ï¿½
                             if (row >= 0 && row < IMG_HEIGHT && col >= 0 && col < IMG_WIDTH) {
                                 window[c_in][ki][kj] = input[c_in][row][col];
                             } else {
@@ -213,17 +213,17 @@ void conv2d_pipelined1(data_t input[CHANNELS][IMG_HEIGHT][IMG_WIDTH],
                         }
                     }
 
-                    // ÀÛ¼Ó¾í»ý¼ÆËã
+                    // ï¿½Û¼Ó¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     for (int ki = 0; ki < KERNEL_SIZE; ki++) {
                         for (int kj = 0; kj < KERNEL_SIZE; kj++) {
-#pragma HLS unroll // Õ¹¿ªÑ­»·£¬¼ÓËÙ¼ÆËã
+#pragma HLS unroll // Õ¹ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¼ï¿½ï¿½ï¿½
                             sum += window[c_in][ki][kj] * weights[c_out][c_in][ki][kj];
                         }
                     }
                 }
 
-                // Sigmoid ¼¤»îº¯Êý
-                output[c_out][i][j] = 1.0 / (1.0 + exp(static_cast<double>(-sum))); // Ó¦ÓÃ Sigmoid º¯Êý
+                // Sigmoid ï¿½ï¿½ï¿½îº¯ï¿½ï¿½
+                output[c_out][i][j] = 1.0 / (1.0 + exp(static_cast<double>(-sum))); // Ó¦ï¿½ï¿½ Sigmoid ï¿½ï¿½ï¿½ï¿½
             }
         }
     }
@@ -235,38 +235,38 @@ void conv2d_pipelined1(data_t input[CHANNELS][IMG_HEIGHT][IMG_WIDTH],
 
 
 void conv2d_with_batchnorm_and_relu(data_t input[CHANNELS][IMG_HEIGHT][IMG_WIDTH],
-                                     data_t weights[CHANNELS][CHANNELS][KERNEL_SIZE][KERNEL_SIZE], // ¾í»ýºËÈ¨ÖØ
-                                     data_t biases[CHANNELS], // Æ«ÖÃ
-                                     data_t gamma[CHANNELS], // Ëõ·Å²ÎÊý
-                                     data_t beta[CHANNELS], // Æ«ÖÃ²ÎÊý
-                                     data_t running_mean[CHANNELS], // ÔËÐÐ¾ùÖµ
-                                     data_t running_var[CHANNELS], // ÔËÐÐ·½²î
+                                     data_t weights[CHANNELS][CHANNELS][KERNEL_SIZE][KERNEL_SIZE], // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½
+                                     data_t biases[CHANNELS], // Æ«ï¿½ï¿½
+                                     data_t gamma[CHANNELS], // ï¿½ï¿½ï¿½Å²ï¿½ï¿½ï¿½
+                                     data_t beta[CHANNELS], // Æ«ï¿½Ã²ï¿½ï¿½ï¿½
+                                     data_t running_mean[CHANNELS], // ï¿½ï¿½ï¿½Ð¾ï¿½Öµ
+                                     data_t running_var[CHANNELS], // ï¿½ï¿½ï¿½Ð·ï¿½ï¿½ï¿½
                                      data_t output[CHANNELS][IMG_HEIGHT][IMG_WIDTH]) {
 #pragma HLS INTERFACE m_axi depth=4294967295 port=output offset=slave
 #pragma HLS INTERFACE m_axi depth=4294967295 port=input offset=slave
 #pragma HLS INTERFACE s_axilite port=return
 
-    // ¾í»ý´°¿Ú»º´æ
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú»ï¿½ï¿½ï¿½
     data_t window[CHANNELS][KERNEL_SIZE][KERNEL_SIZE];
 
-    // Ö÷Ñ­»·£¬±éÀúÃ¿¸öÊä³öÍ¨µÀ
-    for (int c_out = 0; c_out < CHANNELS; c_out++) {   // ±éÀúÊä³öÍ¨µÀ
-        for (int i = 0; i < IMG_HEIGHT; i++) {         // ±éÀú¸ß¶È
-            for (int j = 0; j < IMG_WIDTH; j++) {      // ±éÀú¿í¶È
-#pragma HLS pipeline II=1 // ÆôÓÃÁ÷Ë®Ïß£¬II=1 ±íÊ¾Ã¿¸öÊ±ÖÓÖÜÆÚ´¦ÀíÒ»¸öÊý¾Ý
+    // ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½
+    for (int c_out = 0; c_out < CHANNELS; c_out++) {   // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½
+        for (int i = 0; i < IMG_HEIGHT; i++) {         // ï¿½ï¿½ï¿½ï¿½ï¿½ß¶ï¿½
+            for (int j = 0; j < IMG_WIDTH; j++) {      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#pragma HLS pipeline II=1 // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë®ï¿½ß£ï¿½II=1 ï¿½ï¿½Ê¾Ã¿ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-                // ³õÊ¼»¯¾í»ý½á¹ûÎªÆ«ÖÃ
+                // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªÆ«ï¿½ï¿½
                 data_t sum = biases[c_out];
 
-                // ¶ÔÃ¿¸öÊäÈëÍ¨µÀ½øÐÐ¾í»ý¼ÆËã
+                // ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 for (int c_in = 0; c_in < CHANNELS; c_in++) {
-                    // Ìî³ä´°¿Ú»º´æ£¨¼ÓÔØ KERNEL_SIZE x KERNEL_SIZE ´°¿Ú£©
+                    // ï¿½ï¿½ä´°ï¿½Ú»ï¿½ï¿½æ£¨ï¿½ï¿½ï¿½ï¿½ KERNEL_SIZE x KERNEL_SIZE ï¿½ï¿½ï¿½Ú£ï¿½
                     for (int ki = 0; ki < KERNEL_SIZE; ki++) {
                         for (int kj = 0; kj < KERNEL_SIZE; kj++) {
-                            int row = i + ki - 1;  // ¼ÆËãÊäÈëÍ¼ÏñÖÐµÄÐÐË÷Òý£¬´øÌî³ä
-                            int col = j + kj - 1;  // ¼ÆËãÊäÈëÍ¼ÏñÖÐµÄÁÐË÷Òý£¬´øÌî³ä
+                            int row = i + ki - 1;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+                            int col = j + kj - 1;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-                            // Èç¹ûÔ½½çÔòÌî³ä 0£¬·ñÔò¶ÁÈ¡ input Êý¾Ý
+                            // ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ input ï¿½ï¿½ï¿½ï¿½
                             if (row >= 0 && row < IMG_HEIGHT && col >= 0 && col < IMG_WIDTH) {
                                 window[c_in][ki][kj] = input[c_in][row][col];
                             } else {
@@ -275,26 +275,26 @@ void conv2d_with_batchnorm_and_relu(data_t input[CHANNELS][IMG_HEIGHT][IMG_WIDTH
                         }
                     }
 
-                    // ÀÛ¼Ó¾í»ý¼ÆËã
+                    // ï¿½Û¼Ó¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     for (int ki = 0; ki < KERNEL_SIZE; ki++) {
                         for (int kj = 0; kj < KERNEL_SIZE; kj++) {
-#pragma HLS unroll // Õ¹¿ªÑ­»·£¬¼ÓËÙ¼ÆËã
+#pragma HLS unroll // Õ¹ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¼ï¿½ï¿½ï¿½
                             sum += window[c_in][ki][kj] * weights[c_out][c_in][ki][kj];
                         }
                     }
                 }
 
                 // Batch Normalization
-                // ¼ÆËã¹éÒ»»¯
-                // ½« running_var ºÍ 1e-5 ×ª»»Îª data_t ÀàÐÍÒÔ½â¾ö³ý·¨µÄÆçÒå
+                // ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
+                // ï¿½ï¿½ running_var ï¿½ï¿½ 1e-5 ×ªï¿½ï¿½Îª data_t ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 data_t norm = (sum - running_mean[c_out]) /
                               (static_cast<data_t>(sqrt(static_cast<double>(running_var[c_out])) + static_cast<double>(1e-5)));
 
-                // Ó¦ÓÃ gamma ºÍ beta
+                // Ó¦ï¿½ï¿½ gamma ï¿½ï¿½ beta
                 data_t batch_norm_output = gamma[c_out] * norm + beta[c_out];
 
-                // ReLU ²Ù×÷
-                output[c_out][i][j] = (batch_norm_output > 0) ? batch_norm_output : static_cast<data_t>(0); // Èç¹û batch_norm_output ´óÓÚ 0 ÔòÊä³ö£¬·ñÔòÊä³ö 0
+                // ReLU ï¿½ï¿½ï¿½ï¿½
+                output[c_out][i][j] = (batch_norm_output > 0) ? batch_norm_output : static_cast<data_t>(0); // ï¿½ï¿½ï¿½ batch_norm_output ï¿½ï¿½ï¿½ï¿½ 0 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0
             }
         }
     }

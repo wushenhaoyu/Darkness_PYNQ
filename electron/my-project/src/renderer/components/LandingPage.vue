@@ -8,7 +8,7 @@
           <div style="height: 270px;width: 320px;">
             <div style="text-align: center;font-size: larger;font-weight: 900;color: black;background-color: #e9eef3;">原始视频</div>
             <div v-if="isShowImg1">            
-              <img   src="~@/assets/99.png" alt="electron-vue" >
+              <img   :src="imgurl" alt="electron-vue" >
             </div>
             <div v-else>
               <img   src="~@/assets/bg.png" alt="electron-vue" >
@@ -18,7 +18,7 @@
           <div style="height: 270px;width: 320px;">
             <div style="text-align: center;font-size: larger;font-weight: 900;color: black;background-color: #e9eef3;">增强视频</div>
             <div v-if="isShowImg2">            
-              <img   src="~@/assets/99.png" alt="electron-vue" >
+              <img   :src="img1url" alt="electron-vue" >
             </div>
             <div v-else>
               <img   src="~@/assets/bg.png" alt="electron-vue" >
@@ -29,7 +29,7 @@
           <div style="height: 270px;width: 320px;">
             <div style="text-align: center;font-size: larger;font-weight: 900;color: black;background-color: #e9eef3;">特征1视频</div>
             <div v-if="isShowImg3">            
-              <img   src="~@/assets/99.png" alt="electron-vue" >
+              <img   :src="img2url" alt="electron-vue" >
             </div>
             <div v-else>
               <img   src="~@/assets/bg.png" alt="electron-vue" >
@@ -39,7 +39,7 @@
           <div style="height: 270px;width: 320px;">
             <div style="text-align: center;font-size: larger;font-weight: 900;color: black;background-color: #e9eef3;">特征2视频</div>
             <div v-if="isShowImg4">            
-              <img   src="~@/assets/99.png" alt="electron-vue" >
+              <img   :src="img3url" alt="electron-vue" >
             </div>
             <div v-else>
               <img   src="~@/assets/bg.png" alt="electron-vue" >
@@ -107,7 +107,12 @@
         isShowImg1:false,
         isShowImg2:false,
         isShowImg3:false,
-        isShowImg4:false
+        isShowImg4:false,
+        imgurl_:'http://localhost:8000/video_feed',
+        img1url_:'http://localhost:8000/video_feed3',
+        img2url_:'http://localhost:8000/video_feed2',
+        img3url_:'http://localhost:8000/video_feed1',
+        timestamp: Date.now()
       }
     },
     mounted () {
@@ -115,6 +120,18 @@
     },
     computed: {
       //
+      imgurl(){
+        return `${this.imgurl_}?t=${this.timestamp}`;
+      },
+      img1url(){
+        return `${this.img1url_}?t=${this.timestamp}`;
+      },
+      img2url(){
+        return `${this.img2url_}?t=${this.timestamp}`;
+      },
+      img3url(){
+        return `${this.img3url_}?t=${this.timestamp}`;
+      }
     },
     watch: {
       //
