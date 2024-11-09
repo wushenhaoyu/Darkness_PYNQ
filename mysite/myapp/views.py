@@ -44,6 +44,8 @@ class Camera_Accept_Object:
     def Set_Socket(self, S_addr_port):
         self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)  # 端口可复用
+        self.server.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 1024 * 1024)  # 设置接收缓冲区为 1 MB
+        self.server.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 1024 * 1024)  # 设置发送缓冲区为 1 MB
         self.server.bind(S_addr_port)
         self.server.listen(5)
     def Get_Data(self):
@@ -56,42 +58,51 @@ class Camera_Accept_Object:
     # 发送图像数据
     def RT_Image(self):
         camera = cv2.VideoCapture(0)  # 从摄像头中获取视频
-        self.client.send(struct.pack("B", 0xAA))
-        self.client.send(struct.pack("B", 0x01))
-        self.client.send(struct.pack("l", 1))
-        self.client.send(struct.pack("B", 0x01))
-        self.client.send(struct.pack("B", 0xAF))
+        # self.client.send(struct.pack("B", 0xAA))
+        # self.client.send(struct.pack("B", 0x01))
+        # self.client.send(struct.pack("l", 1))
+        # self.client.send(struct.pack("B", 0x01))
+        # self.client.send(struct.pack("B", 0xAF))
         while not self.start:
             pass
         while self.start:  
             self.waitting_send = False
             a = time.time()
             _, img = camera.read()  # 读取视频每一帧
+            b = time.time()
+            # print("b-a",b-a)
             # img = cv2.imread("99.png")
             img = cv2.resize(img, (320, 240))  # 按要求调整图像大小(resolution必须为元组)
+            c = time.time()
+            # print("c-b",c-b)
             self.image_queue_mid3.put(img)
+            d = time.time()
+            # print("d-c",d-c)
             # 图像预处理
             image = np.transpose(img, (2, 0, 1))  # 从 HWC 转为 CHW
+            e = time.time()
+            # print("e-d",e-d)
             image = image.astype(np.float32) / 255.0  # 转为 float32 类型并除以255归一化
+            f = time.time()
+            # print("f-e",f-e)
             img_data = image.tobytes()
-            
+            g = time.time()
+            # print("g-f",g-f)
             # 计算数据长度
             data_length = len(img_data)
+            h = time.time()
+            # print("h-g",h-g)
             # 发送帧头 0xAA
-            self.client.send(struct.pack("B", 0xAA))
-
-            # 发送标识符 0x01
-            self.client.send(struct.pack("B", 0x02))
-
-            # 发送数据长度
-            self.client.send(struct.pack("l", data_length))
-            self.client.send(img_data)
-            # 发送帧尾 0xAF
-            self.client.send(struct.pack("B", 0xAF))
+            packet = struct.pack("BB", 0xAA, 0x02)               # 前两个字节
+            packet += struct.pack("l", data_length)               # 数据长度字段
+            packet += img_data                                    # 图像数据
+            packet += struct.pack("B", 0xAF)                      # 结束字节
+            self.client.send(packet)
+            print(f"Packet length: {len(packet)} bytes")
             self.waitting_send = True
-            print(time.time()-a)
-            #while self.waitting_send:
-            #    pass
+            while self.waitting_send:
+               pass
+            print("alltime",time.time()-a)
     def deal_with_data(self):
         # print(self.func)
         if self.func ==  b'\x01':
@@ -112,7 +123,7 @@ class Camera_Accept_Object:
             img_array = np.frombuffer(self.buffer, dtype=np.float32)
             image = img_array.reshape((3,240 ,320 ))
             self.image_queue.put(image)
-            # print('存入555')
+
     def receive_image(self):
         self.status = 0
         self.buffer = None
@@ -142,6 +153,7 @@ class Camera_Accept_Object:
                 self.func = b'\x00'
                 self.len = 0            
                 self.status = 0
+                
             continue
             info = struct.unpack("l", self.client.recv(4))  # 这里假设发送的图像大小是以4字节的无符号整数传递的
             data_length = info[0]  # 获取图像大小
@@ -206,7 +218,7 @@ class Camera_Accept_Object:
                     frame = jpeg.tobytes()  # 转换为字节流
                     yield (b'--frame\r\n'
                            b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
-                time.sleep(0.1)
+
     def generate_frame2(self):
         while True:
             # 从队列获取最新的一帧图像并转换为JPEG格式
@@ -221,7 +233,6 @@ class Camera_Accept_Object:
                     frame = jpeg.tobytes()  # 转换为字节流
                     yield (b'--frame\r\n'
                            b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
-                time.sleep(0.1)
     def generate_frame1(self):
         while True:
             # 从队列获取最新的一帧图像并转换为JPEG格式
@@ -234,7 +245,7 @@ class Camera_Accept_Object:
                     frame = jpeg.tobytes()  # 转换为字节流
                     yield (b'--frame\r\n'
                            b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
-                time.sleep(0.1)
+
     def generate_frame(self):
         while True:
             # 从队列获取最新的一帧图像并转换为JPEG格式
@@ -249,7 +260,7 @@ class Camera_Accept_Object:
                     frame = jpeg.tobytes()  # 转换为字节流
                     yield (b'--frame\r\n'
                            b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
-                time.sleep(0.1)
+
         # def display_image(self):
         # while True:
         #     # 从队列中获取图像
