@@ -20,10 +20,9 @@ from myapp.views import video_feed,video_feed1, video_feed2, video_feed3
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("video_feed", video_feed, name="video_feed"),
+    path("video_feed", video_feed, name="video_feed"),#output 
     path("video_feed1", video_feed1, name="video_feed1"),
-    path("video_feed2", video_feed2, name="video_feed3"),
-    path("video_feed3", video_feed2, name="video_feed3")#原视频
-    
+    path("video_feed2", video_feed2, name="video_feed2"),
+    path("video_feed3", video_feed3, name="video_feed3")#原视频
 
 ]
