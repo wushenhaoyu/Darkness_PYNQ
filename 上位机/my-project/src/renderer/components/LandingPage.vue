@@ -49,16 +49,17 @@
       </div>
       <div style="width: 30%;height: 90vh;"><div style="height: 4vh;"></div><div style="height: 86vh;background-color: #ffffff;border-radius: 1.5vw;">
         <div style="text-align: center;font-weight: 900;line-height: 10vh;font-size: 25px;">控制面板</div>
-        <div style="font-weight: 900;margin-top: 2vh;display: flex;justify-content: space-evenly;">
+        <div style="font-weight: 900;margin-top: 2vh;display: flex;justify-content: space-evenly;" @click="control">
           <div>原图 显示:</div>
           <el-switch
           v-model="isShowImg1"
           active-text="开启"
           inactive-text="关闭"
           >
+
         </el-switch>
         </div>
-        <div style="font-weight: 900;margin-top: 2vh;display: flex;justify-content: space-evenly;">
+        <div style="font-weight: 900;margin-top: 2vh;display: flex;justify-content: space-evenly;"  @click="control">
           <div>增强 显示:</div>
           <el-switch
           v-model="isShowImg2"
@@ -67,7 +68,7 @@
           >
         </el-switch>
         </div>
-        <div style="font-weight: 900;margin-top: 2vh;display: flex;justify-content: space-evenly;">
+        <div style="font-weight: 900;margin-top: 2vh;display: flex;justify-content: space-evenly;"  @click="control">
           <div>特征1显示:</div>
           <el-switch
           v-model="isShowImg3"
@@ -76,7 +77,7 @@
           >
         </el-switch>
         </div>
-        <div style="font-weight: 900;margin-top: 2vh;display: flex;justify-content: space-evenly;">
+        <div style="font-weight: 900;margin-top: 2vh;display: flex;justify-content: space-evenly;"  @click="control">
           <div>特征2显示:</div>
           <el-switch
           v-model="isShowImg4"
@@ -86,7 +87,21 @@
         </el-switch>
         </div>
         <div style="font-weight: 900;margin-top: 2vh;display: flex;justify-content: space-evenly;">
-          <el-button type="primary" style="width: 80%;font-weight: 600;">开始识别</el-button>
+          <el-select v-model="value" placeholder="模式选择" @change="change">
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+        </div>
+        <div style="height: 20vh;"></div>
+        <div style="font-weight: 900;margin-top: 2vh;display: flex;justify-content: space-evenly;">
+          <el-button type="primary" style="width: 80%;font-weight: 600;" @click="openYOLO">开始识别</el-button>
+        </div>
+        <div style="font-weight: 900;margin-top: 2vh;display: flex;justify-content: space-evenly;">
+          <el-button type="primary" style="width: 80%;font-weight: 600;" @click="openCamera">开启摄像头</el-button>
         </div>
       </div> </div>
     </div>
@@ -108,11 +123,22 @@
         isShowImg2:false,
         isShowImg3:false,
         isShowImg4:false,
-        imgurl_:'http://localhost:8000/video_feed',
-        img1url_:'http://localhost:8000/video_feed3',
-        img2url_:'http://localhost:8000/video_feed2',
-        img3url_:'http://localhost:8000/video_feed1',
-        timestamp: Date.now()
+        imgurl_:'http://localhost:8000/video_stream_ori/',
+        img1url_:'http://localhost:8000/video_stream_out/',
+        img2url_:'http://localhost:8000/video_stream_fea1/',
+        img3url_:'http://localhost:8000/video_stream_fea2/',
+        timestamp: Date.now(),
+        options: [{
+          value: 1,
+          label: 'easy'
+        }, {
+          value: 2,
+          label: 'medium'
+        }, {
+          value: 3,
+          label: 'difficult'
+        }],
+        value: 0
       }
     },
     mounted () {
@@ -137,8 +163,51 @@
       //
     },
     methods: {
+      change(){
+        let data = {'weight':this.value }
+        this.$http.post('http://127.0.0.1:8000/weight',data)
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+      },
       open (link) {
         this.$electron.shell.openExternal(link)
+      },
+      control(){
+        let data = {
+          "origin": this.isShowImg1,
+          "feature_one": this.isShowImg3,
+          "feature_two": this.isShowImg4,
+          "output": this.isShowImg2
+        }
+        this.$http.post('http://127.0.0.1:8000/control_queues',data,{ headers: { 'Content-Type': 'application/json' } })
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+      },
+      openCamera(){
+        this.$http.post('http://127.0.0.1:8000/openCam')
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+      },
+      openYOLO(){
+        this.$http.post('http://127.0.0.1:8000/openYOLO')
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.error(error);
+        });
       }
     }
   }

@@ -104,7 +104,6 @@ class Camera_Accept_Object:
                pass
             print("alltime",time.time()-a)
     def deal_with_data(self):
-        # print(self.func)
         if self.func ==  b'\x01':
             self.start = True
         elif self.func == b'\x02':
